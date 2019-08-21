@@ -35,5 +35,5 @@ export const en = {
 'cards':'Cards',
 'overdraft':'Overdraft Card',
 'overdraft valid':'Valid Period:  ',
-'years':'years'    
+'years':'years' ,   
 }
