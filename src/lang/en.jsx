@@ -29,5 +29,11 @@ export const en = {
 'message':'Wait for a message from bank preliminary decision',
 'get card':'Get a card',
 'ready':'We are ready to cooperate with potential partners',
-'more':'more'    
+'more':'more',
+'select':'Choose a card',
+'easy':'It is easy and simple to make utility and other types of payments with us. Safety and simplicity of settlements using sumy plastic cards',
+'cards':'Cards',
+'overdraft':'Overdraft Card',
+'overdraft valid':'Valid Period:  ',
+'years':'years'    
 }

@@ -1035,7 +1035,7 @@ class Content extends Component {
                               id="like_sc_header_175783431"
                             >
                               <h3 className="header">
-                                Выберите карту
+                                {ln['select']}
                                 <br /> учитывая ваши{" "}
                                 <span>личные потребности</span>
                               </h3>
@@ -1047,10 +1047,8 @@ class Content extends Component {
                               <div className="wpb_text_column wpb_content_element ">
                                 <div className="wpb_wrapper">
                                   <p style={{ textAlign: "center" }}>
-                                    С нами легко и просто совершать коммунальные
-                                    и иные виды платежей. Безопасность и
-                                    простота расчетов при помощи сумовых
-                                    пластиковых карт{" "}
+                                  {ln['easy']}
+                                   {" "}
                                   </p>
                                 </div>
                               </div>
@@ -1102,7 +1100,7 @@ class Content extends Component {
                                 />
                               </div>
                               <h5 className="header">
-                                Карты <span> UZCARD </span>
+                                {ln['cards']} <span> UZCARD </span>
                               </h5>
                               <ul>
                                 <li>
@@ -1176,13 +1174,13 @@ class Content extends Component {
                                 />
                               </div>
                               <h5 className="header">
-                                <span> ПЕНСИЯ OVERDRAFT </span>
+                                <span> {ln['overdraft']} </span>
                               </h5>
                               <ul>
                                 <li>
                                   <span className="fa fa fa-calendar-check-o" />{" "}
-                                  Срок действия карты:
-                                  <strong> 5 лет </strong>
+                                  {ln['overdraft valid']}
+                                  <strong> 5 {ln[]} </strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-percent" />{" "}

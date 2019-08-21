@@ -29,5 +29,11 @@ export const uz = {
      'message':'Xabarni kuting',
      'get card':'Kartani olish',
      'ready':'Biz potentsial sheriklar bilan hamkorlik qilishga tayyormiz',
-     'more':"Ko'proq"                                              
+     'more':"Ko'proq",
+     'select':'Kartani tanlang',
+     'easy':"Biz bilan kommunal va boshqa to'lovlarni amalga oshirish juda oson va sodda. Sumy plastik kartalaridan foydalangan holda hisob-kitoblarning xavfsizligi va soddaligi",
+     'cards':'Kartalar',
+     'overdraft':'Overdraft Pensiya karta',
+     'overdraft valid':'Kartaning muddati',
+     'years':'yil'       
 }
