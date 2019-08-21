@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import {change_phone,change_inps,change_passport,send_request} from './../redux/actions/actions';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import {ru} from './../lang/ru';
+import {uz} from './../lang/uz';
+import {en} from './../lang/en';
 
 import { Redirect } from 'react-router'
 
@@ -23,6 +26,14 @@ import { Redirect } from 'react-router'
  
 
   render() {
+    var ln;
+    if (this.props.lang == "ru") {
+      ln = this.props.ru;
+    } else if (this.props.lang == "uz") {
+      ln = this.props.uz;
+    } else {
+      ln = this.props.en;
+    }
 
     const { redirect } = this.state;
 
@@ -154,7 +165,7 @@ import { Redirect } from 'react-router'
         <p>
           <input
             type="submit"
-            value="Submit"
+            value={ln['submit']}
             className="wpcf7-form-control wpcf7-submit"
           />
         </p>
@@ -166,6 +177,9 @@ import { Redirect } from 'react-router'
 
 const mapToStateProps = state =>({
     lang:state.lang.lang,
-    phone:state.phone.phone
+    phone:state.phone.phone,
+    en:en,
+    ru:ru,
+    uz:uz
 })
 export default connect(mapToStateProps,{change_phone,send_request})(Form)

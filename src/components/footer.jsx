@@ -1,7 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {ru} from './../lang/ru';
+import {uz} from './../lang/uz';
+import {en} from './../lang/en';
 
-export default class Footer extends Component {
+ class Footer extends Component {
     render() {
+      var ln;
+      if (this.props.lang == "ru") {
+        ln = this.props.ru;
+      } else if (this.props.lang == "uz") {
+        ln = this.props.uz;
+      } else {
+        ln = this.props.en;
+      }
         return (
             <section id="block-footer">
             <div className="container">
@@ -13,10 +25,7 @@ export default class Footer extends Component {
                         style={{maxWidth: '100%', height: 'auto'}} /></div>
                     <div id="text-4" className="widget widget_text">
                       <div className="textwidget">
-                        <p style={{color:'#fff', paddingRight: '20px'}} >© 2019 Акционерный коммерческий Народный банк Республики
-                          Узбекистан. <br />
-                          Все права защищены.
-                          При использовании материалов сайта ссылка на веб-сайт обязательна.</p>
+                        <p style={{color:'#fff', paddingRight: '20px'}} >© 2019 {ln[ 'copyright']}</p>
                       </div>
                     </div>
         
@@ -25,12 +34,11 @@ export default class Footer extends Component {
                 <div className="col-md-4 col-sm-12 col-ms-12 matchHeight clearfix">
                   <div className="footer-widget-area">
                     <div id="ltx_navmenu-2" className="widget widget_ltx_navmenu">
-                      <h4 className="header-widget">Контакты</h4>
+                      <h4 className="header-widget">{ln['contacts']}</h4>
                     </div>
                     <div id="ltx_icons-3" className="widget widget_ltx_icons">
                       <ul className="social-icons-list">
-                        <li><a href="#"><span className="fa fa-map-marker"></span>100096, г. Ташкент, Чиланзарский район, улица
-                            Катартал, 46</a></li>
+                        <li><a href="#"><span className="fa fa-map-marker"></span>{ln['address']}</a></li>
                         <li><a href="#"><span className="fa fa-phone"></span>+998 (71) 200-00-55</a></li>
                         <li><a href="#"><span className="fa fa-envelope"></span>info@xb.uz</a></li>
                       </ul>
@@ -40,7 +48,7 @@ export default class Footer extends Component {
                 <div className="col-md-4 col-sm-12 col-ms-12 matchHeight clearfix">
                   <div className="footer-widget-area">
                     <div id="ltx_blogposts-2" className="widget widget_ltx_blogposts">
-                      <h4 className="header-widget">Социальные сети</h4>
+                      <h4 className="header-widget">{ln['social']}</h4>
                     </div>
                     <div id="ltx_icons-2" className="widget widget_ltx_icons">
                       <ul className="social-big font-headers">
@@ -57,3 +65,11 @@ export default class Footer extends Component {
         )
     }
 }
+
+const mapStateToProps = state =>({
+  lang:state.lang.lang,
+  en:en,
+  ru:ru,
+  uz:uz
+})
+export default connect(mapStateToProps,{})(Footer)

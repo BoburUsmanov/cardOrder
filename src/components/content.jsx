@@ -835,7 +835,7 @@ class Content extends Component {
                                     {" "}
                                     <strong className="header">
                                       {" "}
-                                      Education
+                                      {ln['Education']}
                                     </strong>
                                     <div className="descr" />
                                   </div>
@@ -861,7 +861,7 @@ class Content extends Component {
                                   </span>
                                   <div className="block-right">
                                     {" "}
-                                    <strong className="header"> Travel</strong>
+                                    <strong className="header"> {ln['Travel']}</strong>
                                     <div className="descr" />
                                   </div>
                                 </div>
@@ -888,7 +888,7 @@ class Content extends Component {
                                     {" "}
                                     <strong className="header">
                                       {" "}
-                                      Shopping
+                                      {ln['Shopping']}
                                     </strong>
                                     <div className="descr" />
                                   </div>
@@ -916,7 +916,7 @@ class Content extends Component {
                                     {" "}
                                     <strong className="header">
                                       {" "}
-                                      Medicine
+                                      {ln['Medicine']}
                                     </strong>
                                     <div className="descr" />
                                   </div>
@@ -1105,17 +1105,17 @@ class Content extends Component {
                               <ul>
                                 <li>
                                   <span className="fa fa fa-calendar-check-o" />{" "}
-                                  Срок действия карты:
-                                  <strong> 5 лет </strong>
+                                  {ln['overdraft valid']}
+                                  <strong> 5 {ln['years']} </strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-percent" />{" "}
-                                  Процентная ставка: <strong>0% годовых</strong>
+                                  {ln['rate']} <strong>0% {ln['annum']}</strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-money" />{" "}
-                                  Максимальная сумма:
-                                  <strong>без ограничений </strong>
+                                  {ln['maximum']}:
+                                  <strong> {ln['with no restrictions']} </strong>
                                 </li>
                               </ul>
                               <ul
@@ -1124,34 +1124,21 @@ class Content extends Component {
                                   textAlign: "justify"
                                 }}
                               >
-                                <li>Управление своими денежными средствами;</li>
+                                <li>{ln['Managing your money']}</li>
                                 <li>
-                                  Осуществление безналичных платежей на
-                                  предприятиях бытового обслуживания, при
-                                  покупке товаров и оплате услуг, за сотовую
-                                  связь, в гостиницах, на бензозаправках и в
-                                  других хозяйственных субъектах, выполняющих
-                                  денежные расчёты с населением;
+                                 { ln['Making cashless']}
                                 </li>
                                 <li>
-                                  Осуществление платежей в мини-банках, в
-                                  специальных, коммунальных, накопительных
-                                  кассах, а также в инфокиосках;
+                                 {ln['Making payments']}
                                 </li>
                                 <li>
-                                  Снятие наличных денег через кассы банка и
-                                  банкоматы;
+                                  {ln['bank']}
                                 </li>
                                 <li>
-                                  Возможность подключения услуги СМС –
-                                  уведомления для получения сведений о движении
-                                  денежных средств по пластиковой карте;
+                                {ln['Ability to activate SMS']}
                                 </li>
                                 <li>
-                                  В случае утери пластиковой карты вы можете
-                                  заблокировать её с помощью мобильного
-                                  приложения, не обращаясь непосредственно в
-                                  банк.
+                                 {ln['In case of loss']}
                                 </li>
                               </ul>
                             </div>
@@ -1180,17 +1167,18 @@ class Content extends Component {
                                 <li>
                                   <span className="fa fa fa-calendar-check-o" />{" "}
                                   {ln['overdraft valid']}
-                                  <strong> 5 {ln[]} </strong>
+                                  <strong> 5 {ln['years']} </strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-percent" />{" "}
-                                  Процентная ставка:{" "}
-                                  <strong>16% годовых</strong>
+                                  {ln['rate']}
+                                  {" "}
+                                  <strong>16% {ln['annum']}</strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-money" />{" "}
-                                  Максимальная сумма:
-                                  <strong>3-кратный МРЗП </strong>
+                                  {ln['maximum']}
+                                  <strong> 3-{ln['mp']} </strong>
                                 </li>
                               </ul>
                               <ul
@@ -1200,22 +1188,17 @@ class Content extends Component {
                                 }}
                               >
                                 <li>
-                                  Осуществление безналичных платежей и снятие
-                                  наличных денежных средств;
+                                {ln['uzcard__text']}
                                 </li>
                                 <li>
-                                  Снятие наличных денежных средств в кассах и
-                                  банкоматах АК Народного банка производится
-                                  бесплатно;
+                                 {ln['Cash withdrawals']}
                                 </li>
                                 <li>
-                                  На “Пенсионной карте” Overdraft имеется
-                                  кредитная сумма overdraft в размере 50% от
-                                  месячной пенсии;
+                                 {ln[ 'monthly pension']}
                                 </li>
-                                <li>Срок кредита – 12 месяцев;</li>
+                                <li>{ln['Loan term']}</li>
                                 <li>
-                                  Процентная ставка кредита – 1,33% в месяц.
+                                 {ln['The interest rate ']}
                                 </li>
                               </ul>
                             </div>
@@ -1238,24 +1221,23 @@ class Content extends Component {
                                 />
                               </div>
                               <h5 className="header">
-                                <span> КРЕДИТНАЯ </span> карта
+                               <span> {ln['credit card']} </span>
                               </h5>
                               <ul>
                                 <li>
                                   <span className="fa fa fa-calendar-check-o" />{" "}
-                                  Срок действия карты:
-                                  <strong> 5 лет</strong>, с возобнавляемой
-                                  кредитной линией
+                                 {ln['overdraft valid']}
+                                  <strong> 5 {ln['years']}</strong>, {ln['credit line']}
                                 </li>
                                 <li>
                                   <span className="fa fa fa-percent" />{" "}
-                                  Процентная ставка:{" "}
-                                  <strong>36% годовых </strong>
+                                  {ln['rate']}:{" "}
+                                  <strong>36% {ln['annum']} </strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-money" />{" "}
-                                  Максимальная сумма:{" "}
-                                  <strong>25-кратный МРЗП </strong>
+                                 {ln['maximum']}:{" "}
+                                  <strong>25-{ln['mp']} </strong>
                                 </li>
                               </ul>
                               <ul
@@ -1265,20 +1247,13 @@ class Content extends Component {
                                 }}
                               >
                                 <li>
-                                  Срок действия Кредитной карты 5 лет с открытой
-                                  возобновляемой кредитной линией;
+                                 {ln['Credit Card validity']}
                                 </li>
                                 <li>
-                                  Владелец кредитной карты может осуществлять
-                                  платежи в любых торговых точках или снимать
-                                  наличные денежные средства в банкоматах в
-                                  рамках установленного лимита;
+                                 {ln['Credit card holder']}
                                 </li>
                                 <li>
-                                  Возможность беспроцентного использования
-                                  средств в рамках установленного лимита во
-                                  время льготного периода (льготный период – 30
-                                  дней)
+                                 {ln['The possibility of interest']}
                                 </li>
                               </ul>
                             </div>
@@ -1301,23 +1276,22 @@ class Content extends Component {
                                 />
                               </div>
                               <h5 className="header">
-                                Карта <span> РАССРОЧКА </span>
+                                 <span>{ln['cards']} {ln['installment plan']} </span>
                               </h5>
                               <ul>
                                 <li>
                                   <span className="fa fa fa-calendar-check-o" />{" "}
-                                  Срок действия карты:
-                                  <strong> 5 лет </strong>, с возобнавляемой
-                                  кредитной линией
+                                 {ln['overdraft valid']}
+                                  <strong> 5 {ln['years']} </strong>, {ln['credit line']}
                                 </li>
                                 <li>
                                   <span className="fa fa fa-percent" />{" "}
-                                  Процентная ставка: <strong>0% годовых</strong>
+                                 {ln['rate']} <strong>0% {ln['annum']}</strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-money" />{" "}
-                                  Максимальная сумма:
-                                  <strong>100-кратный МРЗП</strong>
+                                  {ln['maximum']}:
+                                  <strong>100-{ln['mp']}</strong>
                                 </li>
                               </ul>
                               <ul
@@ -1327,16 +1301,13 @@ class Content extends Component {
                                 }}
                               >
                                 <li>
-                                  Покупка потребительских товаров в магазинах
-                                  организаций - партнёров;
+                                  {ln[ 'Consumer Shopping']}
                                 </li>
                                 <li>
-                                  Погашение взятого долга в течение 6 месяцев
-                                  равными долями;
+                                  {ln['Repayment of the taken']}
                                 </li>
                                 <li>
-                                  Самое основное – взятые в долг средства
-                                  погашаются без всяких процентов
+                                  {ln['The most important thing']}
                                 </li>
                               </ul>
                             </div>
@@ -1456,13 +1427,13 @@ class Content extends Component {
                               className="heading  default align-center color-main subcolor-main transform-default   vc_custom_1518971574999"
                               id="like_sc_header_179953262"
                             >
-                              <h6 className="header"> Online request</h6>
+                              <h6 className="header"> {ln['Online request']}</h6>
                             </div>
                             <div
                               className="heading  header-underline align-center color-black subcolor-main transform-default   vc_custom_1518971604412"
                               id="like_sc_header_111443523"
                             >
-                              <h3 className="header">Order your card now</h3>
+                              <h3 className="header">{ln['Order your card now']}</h3>
                             </div>
                             <div
                               className="ltx-contact-form-7 transform- form-center form-white form-bg-white form-style-default form-btn- form-btn- form-padding-default "
