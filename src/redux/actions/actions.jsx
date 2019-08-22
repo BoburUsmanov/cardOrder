@@ -1,14 +1,27 @@
 import {
   CHANGE__LANGUAGE,
-  RESPONSE
+  RESPONSE,SAVE__PHONE,GET__CODE, SESSION__ID
 } from "./types";
 import Axios from "axios";
-// import {browserHistory} from 'react-router';
 
 
 export const change_language = text => dispatch => {
   dispatch({
     type: CHANGE__LANGUAGE,
+    payload: text
+  });
+};
+
+export const save_phone = text => dispatch => {
+  dispatch({
+    type: SAVE__PHONE,
+    payload: text
+  });
+};
+
+export const get_code = text => dispatch => {
+  dispatch({
+    type: GET__CODE,
     payload: text
   });
 };
@@ -19,10 +32,9 @@ export const send_request = (inps,number,seria,phone) => dispatch => {
     "data":{
       'inps':inps,
       'document':`${seria}${number}`,
-      'phone':phone
+      'phone':`998${phone}`
     }
   }
-  // console.log(userData);
   Axios.post(`/index.php?sigin`, userData)
     .then(response =>{
       dispatch({
@@ -30,10 +42,22 @@ export const send_request = (inps,number,seria,phone) => dispatch => {
         payload: response.data
       })
       
+    })
+};
+
+export const session_id = (sms,session) => dispatch => {
+  let userInfo = {
+    "data":{
+      'id':sms,
+      'ses':session
     }
-     
-    )
-    .catch(error => {
-        // console.log(error)
-    });
+  }
+  Axios.post(`/index.php?confirm`,userInfo)
+    .then(response =>{
+      dispatch({
+        type: SESSION__ID,
+        payload: response.data
+      })
+      console.log('key_code:' + response.data);
+    })
 };

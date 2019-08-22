@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { send_request } from "./../redux/actions/actions";
+import { send_request,save_phone } from "./../redux/actions/actions";
 import { connect } from "react-redux";
 import { ru } from "./../lang/ru";
 import { uz } from "./../lang/uz";
@@ -31,6 +31,8 @@ class Form extends Component {
       this.state.doc_seria,
       this.state.phone
     );
+
+    this.props.save_phone(this.state.phone)
   };
 
   render() {
@@ -136,7 +138,6 @@ class Form extends Component {
           <div className="col-md-12 tel">
             <span className="wpcf7-form-control-wrap field-heade2r">
               <input
-                // data-mask="(99) 999-99-99" data-mask-selectonfocus="true"
                 type="text"
                 name="phone"
                 value={this.state.phone}
@@ -173,5 +174,5 @@ const mapToStateProps = state => ({
 });
 export default connect(
   mapToStateProps,
-  { send_request }
+  { send_request,save_phone }
 )(Form);

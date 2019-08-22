@@ -118,12 +118,14 @@ $(document).ready(function() {
     $('.questionBtn').fadeOut();
   })
 
-  
-  $('.phone').mask('(99) 999-99-99');
 
   
-  // $(".phone").inputmask({"mask": "(99) 999-99-99"});
+  
+
   
   
+  // $('.phone').mask('(99) 999-99-99');
+
+  $('.confirmCode').mask('999999');
 
 });
