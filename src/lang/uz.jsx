@@ -72,5 +72,9 @@ export const uz = {
     'confirmDesc': 'Sizga tasdiqlash kodini yubordik. Iltimos quyidagi maydonga kodni kitriting. ',
     'confirmBtn':'Tasdiqlash',
     'cancelBtn': 'Ortga',
-    'verificationCode': 'Kodni kiriting'                  
+    'verificationCode': 'Kodni kiriting',
+    'doc_seria_lang' : 'Passport seriya',
+    'doc_num_lang': 'Passport seriya raqami',
+    'pin': 'Shaxsiy Identifikatsion Raqam',
+    'form_phone': 'Telefon raqam'
 }

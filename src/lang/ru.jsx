@@ -72,5 +72,9 @@ export const ru = {
     'confirmDesc': 'Мы отправили код активации на ваш телефон. Пожалуйста, введите ниже.'  ,
     'confirmBtn':'Подтвердить',
     'cancelBtn': 'Назад',
-    'verificationCode': 'Введите код'
+    'verificationCode': 'Введите код',
+    'doc_seria_lang' : 'Пасспорт серия',
+    'doc_num_lang': 'Номер пасспорта',
+    'pin': 'Персональный Идентификационный Номер',
+    'form_phone': 'Номер телефона'
 }

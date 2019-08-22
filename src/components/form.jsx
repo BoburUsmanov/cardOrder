@@ -71,7 +71,7 @@ class Form extends Component {
           <div className="col-md-12">
             {this.props.response.status ? (
               <div className="alert alert-danger" >
-               Error
+                Error
               </div>
             ) : (
               ""
@@ -80,7 +80,7 @@ class Form extends Component {
 
           <div className="col-md-12 onFocusBtnShow">
             <div className="row">
-              <div className="col-md-4">
+              <div className="col-md-5">
                 <span className="wpcf7-form-control-wrap field-header3">
                   <input
                     type="text"
@@ -89,14 +89,14 @@ class Form extends Component {
                     onChange={this.onChange}
                     className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                     required
-                    placeholder="Seriya"
+                    placeholder={ln['doc_seria_lang']}
                     pattern="[A-Z]{2}"
                     maxLength="2"
                     onInput={toInputUppercase}
                   />
                 </span>
               </div>
-              <div className="col-md-8">
+              <div className="col-md-7">
                 <span className="wpcf7-form-control-wrap field-header3">
                   <input
                     type="number"
@@ -106,7 +106,7 @@ class Form extends Component {
                     maxLength="7"
                     className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                     required
-                    placeholder="Passport raqami"
+                    placeholder={ln['doc_num_lang']}
                     onInput={validateNumber}
                   />
                 </span>
@@ -129,7 +129,7 @@ class Form extends Component {
                 maxLength="14"
                 className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                 required
-                placeholder="INPS"
+                placeholder={ln['pin']}
               />
             </span>
             <span className="fa fa-address-card" />
@@ -144,7 +144,8 @@ class Form extends Component {
                 onChange={this.onChange}
                 className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required phone"
                 required
-                placeholder="Telefon raqam"
+                placeholder={ln['form_phone']}
+                id="phone"
               />
             </span>
             <span className="fa fa-phone-square" />

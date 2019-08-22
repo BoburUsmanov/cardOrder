@@ -119,13 +119,12 @@ $(document).ready(function() {
   })
 
 
-  
-  
-
-  
-  
-  // $('.phone').mask('(99) 999-99-99');
-
   $('.confirmCode').mask('999999');
+  $("#phone").inputmask("(99) 999-99-99", {showMaskOnFocus: true, showMaskOnHover: false});
 
 });
+
+
+$(document).on('load', function(){
+  $('.innerBlock').fadeIn(3500);
+})
