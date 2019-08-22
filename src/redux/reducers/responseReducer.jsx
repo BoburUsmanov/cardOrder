@@ -2,7 +2,7 @@
 import {RESPONSE } from '../actions/types';
 
 const initialState = {
-    response:[]
+    response:{}
 }
 
 
