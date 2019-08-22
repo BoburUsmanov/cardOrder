@@ -14,9 +14,9 @@ class Header extends Component {
   }
   render() {
     var ln;
-    if (this.props.lang == "ru") {
+    if (this.props.lang === "ru") {
       ln = this.props.ru;
-    } else if (this.props.lang == "uz") {
+    } else if (this.props.lang === "uz") {
       ln = this.props.uz;
     } else {
       ln = this.props.en;
@@ -146,7 +146,7 @@ class Header extends Component {
             </div>
           </nav>
         </div>
-        {console.log(this.props.lang)}
+        {/* {console.log(this.props.lang)} */}
       </div>
     );
   }

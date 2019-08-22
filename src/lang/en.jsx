@@ -13,7 +13,6 @@ export const en = {
 'credit card':'Credit Card',
 '30':'grace period - 30 days',
 'grace__text':'Interest-free use of credit funds of the bank during the grace period - 30 days. 5 year renewable grace period',
-'overdraft':' «Пенсия – Overdraft»',
 'free':'Opening a card for the first time - for free',
 'balance':'Ability to spend money in excess of available account balance. Interest-free cash withdrawal at ATMs of our bank' ,
 'company partners':'Company partners',

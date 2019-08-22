@@ -7,9 +7,9 @@ import {en} from './../lang/en';
  class Footer extends Component {
     render() {
       var ln;
-      if (this.props.lang == "ru") {
+      if (this.props.lang === "ru") {
         ln = this.props.ru;
-      } else if (this.props.lang == "uz") {
+      } else if (this.props.lang === "uz") {
         ln = this.props.uz;
       } else {
         ln = this.props.en;

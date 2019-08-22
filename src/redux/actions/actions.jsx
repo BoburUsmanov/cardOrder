@@ -25,10 +25,6 @@ export const send_request = (userData) => dispatch => {
      
     )
     .catch(error => {
-      
-        
-          
-       
-    
+        console.log(error)
     });
 };
