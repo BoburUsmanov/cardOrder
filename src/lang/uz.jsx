@@ -67,5 +67,7 @@ export const uz = {
      'copyright':"O'zbekiston Respublikasi aktsiyadorlik tijorat Xalq banki.Barcha huquqlar himoyalangan. Sayt materiallaridan foydalanganda veb-saytga havola ko'rsatilishi shart.",
      'Online request':"Onlayn so'rov",
      'Order your card now':'Kartaga buyurtma berish',
-     'submit':'Yuborish'                                         
+     'submit':'Yuborish'       
+     ,
+    'modalImg' : '/img/uzModal.jpg',                                  
 }

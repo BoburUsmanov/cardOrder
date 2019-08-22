@@ -14,17 +14,25 @@ export const change_language = text => dispatch => {
 };
 
 
-export const send_request = (userData) => dispatch => {
-  
-  Axios.post(`http://172.28.5.194:8080/nps/signUp/${userData}`)
-    .then(response =>
+export const send_request = (inps,number,seria,phone) => dispatch => {
+  let userData = {
+    "data":{
+      'inps':inps,
+      'document':`${seria}${number}`,
+      'phone':phone
+    }
+  }
+  Axios.post(`/index.php?sigin`, userData)
+    .then(response =>{
       dispatch({
         type: RESPONSE,
         payload: response.data
       })
+      console.log(response.data);
+    }
      
     )
     .catch(error => {
-        console.log(error)
+        // console.log(error)
     });
 };

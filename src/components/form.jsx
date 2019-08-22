@@ -6,6 +6,7 @@ import { uz } from './../lang/uz';
 import { en } from './../lang/en';
 import { Redirect } from 'react-router'
 
+
 class Form extends Component {
 
   constructor(props) {
@@ -13,9 +14,10 @@ class Form extends Component {
 
     this.state = {
       inps:'',
-      document:'',
-      phone: '',
-      redirect:false
+      doc_number:'',
+      doc_seria:'',
+      phone: ''
+      // redirect:false
     }
 
   }
@@ -26,14 +28,31 @@ class Form extends Component {
 
   onSubmit = (e) =>{
     e.preventDefault();
-    this.setState({redirect:true})
-    this.props.send_request(this.state);
+    // this.setState({redirect:true})
+    this.props.send_request(this.state.inps,this.state.doc_number,this.state.doc_seria,this.state.phone);
   }
 
-
-
-
+  
   render() {
+    
+    const toInputUppercase = e => {
+      e.target.value = ("" + e.target.value).toUpperCase();
+    };
+
+
+    const validateNumber =(event) => {
+      if (event.target.value.length > 7) {
+        event.target.value = event.target.value.slice(0,7); 
+      }
+    };
+
+    const validateInps =(event) => {
+      if (event.target.value.length > 14) {
+        event.target.value = event.target.value.slice(0,14); 
+      }
+    };
+
+    
 
     var ln;
     if (this.props.lang == "ru") {
@@ -45,107 +64,100 @@ class Form extends Component {
     }
 
 
-    if (this.state.redirect) {
-      return <Redirect to='/login' />;
-    }
+    // if (this.state.redirect) {
+    //   return <Redirect to='/login' />;
+    // }
 
     return (
-      <form className="wpcf7-form" onSubmit={this.onSubmit} >
+        <form className="wpcf7-form" onSubmit={this.onSubmit} >
 
-        <div className="row">
-          <div className="col-md-12 hidden">
-            {" "}
-            <span className="wpcf7-form-control-wrap field-header">
-              <input
-                type="text"
-                name="field-header"
+          <div className="row">
 
-
-                placeholder="Ism"
-              />
-            </span>
-            <span className="fa fa-user-circle" />
-          </div>
-
-
-          <div className="col-md-12">
-            {" "}
-            <span className="wpcf7-form-control-wrap field-heade2r">
-              <input
-                type="tel"
-                name="phone"
-                value = {this.state.phone}
-                onChange = {this.onChange}
-                className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                required
-                placeholder="Telefon raqam"
-
-              />
-            </span>
-            <span className="fa fa-phone-square" />
-          </div>
-
-          <div className="col-md-12 ">
-            {" "}
-            <span className="wpcf7-form-control-wrap field-header3">
-              <input
-                type="text"
-                name="document"
-                value={this.state.document}
-                onChange={this.onChange}
-                size="40"
-                className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                required
-                placeholder="Passport raqami"
-              />
-            </span>
-            <span className="fa fa-address-card" />
-          </div>
-          <div className="col-md-12 ">
-            {" "}
-            <span className="wpcf7-form-control-wrap field-header3">
-              <input
-                type="number"
-                name="inps"
-                value={this.state.inps}
-                onChange = {this.onChange}
-                size="40"
-                className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                required
-                placeholder="INPS"
-              />
-            </span>
-            <span className="fa fa-address-card" />
-          </div>
-          <div className="col-md-12 hidden">
-            {" "}
-            <span className="wpcf7-form-control-wrap select-menu">
-              <div className="select-wrap">
-                <select
-                  name="select-menu"
-                  className="wpcf7-form-control wpcf7-select"
-                  aria-invalid="false"
-                >
-                  <option value="What card do you need">
-                    What card do you need
-                  </option>
-                  <option value="Internet card">Internet card</option>
-                  <option value="Prepaid card">Prepaid card</option>
-                  <option value="Universal card">Universal card</option>
-                </select>
+            
+            <div className="col-md-12 onFocusBtnShow">
+              <div className="row">
+                <div className="col-md-4">
+                  <span className="wpcf7-form-control-wrap field-header3">
+                    <input
+                      type="text"
+                      name="doc_seria"
+                      value={this.state.doc_seria}
+                      onChange={this.onChange}
+                      className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                      required
+                      placeholder="Seriya"
+                      pattern="[A-Z]{2}"
+                      maxLength='2'
+                      onInput={toInputUppercase}
+                    />
+                  </span>
+                </div>
+                <div className="col-md-8">
+                  <span className="wpcf7-form-control-wrap field-header3">
+                    <input
+                      type="number"
+                      name="doc_number"
+                      value={this.state.doc_number}
+                      onChange={this.onChange}
+                      maxLength="7"
+                      className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                      required
+                      placeholder="Passport raqami" 
+                      onInput={validateNumber}
+                    />
+                  </span>
+                  <span className="fa fa-address-card" />
+                </div>
               </div>
-            </span>
+            </div>
+            
+
+            <div className="col-md-12 onFocusBtnShow">
+              <button type="button" className="questionBtn"><i className="fa fa-question"></i></button>
+              <span className="wpcf7-form-control-wrap field-header3">
+                <input
+                  type="number"
+                  name="inps"
+                  value={this.state.inps}
+                  onChange = {this.onChange}
+                  onInput={validateInps}
+                  maxLength="14"
+                  className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                  required
+                  placeholder="INPS"
+                />
+              </span>
+              <span className="fa fa-address-card" />
+            </div>
+            
+            <div className="col-md-12 tel">
+              
+              <span className="wpcf7-form-control-wrap field-heade2r">
+                <input className=""
+                  type="tel"
+                  name="phone"
+                  value = {this.state.phone}
+                  onChange = {this.onChange}
+                  className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                  required
+                  placeholder="Telefon raqam"
+
+                />
+              </span>
+              <span className="fa fa-phone-square" />
+            </div>
+
           </div>
-        </div>
-        <p>
-          <input
-            type="submit"
-            value={ln['submit']}
-            className="wpcf7-form-control wpcf7-submit"
-          />
-        </p>
-        <div className="wpcf7-response-output wpcf7-display-none" />
-      </form>
+          
+          <p>
+            <input
+              type="submit"
+              value={ln['submit']}
+              className="wpcf7-form-control wpcf7-submit"
+            />
+          </p>
+          <div className="wpcf7-response-output wpcf7-display-none" />
+        </form>
     );
   }
 }

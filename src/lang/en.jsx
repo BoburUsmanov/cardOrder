@@ -66,6 +66,7 @@ export const en = {
 'copyright':'Joint-Stock Commercial People’s Bank of the Republic of Uzbekistan.All rights reserved. When using materials from the site, a link to the website is required.',
 'Online request':'Online request',
 'Order your card now':'Order your card now',
-'submit':'Submit'
+'submit':'Submit',
+'modalImg' : '/img/engModal.jpg'
 
 }

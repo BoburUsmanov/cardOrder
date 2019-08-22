@@ -209,6 +209,73 @@ div{
   overflow:  hidden !important;
 }
 
+
+.modal{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* transition: all .25s ease-out; */
+  background: transparent;
+  z-index: 999;
+  display: none;
+}
+.questionBtn{
+  display: none;
+  position: absolute;
+  right: -25px;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: #095A2F;
+  color: #f1bf56;
+  margin: 0;
+  outline: none;
+  transition: background .2s, color .2s;
+}
+.questionBtn:hover{
+  background: transparent;
+  border-color: #095A2F;
+  color: #095A2F;
+}
+.modal img{
+  width: 50%;
+  position: absolute;
+  z-index: 999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.modal button{
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 99;
+  font-size: 23px;
+  border-radius: 50%;
+  width: 35px;
+  font-weight: bold;
+  height: 35px;
+  background: #f1bf56;
+  outline: none;
+  border: none;
+
+}
+.modal-overlay{
+  position: fixed;
+  display: block;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+
 @media only screen and (min-width: 1200px) {
   .closeBtn {
     display: none;

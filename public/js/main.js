@@ -104,4 +104,17 @@ $(document).ready(function() {
     });
     return (menuOpen = false);
   });
+
+  $('.modal button').on('click',function(){
+    $('.modal').fadeOut();
+  });
+  $('.questionBtn').on('click',function(){
+    $('.modal').fadeIn();
+  });
+  $('.onFocusBtnShow input').on('focus', function(){
+    $('.questionBtn').fadeIn();
+  })
+  $('.tel input').on('focus', function(){
+    $('.questionBtn').fadeOut();
+  })
 });
