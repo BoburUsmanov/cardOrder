@@ -1,6 +1,6 @@
 import {
   CHANGE__LANGUAGE,
-  RESPONSE,SAVE__PHONE,GET__CODE, SESSION__ID
+  RESPONSE,SAVE__PHONE,GET__CODE, SESSION__ID, USER__ENTERED
 } from "./types";
 import Axios from "axios";
 
@@ -26,6 +26,12 @@ export const get_code = text => dispatch => {
   });
 };
 
+export const user_entered = text => dispatch => {
+  dispatch({
+    type: USER__ENTERED,
+    payload: text
+  });
+};
 
 export const send_request = (inps,number,seria,phone) => dispatch => {
   let userData = {

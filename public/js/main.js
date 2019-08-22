@@ -128,4 +128,8 @@ $(document).ready(function() {
 
   $('.confirmCode').mask('999999');
 
+  $('.reload').on('click',function(){
+    location.reload();
+  })
+
 });
