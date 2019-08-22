@@ -118,6 +118,12 @@ $(document).ready(function() {
     $('.questionBtn').fadeOut();
   })
 
-  $('.date').mask('00/00/0000');
+  
+  $('.phone').mask('(99) 999-99-99');
+
+  
+  // $(".phone").inputmask({"mask": "(99) 999-99-99"});
+  
+  
 
 });

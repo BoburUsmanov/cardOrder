@@ -136,12 +136,12 @@ class Form extends Component {
           <div className="col-md-12 tel">
             <span className="wpcf7-form-control-wrap field-heade2r">
               <input
-                className="date"
+                // data-mask="(99) 999-99-99" data-mask-selectonfocus="true"
                 type="text"
                 name="phone"
                 value={this.state.phone}
                 onChange={this.onChange}
-                className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required phone"
                 required
                 placeholder="Telefon raqam"
               />
