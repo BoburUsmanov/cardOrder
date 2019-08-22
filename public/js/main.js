@@ -117,4 +117,7 @@ $(document).ready(function() {
   $('.tel input').on('focus', function(){
     $('.questionBtn').fadeOut();
   })
+
+  $('.date').mask('00/00/0000');
+
 });

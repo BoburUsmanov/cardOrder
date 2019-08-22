@@ -22,13 +22,14 @@ export const send_request = (inps,number,seria,phone) => dispatch => {
       'phone':phone
     }
   }
+  // console.log(userData);
   Axios.post(`/index.php?sigin`, userData)
     .then(response =>{
       dispatch({
         type: RESPONSE,
         payload: response.data
       })
-      console.log(response.data);
+      
     }
      
     )
