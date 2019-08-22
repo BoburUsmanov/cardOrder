@@ -67,6 +67,9 @@ export const en = {
 'Online request':'Online request',
 'Order your card now':'Order your card now',
 'submit':'Submit',
-'modalImg' : '/img/engModal.jpg'
-
+'modalImg' : '/img/engModal.jpg',
+'confirmDesc': 'We sent the activation code to your phone.Please enter below.',
+'confirmBtn':'Confirm',
+'cancelBtn': 'Cancel',
+'verificationCode': 'Enter code'
 }

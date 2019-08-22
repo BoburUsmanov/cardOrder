@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { send_request } from "./../redux/actions/actions";
+import { send_request,save_phone } from "./../redux/actions/actions";
 import { connect } from "react-redux";
 import { ru } from "./../lang/ru";
 import { uz } from "./../lang/uz";
@@ -31,6 +31,8 @@ class Form extends Component {
       this.state.doc_seria,
       this.state.phone
     );
+
+    this.props.save_phone(this.state.phone)
   };
 
   render() {
@@ -136,12 +138,11 @@ class Form extends Component {
           <div className="col-md-12 tel">
             <span className="wpcf7-form-control-wrap field-heade2r">
               <input
-                className="date"
                 type="text"
                 name="phone"
                 value={this.state.phone}
                 onChange={this.onChange}
-                className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required phone"
                 required
                 placeholder="Telefon raqam"
               />
@@ -173,5 +174,5 @@ const mapToStateProps = state => ({
 });
 export default connect(
   mapToStateProps,
-  { send_request }
+  { send_request,save_phone }
 )(Form);
