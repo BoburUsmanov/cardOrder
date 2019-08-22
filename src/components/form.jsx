@@ -1,31 +1,40 @@
 import React, { Component } from "react";
-import {change_phone,change_inps,change_passport,send_request} from './../redux/actions/actions';
-import {connect} from 'react-redux';
-import axios from 'axios';
-import {ru} from './../lang/ru';
-import {uz} from './../lang/uz';
-import {en} from './../lang/en';
-
+import { send_request } from './../redux/actions/actions';
+import { connect } from 'react-redux';
+import { ru } from './../lang/ru';
+import { uz } from './../lang/uz';
+import { en } from './../lang/en';
 import { Redirect } from 'react-router'
 
- class Form extends Component {
-  state = {
-    redirect:false
+class Form extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      inps:'',
+      document:'',
+      phone: '',
+      redirect:false
+    }
+
+  }
+
+  onChange = (e) =>{
+    this.setState({[e.target.name]:e.target.value});
+  }
+
+  onSubmit = (e) =>{
+    e.preventDefault();
+    this.setState({redirect:true})
+    this.props.send_request(this.state);
   }
 
 
-     onSubmitHandle = (e) =>{
-        e.preventDefault();
-        // this.props.send_request();
-        this.setState({ redirect: true })
-    }
 
-    phoneInput = (e) =>{
-        this.props.change_phone(e.target.value)
-    }
- 
 
   render() {
+
     var ln;
     if (this.props.lang == "ru") {
       ln = this.props.ru;
@@ -35,15 +44,14 @@ import { Redirect } from 'react-router'
       ln = this.props.en;
     }
 
-    const { redirect } = this.state;
 
-    if (redirect) {
-      return <Redirect to='/login'/>;
+    if (this.state.redirect) {
+      return <Redirect to='/login' />;
     }
 
     return (
-      <form className="wpcf7-form" onSubmit={this.onSubmitHandle} >
-       
+      <form className="wpcf7-form" onSubmit={this.onSubmit} >
+
         <div className="row">
           <div className="col-md-12 hidden">
             {" "}
@@ -51,8 +59,8 @@ import { Redirect } from 'react-router'
               <input
                 type="text"
                 name="field-header"
-             
-                
+
+
                 placeholder="Ism"
               />
             </span>
@@ -65,62 +73,29 @@ import { Redirect } from 'react-router'
             <span className="wpcf7-form-control-wrap field-heade2r">
               <input
                 type="tel"
-                name="field-heade2r"
-             
+                name="phone"
+                value = {this.state.phone}
+                onChange = {this.onChange}
                 className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
-                placeholder="Telefon raqam" onChange={this.phoneInput}
-                value={this.props.phone}
+                required
+                placeholder="Telefon raqam"
+
               />
             </span>
             <span className="fa fa-phone-square" />
           </div>
 
-
-          <div className="col-md-6 hidden">
-            {" "}
-            <span className="wpcf7-form-control-wrap field-header3">
-              <input
-                type="text"
-                name="field-header3"
-                // value=""
-                size="40"
-                className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
-                placeholder="Email"
-              />
-            </span>
-            <span className="fa fa-envelope" />
-          </div>
-          <div className="col-md-6 hidden">
-            {" "}
-            <span className="wpcf7-form-control-wrap field-heade2r">
-              <input
-                type="text"
-                name="field-heade2r"
-                // value=""
-                size="40"
-                className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
-                placeholder="Date of Birth"
-              />
-            </span>
-            <span className="fa fa-calendar" />
-          </div>
           <div className="col-md-12 ">
             {" "}
             <span className="wpcf7-form-control-wrap field-header3">
               <input
                 type="text"
-                name="field-header3"
-                // value=""
+                name="document"
+                value={this.state.document}
+                onChange={this.onChange}
                 size="40"
                 className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
+                required
                 placeholder="Passport raqami"
               />
             </span>
@@ -130,13 +105,13 @@ import { Redirect } from 'react-router'
             {" "}
             <span className="wpcf7-form-control-wrap field-header3">
               <input
-                type="text"
-                name="field-header3"
-                // value=""
+                type="number"
+                name="inps"
+                value={this.state.inps}
+                onChange = {this.onChange}
                 size="40"
                 className="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                aria-required="true"
-                aria-invalid="false"
+                required
                 placeholder="INPS"
               />
             </span>
@@ -175,11 +150,10 @@ import { Redirect } from 'react-router'
   }
 }
 
-const mapToStateProps = state =>({
-    lang:state.lang.lang,
-    phone:state.phone.phone,
-    en:en,
-    ru:ru,
-    uz:uz
+const mapToStateProps = state => ({
+  lang: state.lang.lang,
+  en: en,
+  ru: ru,
+  uz: uz
 })
-export default connect(mapToStateProps,{change_phone,send_request})(Form)
+export default connect(mapToStateProps, { send_request })(Form)

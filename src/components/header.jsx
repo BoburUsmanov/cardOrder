@@ -5,6 +5,7 @@ import Language from './language';
 import {ru} from './../lang/ru';
 import {en} from './../lang/en';
 import {uz} from './../lang/uz';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   
@@ -67,9 +68,9 @@ class Header extends Component {
               <div className="row row-center">
                 <div className="col-xl-2 col-lg-3 col-md-3 col-sm-6 col-ms-6 col-xs-6">
                   <div className="navbar-logo">
-                    <a className="logo" href="#">
+                    <Link to="/" className="logo">
                       <img width="199" id="logo" src="/img/logo.png" alt="" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <button
