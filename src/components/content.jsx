@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { ru } from "./../lang/ru";
 import { uz } from "./../lang/uz";
 import { en } from "./../lang/en";
-import Form from './form';
-
+import Form from "./form";
+import { reactLocalStorage } from "reactjs-localstorage";
 class Content extends Component {
   render() {
     var ln;
@@ -645,7 +645,10 @@ class Content extends Component {
                               className="heading  header-underline align-center color-black transform-default   vc_custom_1518742551077"
                               id="like_sc_header_1881305477"
                             >
-                              <h3 className="header"> {ln["get"]} <span>{ln['card']}</span></h3>
+                              <h3 className="header">
+                                {" "}
+                                {ln["get"]} <span>{ln["card"]}</span>
+                              </h3>
                             </div>
                             <ul className="block-icon icons-count-3  col-bg-transparent icon-top align-center i-circle-large layout-cols3 row">
                               <li
@@ -668,7 +671,8 @@ class Content extends Component {
                                   </span>
                                   <h5 className="header">
                                     {" "}
-                                    <span> 01. </span>{ln['service01']}
+                                    <span> 01. </span>
+                                    {ln["service01"]}
                                   </h5>
                                 </div>
                               </li>
@@ -692,7 +696,7 @@ class Content extends Component {
                                   </span>
                                   <h5 className="header">
                                     {" "}
-                                    <span> 02. </span> {ln['message']}
+                                    <span> 02. </span> {ln["message"]}
                                   </h5>
                                 </div>
                               </li>
@@ -716,7 +720,7 @@ class Content extends Component {
                                   </span>
                                   <h5 className="header">
                                     {" "}
-                                    <span> 03. </span> {ln['get card']}{" "}
+                                    <span> 03. </span> {ln["get card"]}{" "}
                                   </h5>
                                 </div>
                               </li>
@@ -797,7 +801,7 @@ class Content extends Component {
                               className="heading  header-underline color-black subcolor-main transform-default vc_custom_1518889619319"
                               id="like_sc_header_1773092424"
                             >
-                              <h3 className="header">{ln['partner']} ?</h3>
+                              <h3 className="header">{ln["partner"]} ?</h3>
                             </div>
                             <div
                               className="ltx-content-width col-align-left"
@@ -805,9 +809,7 @@ class Content extends Component {
                             >
                               <div className="wpb_text_column wpb_content_element ">
                                 <div className="wpb_wrapper">
-                                  <p>
-                                   {ln['ready']}
-                                  </p>
+                                  <p>{ln["ready"]}</p>
                                 </div>
                               </div>
                             </div>
@@ -835,7 +837,7 @@ class Content extends Component {
                                     {" "}
                                     <strong className="header">
                                       {" "}
-                                      {ln['Education']}
+                                      {ln["Education"]}
                                     </strong>
                                     <div className="descr" />
                                   </div>
@@ -861,7 +863,10 @@ class Content extends Component {
                                   </span>
                                   <div className="block-right">
                                     {" "}
-                                    <strong className="header"> {ln['Travel']}</strong>
+                                    <strong className="header">
+                                      {" "}
+                                      {ln["Travel"]}
+                                    </strong>
                                     <div className="descr" />
                                   </div>
                                 </div>
@@ -888,7 +893,7 @@ class Content extends Component {
                                     {" "}
                                     <strong className="header">
                                       {" "}
-                                      {ln['Shopping']}
+                                      {ln["Shopping"]}
                                     </strong>
                                     <div className="descr" />
                                   </div>
@@ -916,7 +921,7 @@ class Content extends Component {
                                     {" "}
                                     <strong className="header">
                                       {" "}
-                                      {ln['Medicine']}
+                                      {ln["Medicine"]}
                                     </strong>
                                     <div className="descr" />
                                   </div>
@@ -955,7 +960,7 @@ class Content extends Component {
                                 className="btn  btn-default transform-default color-text-default color-hover-default"
                                 id="like_sc_button_1248501390"
                               >
-                                {ln['more']}
+                                {ln["more"]}
                               </a>
                             </div>
                             <div className="es-resp">
@@ -1035,7 +1040,7 @@ class Content extends Component {
                               id="like_sc_header_175783431"
                             >
                               <h3 className="header">
-                                {ln['select']}
+                                {ln["select"]}
                                 <br /> учитывая ваши{" "}
                                 <span>личные потребности</span>
                               </h3>
@@ -1047,8 +1052,7 @@ class Content extends Component {
                               <div className="wpb_text_column wpb_content_element ">
                                 <div className="wpb_wrapper">
                                   <p style={{ textAlign: "center" }}>
-                                  {ln['easy']}
-                                   {" "}
+                                    {ln["easy"]}{" "}
                                   </p>
                                 </div>
                               </div>
@@ -1100,22 +1104,25 @@ class Content extends Component {
                                 />
                               </div>
                               <h5 className="header">
-                                {ln['cards']} <span> UZCARD </span>
+                                {ln["cards"]} <span> UZCARD </span>
                               </h5>
                               <ul>
                                 <li>
                                   <span className="fa fa fa-calendar-check-o" />{" "}
-                                  {ln['overdraft valid']}
-                                  <strong> 5 {ln['years']} </strong>
+                                  {ln["overdraft valid"]}
+                                  <strong> 5 {ln["years"]} </strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-percent" />{" "}
-                                  {ln['rate']} <strong>0% {ln['annum']}</strong>
+                                  {ln["rate"]} <strong>0% {ln["annum"]}</strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-money" />{" "}
-                                  {ln['maximum']}:
-                                  <strong> {ln['with no restrictions']} </strong>
+                                  {ln["maximum"]}:
+                                  <strong>
+                                    {" "}
+                                    {ln["with no restrictions"]}{" "}
+                                  </strong>
                                 </li>
                               </ul>
                               <ul
@@ -1124,22 +1131,12 @@ class Content extends Component {
                                   textAlign: "justify"
                                 }}
                               >
-                                <li>{ln['Managing your money']}</li>
-                                <li>
-                                 { ln['Making cashless']}
-                                </li>
-                                <li>
-                                 {ln['Making payments']}
-                                </li>
-                                <li>
-                                  {ln['bank']}
-                                </li>
-                                <li>
-                                {ln['Ability to activate SMS']}
-                                </li>
-                                <li>
-                                 {ln['In case of loss']}
-                                </li>
+                                <li>{ln["Managing your money"]}</li>
+                                <li>{ln["Making cashless"]}</li>
+                                <li>{ln["Making payments"]}</li>
+                                <li>{ln["bank"]}</li>
+                                <li>{ln["Ability to activate SMS"]}</li>
+                                <li>{ln["In case of loss"]}</li>
                               </ul>
                             </div>
                           </div>
@@ -1161,24 +1158,23 @@ class Content extends Component {
                                 />
                               </div>
                               <h5 className="header">
-                                <span> {ln['overdraft']} </span>
+                                <span> {ln["overdraft"]} </span>
                               </h5>
                               <ul>
                                 <li>
                                   <span className="fa fa fa-calendar-check-o" />{" "}
-                                  {ln['overdraft valid']}
-                                  <strong> 5 {ln['years']} </strong>
+                                  {ln["overdraft valid"]}
+                                  <strong> 5 {ln["years"]} </strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-percent" />{" "}
-                                  {ln['rate']}
-                                  {" "}
-                                  <strong>16% {ln['annum']}</strong>
+                                  {ln["rate"]}{" "}
+                                  <strong>16% {ln["annum"]}</strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-money" />{" "}
-                                  {ln['maximum']}
-                                  <strong> 3-{ln['mp']} </strong>
+                                  {ln["maximum"]}
+                                  <strong> 3-{ln["mp"]} </strong>
                                 </li>
                               </ul>
                               <ul
@@ -1187,19 +1183,11 @@ class Content extends Component {
                                   textAlign: "justify"
                                 }}
                               >
-                                <li>
-                                {ln['uzcard__text']}
-                                </li>
-                                <li>
-                                 {ln['Cash withdrawals']}
-                                </li>
-                                <li>
-                                 {ln[ 'monthly pension']}
-                                </li>
-                                <li>{ln['Loan term']}</li>
-                                <li>
-                                 {ln['The interest rate ']}
-                                </li>
+                                <li>{ln["uzcard__text"]}</li>
+                                <li>{ln["Cash withdrawals"]}</li>
+                                <li>{ln["monthly pension"]}</li>
+                                <li>{ln["Loan term"]}</li>
+                                <li>{ln["The interest rate "]}</li>
                               </ul>
                             </div>
                           </div>
@@ -1221,23 +1209,24 @@ class Content extends Component {
                                 />
                               </div>
                               <h5 className="header">
-                               <span> {ln['credit card']} </span>
+                                <span> {ln["credit card"]} </span>
                               </h5>
                               <ul>
                                 <li>
                                   <span className="fa fa fa-calendar-check-o" />{" "}
-                                 {ln['overdraft valid']}
-                                  <strong> 5 {ln['years']}</strong>, {ln['credit line']}
+                                  {ln["overdraft valid"]}
+                                  <strong> 5 {ln["years"]}</strong>,{" "}
+                                  {ln["credit line"]}
                                 </li>
                                 <li>
                                   <span className="fa fa fa-percent" />{" "}
-                                  {ln['rate']}:{" "}
-                                  <strong>36% {ln['annum']} </strong>
+                                  {ln["rate"]}:{" "}
+                                  <strong>36% {ln["annum"]} </strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-money" />{" "}
-                                 {ln['maximum']}:{" "}
-                                  <strong>25-{ln['mp']} </strong>
+                                  {ln["maximum"]}:{" "}
+                                  <strong>25-{ln["mp"]} </strong>
                                 </li>
                               </ul>
                               <ul
@@ -1246,15 +1235,9 @@ class Content extends Component {
                                   textAlign: "justify"
                                 }}
                               >
-                                <li>
-                                 {ln['Credit Card validity']}
-                                </li>
-                                <li>
-                                 {ln['Credit card holder']}
-                                </li>
-                                <li>
-                                 {ln['The possibility of interest']}
-                                </li>
+                                <li>{ln["Credit Card validity"]}</li>
+                                <li>{ln["Credit card holder"]}</li>
+                                <li>{ln["The possibility of interest"]}</li>
                               </ul>
                             </div>
                           </div>
@@ -1276,22 +1259,25 @@ class Content extends Component {
                                 />
                               </div>
                               <h5 className="header">
-                                 <span>{ln['cards']} {ln['installment plan']} </span>
+                                <span>
+                                  {ln["cards"]} {ln["installment plan"]}{" "}
+                                </span>
                               </h5>
                               <ul>
                                 <li>
                                   <span className="fa fa fa-calendar-check-o" />{" "}
-                                 {ln['overdraft valid']}
-                                  <strong> 5 {ln['years']} </strong>, {ln['credit line']}
+                                  {ln["overdraft valid"]}
+                                  <strong> 5 {ln["years"]} </strong>,{" "}
+                                  {ln["credit line"]}
                                 </li>
                                 <li>
                                   <span className="fa fa fa-percent" />{" "}
-                                 {ln['rate']} <strong>0% {ln['annum']}</strong>
+                                  {ln["rate"]} <strong>0% {ln["annum"]}</strong>
                                 </li>
                                 <li>
                                   <span className="fa fa fa-money" />{" "}
-                                  {ln['maximum']}:
-                                  <strong>100-{ln['mp']}</strong>
+                                  {ln["maximum"]}:
+                                  <strong>100-{ln["mp"]}</strong>
                                 </li>
                               </ul>
                               <ul
@@ -1300,22 +1286,16 @@ class Content extends Component {
                                   textAlign: "justify"
                                 }}
                               >
-                                <li>
-                                  {ln[ 'Consumer Shopping']}
-                                </li>
-                                <li>
-                                  {ln['Repayment of the taken']}
-                                </li>
-                                <li>
-                                  {ln['The most important thing']}
-                                </li>
+                                <li>{ln["Consumer Shopping"]}</li>
+                                <li>{ln["Repayment of the taken"]}</li>
+                                <li>{ln["The most important thing"]}</li>
                               </ul>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="vc_row wpb_row vc_row-fluid">
                       <div className="wpb_column vc_column_container vc_col-sm-12">
                         <div className="vc_column-inner">
@@ -1352,195 +1332,8 @@ class Content extends Component {
                     </div>
                   </section>
                   <div className="vc_row-full-width vc_clearfix" />
-                  <section
-                    data-vc-full-width="true"
-                    data-vc-full-width-init="false"
-                    data-vc-parallax="1.3"
-                    id="cardOffer"
-                    className="vc_section vc_custom_1518968543193 vc_section-has-fill vc_general vc_parallax vc_parallax-content-moving bg-color-black ltx-overlay bg-overlay-black"
-                  >
-                    <div className="ltx-overlay-black" />
-                    <div className="vc_row wpb_row vc_row-fluid">
-                      <div className="wpb_column vc_column_container vc_col-sm-12">
-                        <div className="vc_column-inner">
-                          <div className="wpb_wrapper">
-                            <div className="es-resp">
-                              <div
-                                className="visible-xl"
-                                style={{ height: "72px" }}
-                              />
-                              <div
-                                className="hidden-xl hidden-md hidden-sm hidden-ms hidden-xs"
-                                style={{ height: "72px" }}
-                              />
-                              <div
-                                className="visible-md"
-                                style={{ height: "72px" }}
-                              />
-                              <div
-                                className="visible-sm "
-                                style={{ height: "72px" }}
-                              />
-                              <div
-                                className="visible-ms"
-                                style={{ height: "72px" }}
-                              />
-                              <div
-                                className="visible-xs"
-                                style={{ height: "72px" }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="vc_row wpb_row vc_row-fluid">
-                      <div className="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-has-fill">
-                        <div className="vc_column-inner vc_custom_1518973912429">
-                          <div className="wpb_wrapper">
-                            <div className="es-resp">
-                              <div
-                                className="visible-xl"
-                                style={{ height: "64px" }}
-                              />
-                              <div
-                                className="hidden-xl hidden-md hidden-sm hidden-ms hidden-xs"
-                                style={{ height: "64px" }}
-                              />
-                              <div
-                                className="visible-md"
-                                style={{ height: "64px" }}
-                              />
-                              <div
-                                className="visible-sm "
-                                style={{ height: "3px" }}
-                              />
-                              <div
-                                className="visible-ms"
-                                style={{ height: "0px" }}
-                              />
-                              <div
-                                className="visible-xs"
-                                style={{ height: "0px" }}
-                              />
-                            </div>
-                            <div
-                              className="heading  default align-center color-main subcolor-main transform-default   vc_custom_1518971574999"
-                              id="like_sc_header_179953262"
-                            >
-                              <h6 className="header"> {ln['Online request']}</h6>
-                            </div>
-                            <div
-                              className="heading  header-underline align-center color-black subcolor-main transform-default   vc_custom_1518971604412"
-                              id="like_sc_header_111443523"
-                            >
-                              <h3 className="header">{ln['Order your card now']}</h3>
-                            </div>
-                            <div
-                              className="ltx-contact-form-7 transform- form-center form-white form-bg-white form-style-default form-btn- form-btn- form-padding-default "
-                              id="like_sc_contact_form_7_1762610381"
-                            >
-                              <div
-                                role="form"
-                                className="wpcf7"
-                                id="wpcf7-f3614-p3497-o1"
-                                lang="en-US"
-                                dir="ltr"
-                              >
-                                <div className="screen-reader-response" />
-                                <Form />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-6 vc_col-md-4 vc_hidden-sm vc_hidden-xs">
-                        <div className="vc_column-inner vc_custom_1518973983594">
-                          <div className="wpb_wrapper">
-                            <div className="wpb_single_image wpb_content_element vc_align_right   card-right-1">
-                              <figure className="wpb_wrapper vc_figure">
-                                <div className="vc_single_image-wrapper   vc_box_border_grey">
-                                  <img
-                                    width="774"
-                                    height="518"
-                                    src="img/uzcard.png"
-                                    className="vc_single_image-img attachment-full"
-                                    alt=""
-                                    srcSet="/img/uzcard.png 774w, /img/uzcard.png 300w, /img/uzcard.png 768w, /img/uzcard.png 600w, /img/uzcard.png 272w"
-                                    sizes="(max-width: 774px) 100vw, 774px"
-                                  />
-                                </div>
-                              </figure>
-                            </div>
-                            <div className="wpb_single_image wpb_content_element vc_align_right   card-right-2">
-                              <figure className="wpb_wrapper vc_figure">
-                                <div className="vc_single_image-wrapper   vc_box_border_grey">
-                                  <img
-                                    width="774"
-                                    height="518"
-                                    src="img/rassrochka.png"
-                                    className="vc_single_image-img attachment-full"
-                                    alt=""
-                                    srcSet="/img/rassrochka.png 774w, /img/rassrochka.png 300w, /img/rassrochka.png 768w, /img/rassrochka.png 600w, /img/rassrochka.png 272w"
-                                    sizes="(max-width: 774px) 100vw, 774px"
-                                  />
-                                </div>
-                              </figure>
-                            </div>
-                            <div className="wpb_single_image wpb_content_element vc_align_right   card-right-3">
-                              <figure className="wpb_wrapper vc_figure">
-                                <div className="vc_single_image-wrapper   vc_box_border_grey">
-                                  <img
-                                    width="774"
-                                    height="518"
-                                    src="img/kredit.png"
-                                    className="vc_single_image-img attachment-full"
-                                    alt=""
-                                    srcSet="/img/kredit.png 774w, /img/kredit.png 300w, /img/kredit.png 768w, /img/kredit.png 600w, /img/kredit.png 272w"
-                                    sizes="(max-width: 774px) 100vw, 774px"
-                                  />
-                                </div>
-                              </figure>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="vc_row wpb_row vc_row-fluid">
-                      <div className="wpb_column vc_column_container vc_col-sm-12">
-                        <div className="vc_column-inner">
-                          <div className="wpb_wrapper">
-                            <div className="es-resp">
-                              <div
-                                className="visible-xl"
-                                style={{ height: "90px" }}
-                              />
-                              <div
-                                className="hidden-xl hidden-md hidden-sm hidden-ms hidden-xs"
-                                style={{ height: "90px" }}
-                              />
-                              <div
-                                className="visible-md"
-                                style={{ height: "90px" }}
-                              />
-                              <div
-                                className="visible-sm"
-                                style={{ height: "90px" }}
-                              />
-                              <div
-                                className="visible-ms"
-                                style={{ height: "90px" }}
-                              />
-                              <div
-                                className="visible-xs"
-                                style={{ height: "90px" }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
+
+                 {localStorage.getItem('rememberMe')?'': <Form />}
                   <div className="vc_row-full-width vc_clearfix" />
                 </div>
               </article>

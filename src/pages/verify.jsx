@@ -7,8 +7,10 @@ import { ru } from "../lang/ru";
 import { uz } from "../lang/uz";
 import { get_code, session_id } from "./../redux/actions/actions";
 import { Redirect } from "react-router";
+import localStorage from 'reactjs-localstorage';
 
 class Verify extends Component {
+	
 	getCode = e => {
 		this.props.get_code(e.target.value);
 	};
@@ -16,6 +18,7 @@ class Verify extends Component {
 	getUserData = e => {
 		this.props.session_id(this.props.code, this.props.data);
 	};
+
 
 	render() {
 		var ln;

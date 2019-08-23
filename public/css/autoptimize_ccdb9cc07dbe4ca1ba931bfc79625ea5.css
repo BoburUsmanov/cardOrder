@@ -20500,11 +20500,11 @@ nav.navbar.affix {
 
 .ltx-topbar-block .block-icon.icon-h-right a {
     position: relative!important;
-    color: var(--black)!important
+    /* color: var(--black)!important */
 }
 
 .ltx-topbar-block .block-icon.icon-h-right a:hover {
-    color: var(--main)!important
+    /* color: var(--main)!important */
 }
 
 .ltx-topbar-block .block-icon.icon-h-right .header {

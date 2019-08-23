@@ -17,9 +17,6 @@ class App extends Component {
         remember: rememberMe
     };
   }
-  componentDidMount(){
-    
-  }
   render() {
   
     return (

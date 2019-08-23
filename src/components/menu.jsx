@@ -3,6 +3,7 @@ import {ru} from './../lang/ru';
 import {en} from './../lang/en';
 import {uz} from './../lang/uz';
 import { connect } from "react-redux";
+import { reactLocalStorage } from "reactjs-localstorage";
 
  class Menu extends Component {
   render() {
@@ -51,9 +52,9 @@ import { connect } from "react-redux";
                 id="menu-item-619"
                 className="menu-item menu-item-type-custom menu-item-619"
               >
-                <a href="#cardOffer">
+               {localStorage.getItem('rememberMe')?'': <a href="#cardOffer">
                   <span>{ln["apply"]}</span>
-                </a>
+                </a>}
               </li>
               <li
                 id="menu-item-59"

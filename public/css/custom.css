@@ -105,3 +105,48 @@
   background: #fff !important;
  transform:scale(1.5);
 }
+.user__avatar{
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+  cursor: pointer;
+}
+.user__avatar .fa{
+font-size: 25px;
+margin-right: 5px;
+color: #f1bf56;
+}
+.number{
+position: relative;
+}
+.number:hover .number__content{
+  opacity: 1;
+  z-index: 99999;
+  top: 28px;
+}
+.number__content{
+position: absolute;
+left: -25px;
+top: 75px;
+width: 200px;
+opacity: 0;
+z-index: -999;
+background-color: #095A2F;
+transition: 0.25s ease;
+}
+.number__content a.dropdown__link{
+text-transform: uppercase;
+color: #f1bf56 !important;
+padding: 8px 8px;
+border-bottom: 1px dotted #f1bf56;
+transition: 0.25s ease;
+display: block;
+}
+.number__content a.dropdown__link:hover{
+  text-indent: 15px;
+  color: #f1bf56;
+}
+.reload{
+margin-top: 100px;
+display: inline-block;
+}
