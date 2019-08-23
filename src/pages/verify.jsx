@@ -34,6 +34,31 @@ class Verify extends Component {
 			return <Redirect to="/user" />;
 		}
 
+		const replacePhoneNumbers = () =>{
+            var tele = [];
+            for (var i = 0; i < this.props.number.length; i++) {
+                if(i < 5){
+                    tele[i] = this.props.number[i].replace(/^\d+$/, "*");
+                }
+                else{
+                    tele[i] = this.props.number[i];
+                }
+            }
+            
+            var full_phone = "";
+            for (var i = 0; i < this.props.number.length; i++) {
+                full_phone += tele[i];
+            }
+            return full_phone;
+            //return number;
+		}
+		// console.log(full_phone);
+
+        // window.onload = function what(){
+        //     var number1 = replacePhoneNumbers(this.number);
+        //     document.getElementById("demo").innerHTML = number1;
+        // }
+
 		return (
 			<React.Fragment>
 				<Header />
@@ -41,7 +66,7 @@ class Verify extends Component {
 					<div className="innerBlock animated fadeIn">
 						<div className="row">
 							<div className="col-md-12">
-								<h3>+998 {this.props.number}</h3>
+								<h3>+998 {replacePhoneNumbers(this.props.number)}</h3>
 								<p>{ln["confirmDesc"]} </p>
 								<input
 									type="number"

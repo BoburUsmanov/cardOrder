@@ -7,7 +7,11 @@
     "http-proxy-middleware": "^0.19.1",
     "jquery": "^3.4.1",
     "jquery-mask-plugin": "^1.14.16",
+<<<<<<< HEAD
     "load-script": "^1.0.0",
+=======
+    "owl.carousel": "^2.3.4",
+>>>>>>> 6ea96c4c10fe4d4216bb87b21be3d076554ba507
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.0",

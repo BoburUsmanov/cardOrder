@@ -30,81 +30,8 @@ $(document).ready(function() {
     t1.play(0);
   });
 
-  $(".menu-item a").on("click", function(event) {
-    if (this.hash !== "") {
-      event.preventDefault();
-      var hash = this.hash;
-      $("html, body").animate(
-        {
-          scrollTop: $(hash).offset().top - 100
-        },
-        500,
-        function() {
-          return false;
-        }
-      );
-    }
-  });
 
-  var menuOpen = false;
-  $(window).scroll(function() {
-    if ($(window).innerWidth() > 576) {
-      if (!menuOpen) {
-        if ($(this).scrollTop() > 200) {
-          $("nav.navbar #navbar").css({
-            transition: "all .1s",
-            height: "100%"
-          });
-          $("nav.navbar #navbar ul.navbar-nav>li>a").css("font-size", "14px");
-          $("nav.navbar").css({
-            transition: "all .1s",
-            height: "60px",
-            padding: "4px 0 0"
-          });
-          $("#logo").css({
-            width: "60%",
-            margin: "5px 0 0",
-            padding: "10px"
-          });
-        } else {
-          $("nav.navbar").css({
-            transition: "all .1s",
-            background: "#fff",
-            height: "110px",
-            padding: "8px 0"
-          });
-          $("#logo").css({
-            width: "90%",
-            margin: "10px",
-            padding: "20px"
-          });
-          $("nav.navbar #navbar ul.navbar-nav>li>a").css("font-size", "16px");
-        }
-      } else {
-        $("#navbar").css({
-          height: "100%!important"
-        });
-      }
-    }
-  });
-
-  $(".navbar-toggle").click(function() {
-    $("nav.navbar #navbar.collapse").css({
-      left: 0,
-      overflow: "hidden",
-      transition: "all .3s linear"
-    });
-    return (menuOpen = true);
-  });
-  $(".closeBtn").click(function() {
-    $("nav.navbar #navbar.collapse").css({
-      left: "-1000%",
-      overflow: "hidden",
-      transition: "all .3s linear"
-    });
-    return (menuOpen = false);
-  });
-
+<<<<<<< HEAD
   $(".modal button").on("click", function() {
     $(".modal").fadeOut();
   });
@@ -117,6 +44,9 @@ $(document).ready(function() {
   $(".tel input").on("focus", function() {
     $(".questionBtn").fadeOut();
   });
+=======
+
+>>>>>>> 6ea96c4c10fe4d4216bb87b21be3d076554ba507
 
   $(".confirmCode").mask("999999");
   $("#phone").inputmask("(99) 999-99-99", {
@@ -125,6 +55,7 @@ $(document).ready(function() {
     autoclear: false
   });
 
+<<<<<<< HEAD
   $("#reload").on("click", function() {
     location.reload();
   });
@@ -136,6 +67,8 @@ $(document).ready(function() {
     $("#profileCardImg").css("margin-left", moveX + "px");
     $("#profileCardImg").css("margin-top", moveY + "px");
   });
+=======
+>>>>>>> 6ea96c4c10fe4d4216bb87b21be3d076554ba507
 });
 
 $(document).on("load", function() {

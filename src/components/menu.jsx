@@ -36,7 +36,7 @@ import { reactLocalStorage } from "reactjs-localstorage";
                 id="menu-item-3957"
                 className="menu-item menu-item-type-post_type menu-item-object-page current-menu-parent current_page_ancestor menu-item-3957"
               >
-                <a href="index.html#header">
+                <a href="#slider">
                   <span>{ln["home"]}</span>
                 </a>
               </li>

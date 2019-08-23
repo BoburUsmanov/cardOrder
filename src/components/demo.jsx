@@ -22,7 +22,7 @@ class Demo extends Component {
     }
 
     return (
-      <div className="demo">
+      <div className="demo" id="slider">
         <div style={{ position: "absolute", bottom: 0 }}>
           <img src="/img/Rectangle1.png" style={{ width: "100%" }} alt="" />
         </div>
