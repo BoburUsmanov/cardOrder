@@ -126,9 +126,17 @@ $(document).ready(function() {
     // location.reload();
   })
 
+  $('#profileCardHeader').mousemove(function(event){
+    var moveX = (($(window).width() / 2) - event.pageX) * 0.03;
+    var moveY = (($(window).height() / 2) - event.pageY) * 0.03;
+  
+    $('#profileCardImg').css('margin-left', moveX + 'px');
+    $('#profileCardImg').css('margin-top', moveY + 'px');
+  });
 });
 
 
 $(document).on('load', function(){
   $('.innerBlock').fadeIn(3500);
 })
+

@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import Verify from "./pages/verify";
 import User from "./pages/user";
 import Default from "./pages/default";
+import Profile from './pages/profile';  
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
 
@@ -27,6 +28,7 @@ class App extends Component {
           <Route path="/" exact component={this.state.remember?User:Home} />
           <Route path="/verify"  component={this.state.remember?User:Verify} />
           <Route path="/user"  component={User} />
+          <Route path="/profile"  component={Profile} />
           <Route component={Default} />
         </Switch>
       </React.Fragment>
