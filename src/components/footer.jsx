@@ -15,7 +15,7 @@ import {en} from './../lang/en';
         ln = this.props.en;
       }
         return (
-            <section id="block-footer" className="navbar-fixed-bottom">
+            <section id="block-footer">
             <div className="container">
               <div className="row">
                 <div className="col-md-4 col-sm-12 col-ms-12  matchHeight clearfix">

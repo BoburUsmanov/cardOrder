@@ -370,6 +370,50 @@ input[type=number]::-webkit-outer-spin-button {
   transform: translateX(-50%)
 }
 
+.card{
+  margin-top: 50px;
+  width: 100%;
+  box-shadow: 0 5px 10px #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.card-header{
+  background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.3)), url(/img/card-bg.jpg) no-repeat center;
+  background-size: cover;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-header img{
+  width: 70%;
+  margin-top: -30px;
+}
+.card-body{
+  position: relative;
+  padding: 20px;
+}
+.card-body img{
+  position: absolute;
+  width: 100px;
+  border-radius: 50%;
+  height: 100px;
+  top: -50px;
+  left: 50%;
+  border: 2px solid #fff;
+  transform: translateX(-50%);
+}
+.userInfo{
+  margin-top: 40px;
+}
+
+.card-offer-btn{
+  text-align: center;
+  margin-bottom: 40px;
+}
+.card-offer-btn button{
+  
+}
 
 @media only screen and (min-width: 1200px) {
   .closeBtn {
