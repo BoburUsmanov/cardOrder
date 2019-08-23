@@ -35,7 +35,7 @@ class Verify extends Component {
 			<React.Fragment>
 				<Header />
 				<div className="Verify">
-					<div className="innerBlock">
+					<div className="innerBlock animated fadeIn">
 						<div className="row">
 							<div className="col-md-12">
 								<h3>+998 {this.props.number}</h3>

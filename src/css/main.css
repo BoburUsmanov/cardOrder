@@ -293,6 +293,7 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
   position: absolute;
   top: 50%;
+  display: none;
   left: 50%;
   transform: translate(-50%,-50%);
 }
@@ -312,10 +313,51 @@ input[type=number]::-webkit-outer-spin-button {
   position: relative;
   padding: 20px;
   font-size: 20px;
+  
   font-weight: 600;
   text-align: center;
   margin: 40px auto;
 } 
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  display: block;
+  animation-delay: 300ms
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+
+.user-main{
+  padding-top: 160px;
+}
+
 
 
 @media only screen and (min-width: 1200px) {
