@@ -17,12 +17,10 @@ class App extends Component {
     };
   }
   componentDidMount(){
-    // let rememberme = localStorage.getItem('rememberMe');
+    
   }
   render() {
-    // if (this.state.remember) {
-    //   return <Redirect to="/user" />;
-    // }
+  
     return (
       <React.Fragment>
         <Switch>

@@ -23,19 +23,40 @@ class Form extends Component {
   };
 
   onSubmit = e => {
+
     e.preventDefault();
+
     this.setState({ redirect: true });
+
     this.props.send_request(
       this.state.inps,
       this.state.doc_number,
       this.state.doc_seria,
-      this.state.phone
+      this.phoneTrim()
     );
-
-    this.props.save_phone(this.state.phone)
+   
+    this.props.save_phone(this.state.phone);
   };
 
+   phoneTrim = () => {
+
+    let newArr = [], str = document.querySelector('.phone').value, strArr = [...str], trimmedNumber = '';
+
+    for(let i = 0; i < str.length; i++){
+      if(strArr[i].charAt()!=='-' && strArr[i].charAt()!=='(' && strArr[i].charAt()!==')' && strArr[i].charAt()!==' ' ){
+        newArr.push(strArr[i]);
+      }
+    }
+    for(let i = 0; i < newArr.length; i++){
+      trimmedNumber+=newArr[i];
+    }
+
+    return trimmedNumber;
+    
+  }
+
   render() {
+
     const toInputUppercase = e => {
       e.target.value = ("" + e.target.value).toUpperCase();
     };
@@ -51,6 +72,9 @@ class Form extends Component {
         event.target.value = event.target.value.slice(0, 14);
       }
     };
+
+
+   
 
     var ln;
     if (this.props.lang === "ru") {
@@ -160,7 +184,6 @@ class Form extends Component {
           />
         </p>
         <div className="wpcf7-response-output wpcf7-display-none" />
-        {console.log(this.props.response.status)}
       </form>
     );
   }

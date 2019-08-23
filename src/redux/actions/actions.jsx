@@ -41,6 +41,7 @@ export const send_request = (inps,number,seria,phone) => dispatch => {
       'phone':`998${phone}`
     }
   }
+  console.log(userData);
   Axios.post(`/index.php?sigin`, userData)
     .then(response =>{
       dispatch({
