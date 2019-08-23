@@ -73,9 +73,6 @@ class Form extends Component {
       }
     };
 
-
-   
-
     var ln;
     if (this.props.lang === "ru") {
       ln = this.props.ru;
@@ -92,6 +89,7 @@ class Form extends Component {
     return (
       <form className="wpcf7-form" onSubmit={this.onSubmit}>
         <div className="row">
+
           <div className="col-md-12" style={{height: '28px'}}>
             {this.props.response.status ? (
               <div className="error-message animated fadeIn">

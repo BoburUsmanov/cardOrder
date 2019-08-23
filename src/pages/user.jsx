@@ -4,12 +4,12 @@ import { connect } from "react-redux";
 import { reactLocalStorage } from "reactjs-localstorage";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import Content from '../components/content';
-import { ru } from "./../lang/ru";
-import { uz } from "./../lang/uz";
-import { en } from "./../lang/en";
+import Header from "./../components/header";
+import Content from '../components/content'
+import Footer from '../components/footer';
+import {en} from '../lang/en'
+import {ru} from "../lang/ru"
+import {uz} from '../lang/uz'
 
 class User extends Component {
 	constructor(props) {
@@ -24,7 +24,6 @@ class User extends Component {
 		if (this.props.entered === 0) {
 			localStorage.setItem("rememberMe", true);
 		}
-		// alert(localStorage.getItem('rememberMe'))
 	}
 
 	render() {
@@ -32,8 +31,8 @@ class User extends Component {
 			localStorage.clear();
 		};
 
-		// if (!localStorage.getItem("rememberMe")) {
-		// 	return <Redirect to="/" />;
+		// if (!localStorage.getItem('rememberMe')) {
+		//   return <Redirect to="/" />;
 		// }
 
 		var ln;
@@ -52,7 +51,7 @@ class User extends Component {
 					<Link to="/" className="reload" onClick={logout}>
 						Logout
 					</Link>
-                    <Content />
+					<Content />
 					{/* <div className="container-fluid">
 						<div className="row">
 							<div className="col-md-9">
@@ -364,21 +363,37 @@ class User extends Component {
 						</div>
 					</div>
                  */}
-                    <div className="vc_row wpb_row vc_row-fluid card-offer-btn">
-                        <div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
-                            <input type="submit" value={ln["Order your card now"]} className="wpcf7-form-control wpcf7-submit" />
-                        </div>
-                        <div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
-                            <input type="submit" value={ln["Order your card now"]} className="wpcf7-form-control wpcf7-submit" />
-                        </div>
-                        <div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
-                            <input type="submit" value={ln["Order your card now"]} className="wpcf7-form-control wpcf7-submit" />
-                        </div>
-                        <div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
-                            <input type="submit" value={ln["Order your card now"]} className="wpcf7-form-control wpcf7-submit" />
-                        </div>
-                    </div>
-                </div>
+					<div className="vc_row wpb_row vc_row-fluid card-offer-btn">
+						<div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
+							<input
+								type="submit"
+								value={ln["Order your card now"]}
+								className="wpcf7-form-control wpcf7-submit"
+							/>
+						</div>
+						<div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
+							<input
+								type="submit"
+								value={ln["Order your card now"]}
+								className="wpcf7-form-control wpcf7-submit"
+							/>
+						</div>
+						<div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
+							<input
+								type="submit"
+								value={ln["Order your card now"]}
+								className="wpcf7-form-control wpcf7-submit"
+							/>
+						</div>
+						<div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
+							<input
+								type="submit"
+								value={ln["Order your card now"]}
+								className="wpcf7-form-control wpcf7-submit"
+							/>
+						</div>
+					</div>
+				</div>
 				<Footer />
 			</div>
 		);
