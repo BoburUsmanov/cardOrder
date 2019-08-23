@@ -73,9 +73,6 @@ class Form extends Component {
       }
     };
 
-
-   
-
     var ln;
     if (this.props.lang === "ru") {
       ln = this.props.ru;
@@ -93,13 +90,9 @@ class Form extends Component {
       <form className="wpcf7-form" onSubmit={this.onSubmit}>
         <div className="row">
           <div className="col-md-12">
-            {this.props.response.status ? (
-              <div className="alert alert-danger" >
-                Error
-              </div>
-            ) : (
-              ""
-            )}
+            {this.props.response.status ? (this.props.response.status===1)?'kiritishda xat0lik'
+            : "Serverda xatolik":
+              ""}
           </div>
 
           <div className="col-md-12 onFocusBtnShow">

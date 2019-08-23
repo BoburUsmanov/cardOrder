@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { reactLocalStorage } from "reactjs-localstorage";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
+import Header from "./../components/header";
 
 class User extends Component {
   constructor(props) {
@@ -12,13 +13,14 @@ class User extends Component {
     this.state = {
       rememberMe: rememberMe
     };
+    
   }
 
   componentDidMount() {
     if (this.props.entered === 0) {
       localStorage.setItem("rememberMe", true);
+    
     }
-    // alert(localStorage.getItem('rememberMe'))
   }
 
   render() {
@@ -26,16 +28,13 @@ class User extends Component {
       localStorage.clear();
     };
 
-    if (!localStorage.getItem('rememberMe')) {
-      return <Redirect to="/" />;
-    }
+    // if (!localStorage.getItem('rememberMe')) {
+    //   return <Redirect to="/" />;
+    // }
 
     return (
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <p> User page</p>
-        <Link to="/" className="reload" onClick={logout}>
-          Logout
-        </Link>
+      <div>
+        <Header />
       </div>
     );
   }
