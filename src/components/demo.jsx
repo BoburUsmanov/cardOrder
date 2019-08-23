@@ -26,10 +26,9 @@ class Demo extends Component {
         <div style={{ position: "absolute", bottom: 0 }}>
           <img src="/img/Rectangle1.png" style={{ width: "100%" }} alt="" />
         </div>
-        {/* <Slider {...settings} className="slider" afterChange={this.mySweetAfterChangeHandler}> */}
         <div className="slider owl-carousel">
           <div className="demo__item uzcard">
-            <h1 className="demo__overlay">Uzcard</h1>
+            <h1 className="demo__overlay">Uzcard</h1>flphklptopthkpl
             <h2 className="demo__title "> UZCARD</h2>
 
             <h3 className="demo__subtitle">{ln['uzcard__subtitle']}</h3>

@@ -52,6 +52,7 @@ class Verify extends Component {
 								/>
 								<div>
 									<button
+										id="verifyLoad"
 										onClick={this.getUserData}
 										className="btn btn-success"
 									>

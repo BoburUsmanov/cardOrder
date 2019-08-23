@@ -105,38 +105,40 @@ $(document).ready(function() {
     return (menuOpen = false);
   });
 
-  $('.modal button').on('click',function(){
-    $('.modal').fadeOut();
+  $(".modal button").on("click", function() {
+    $(".modal").fadeOut();
   });
-  $('.questionBtn').on('click',function(){
-    $('.modal').fadeIn();
+  $(".questionBtn").on("click", function() {
+    $(".modal").fadeIn();
   });
-  $('.onFocusBtnShow input').on('focus', function(){
-    $('.questionBtn').fadeIn();
-  })
-  $('.tel input').on('focus', function(){
-    $('.questionBtn').fadeOut();
-  })
+  $(".onFocusBtnShow input").on("focus", function() {
+    $(".questionBtn").fadeIn();
+  });
+  $(".tel input").on("focus", function() {
+    $(".questionBtn").fadeOut();
+  });
 
+  $(".confirmCode").mask("999999");
+  $("#phone").inputmask("(99) 999-99-99", {
+    showMaskOnFocus: true,
+    showMaskOnHover: false,
+    autoclear: false
+  });
 
-  $('.confirmCode').mask('999999');
-  $("#phone").inputmask("(99) 999-99-99", {showMaskOnFocus: true, showMaskOnHover: false,autoclear: false});
-
-  $('#reload').on('click',function(){
+  $("#reload").on("click", function() {
     location.reload();
-  })
+  });
 
-  $('#profileCardHeader').mousemove(function(event){
-    var moveX = (($(window).width() / 2) - event.pageX) * 0.03;
-    var moveY = (($(window).height() / 2) - event.pageY) * 0.03;
-  
-    $('#profileCardImg').css('margin-left', moveX + 'px');
-    $('#profileCardImg').css('margin-top', moveY + 'px');
+  $("#profileCardHeader").mousemove(function(event) {
+    var moveX = ($(window).width() / 2 - event.pageX) * 0.03;
+    var moveY = ($(window).height() / 2 - event.pageY) * 0.03;
+
+    $("#profileCardImg").css("margin-left", moveX + "px");
+    $("#profileCardImg").css("margin-top", moveY + "px");
   });
 });
 
-
-$(document).on('load', function(){
-  $('.innerBlock').fadeIn(3500);
-})
+$(document).on("load", function() {
+  $(".innerBlock").fadeIn(3500);
+});
 

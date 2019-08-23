@@ -6,7 +6,7 @@ import { en } from "../lang/en";
 import { ru } from "../lang/ru";
 import { uz } from "../lang/uz";
 
-class profile extends Component {
+class Profile extends Component {
 	render() {
 		var ln;
 		if (this.props.lang === "ru") {
@@ -51,4 +51,4 @@ const mapStateToProps = state => ({
 	ru: ru
 });
 
-export default connect(mapStateToProps)(profile);
+export default connect(mapStateToProps)(Profile);

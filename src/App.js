@@ -5,27 +5,42 @@ import Home from "./pages/home";
 import Verify from "./pages/verify";
 import User from "./pages/user";
 import Default from "./pages/default";
-import Profile from './pages/profile';  
+import Profile from "./pages/profile";
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
+import "./demo";
 
 class App extends Component {
-  constructor(props){
-    super(props)
-    let rememberMe = localStorage.getItem('rememberMe');
+  constructor(props) {
+    super(props);
+    let rememberMe = localStorage.getItem("rememberMe");
     this.state = {
-        remember: rememberMe
+      remember: rememberMe
     };
   }
+
+  componentWillMount() {
+    // const script = document.createElement("script");
+
+    // script.src = "/js/jquery.min.js";
+
+    // document.body.appendChild(script);
+  }
+
   render() {
-  
     return (
       <React.Fragment>
         <Switch>
-          <Route path="/" exact component={this.state.remember?User:Home} />
-          <Route path="/verify"  component={this.state.remember?User:Verify} />
-          <Route path="/user"  component={User} />
-          <Route path="/profile"  component={Profile} />
+          <Route path="/" exact component={this.state.remember ? User : Home} />
+          <Route
+            path="/verify"
+            component={this.state.remember ? User : Verify}
+          />
+          <Route path="/user" component={User} />
+          <Route
+            path="/profile"
+            component={this.state.remember ? Profile : Default}
+          />
           <Route component={Default} />
         </Switch>
       </React.Fragment>

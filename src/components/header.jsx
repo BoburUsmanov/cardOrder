@@ -51,6 +51,7 @@ class Header extends Component {
                           <img
                             src="/img/phone-square-alt-solid.svg"
                             width="16"
+                            
                             style={{ marginTop: "-3px", marginRight: "5px" }}
                             alt=""
                           />
