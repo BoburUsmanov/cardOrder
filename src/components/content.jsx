@@ -5,6 +5,7 @@ import { uz } from "./../lang/uz";
 import { en } from "./../lang/en";
 import Form from "./form";
 import { reactLocalStorage } from "reactjs-localstorage";
+import Demo from './../components/demo'
 class Content extends Component {
   render() {
     var ln;
@@ -16,7 +17,9 @@ class Content extends Component {
       ln = this.props.en;
     }
     return (
-      <div className="container main-wrapper">
+      <React.Fragment>
+        <Demo />  
+        <div className="container-fluid main-wrapper">
         <div className="inner-page text-page margin-disabled">
           <div className="row">
             <div className=" col-md-12 text-page">
@@ -25,11 +28,13 @@ class Content extends Component {
                 className="post-3497 page type-page status-publish hentry"
               >
                 <div className="entry-content clearfix" id="entry-div">
+
                   <section
                     data-vc-full-width="true"
                     data-vc-full-width-init="false"
                     className="vc_section bg-color-white"
-                    id="workWith"
+                    id="workWith" 
+                    style={{padding: '0 100px'}}
                   >
                     <div className="vc_row wpb_row vc_row-fluid">
                       <div className="wpb_column vc_column_container vc_col-sm-12">
@@ -1341,6 +1346,7 @@ class Content extends Component {
           </div>
         </div>
       </div>
+      </React.Fragment>
     );
   }
 }

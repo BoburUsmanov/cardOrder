@@ -5,8 +5,20 @@ import Footer from "../components/footer";
 import { en } from "../lang/en";
 import { ru } from "../lang/ru";
 import { uz } from "../lang/uz";
+import $ from 'jquery'
 
 class profile extends Component {
+	componentDidMount() {
+		$(document).ready(function() {
+			$("#profileCardHeader").mousemove(function(event) {
+				var moveX = ($(window).width() / 2 - event.pageX) * 0.03;
+				var moveY = ($(window).height() / 2 - event.pageY) * 0.03;
+
+				$("#profileCardImg").css("margin-left", moveX + "px");
+				$("#profileCardImg").css("margin-top", moveY + "px");
+			});
+		});
+	}
 	render() {
 		var ln;
 		if (this.props.lang === "ru") {
@@ -19,25 +31,25 @@ class profile extends Component {
 		return (
 			<div className="profile">
 				<Header />
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="profile-inner animated fadeIn">
-                                <div className="card">
-                                    <div className="card-header" id="profileCardHeader">
-                                        <img id="profileCardImg" src="/img/logo.png" alt="logo" />
-                                    </div>
-                                    <div className="card-body">
-                                        <img src="/img/user.svg" alt="" />
-                                        <div className="userInfo">
-                                            <p>Name: John Doe</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+				<div className="container">
+					<div className="row">
+						<div className="col-md-12">
+							<div className="profile-inner animated fadeIn">
+								<div className="card">
+									<div className="card-header" id="profileCardHeader">
+										<img id="profileCardImg" src="/img/logo.png" alt="logo" />
+									</div>
+									<div className="card-body">
+										<img src="/img/user.svg" alt="" />
+										<div className="userInfo">
+											<p>Name: John Doe</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<Footer />
 			</div>
 		);
