@@ -120,7 +120,7 @@ $(document).ready(function() {
 
 
   $('.confirmCode').mask('999999');
-  $("#phone").inputmask("(99) 999-99-99", {showMaskOnFocus: true, showMaskOnHover: false});
+  $("#phone").inputmask("(99) 999-99-99", {showMaskOnFocus: true, showMaskOnHover: false,autoclear: false});
 
   $('.reload').on('click',function(){
     // location.reload();

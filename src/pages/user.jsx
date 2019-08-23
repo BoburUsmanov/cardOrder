@@ -13,13 +13,11 @@ class User extends Component {
     this.state = {
       rememberMe: rememberMe
     };
-    
   }
 
   componentDidMount() {
     if (this.props.entered === 0) {
       localStorage.setItem("rememberMe", true);
-    
     }
   }
 
@@ -33,9 +31,13 @@ class User extends Component {
     // }
 
     return (
-      <div>
         <Header />
-      </div>
+    //   <div style={{ display: "flex", justifyContent: "space-between" }}>
+    //     <p> User page</p>
+    //     <Link to="/" className="reload" onClick={logout}>
+    //       Logout
+    //     </Link>
+    //   </div>
     );
   }
 }
