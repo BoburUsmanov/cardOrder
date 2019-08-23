@@ -92,9 +92,9 @@ class Form extends Component {
     return (
       <form className="wpcf7-form" onSubmit={this.onSubmit}>
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-12" style={{height: '28px'}}>
             {this.props.response.status ? (
-              <div className="alert alert-danger" >
+              <div className="error-message animated fadeIn">
                 Error
               </div>
             ) : (
@@ -170,6 +170,7 @@ class Form extends Component {
                 required
                 placeholder={ln['form_phone']}
                 id="phone"
+                data-inputmask-clearincomplete="false"
               />
             </span>
             <span className="fa fa-phone-square" />
