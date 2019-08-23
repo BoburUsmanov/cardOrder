@@ -40,8 +40,7 @@ export const send_request = (inps,number,seria,phone) => dispatch => {
       'document':`${seria}${number}`,
       'phone':`998${phone}`
     }
-  }
-  console.log(userData);
+  };
   Axios.post(`/index.php?sigin`, userData)
     .then(response =>{
       dispatch({
@@ -58,13 +57,12 @@ export const session_id = (sms,session) => dispatch => {
       'id':sms,
       'ses':session
     }
-  }
+  };
   Axios.post(`/index.php?confirm`,userInfo)
     .then(response =>{
       dispatch({
         type: SESSION__ID,
         payload: response.data
       })
-      console.log('key_code:' + response.data);
     })
 };

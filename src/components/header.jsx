@@ -11,6 +11,11 @@ import { reactLocalStorage } from "reactjs-localstorage";
 
 class Header extends Component {
   render() {
+
+    const logout = e => {
+			localStorage.clear();
+		};
+
     var ln;
     if (this.props.lang === "ru") {
       ln = this.props.ru;
@@ -36,18 +41,41 @@ class Header extends Component {
                         lineHeight: 0
                       }}
                     >
-                      <div style={{ float: "left" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between"
+                        }}
+                      >
                         <p>
                           <img
                             src="/img/phone-square-alt-solid.svg"
                             width="16"
                             style={{ marginTop: "-3px", marginRight: "5px" }}
                             alt=""
-                          />{" "}
+                          />
                           71 200-00-55
                         </p>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems:'center'
+                          }}
+                        >
+                          {localStorage.getItem('rememberMe')?<div className="user__avatar">
+                            <i className="fa fa-user-circle-o" />
+                            <div className="number">
+                            +998{localStorage.getItem('phone')}
+                            <div className="number__content">
+                                <Link className="dropdown__link" to="/profile">Profile</Link>
+                                <Link className="dropdown__link" id="reload" to="/"  onClick={logout}>Logout</Link>
+                            </div>
+                            </div>
+                          </div>:''}
+                          <Language />
+                        </div>
                       </div>
-                      <Language />
                     </div>
                   </div>
                 </div>
@@ -71,14 +99,12 @@ class Header extends Component {
                     </Link>
                   </div>
                 </div>
-               
-                  <Menu />
-            
+
+                <Menu />
               </div>
             </div>
           </nav>
         </div>
-        {/* {console.log(this.props.lang)} */}
       </div>
     );
   }
@@ -88,7 +114,8 @@ const mapStateToProps = state => ({
   lang: state.lang.lang,
   ru: ru,
   uz: uz,
-  en: en
+  en: en,
+  number:state.phone.number
 });
 
 export default connect(
