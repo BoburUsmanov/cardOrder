@@ -5,6 +5,7 @@ import phoneReducer from './phoneReducer';
 import codeReducer from './codeReducer';
 import sessionReducer from './sessionReducer';
 import enteredReducer from './enteredReducer';
+import infoReducer from './infoReducer';
 
 export default combineReducers({
    lang:languageReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
    phone:phoneReducer,
    code:codeReducer,
    session:sessionReducer,
-   user:enteredReducer
+   user:enteredReducer,
+   info:infoReducer
 });

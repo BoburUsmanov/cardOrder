@@ -96,12 +96,6 @@ class App extends Component {
       })
 
 
-      // $('.confirmCode').mask('999999');
-      // $("#phone").inputmask("(99) 999-99-99", {showMaskOnFocus: true, showMaskOnHover: false,autoclear: false});
-
-      // $('#reload').on('click',function(){
-      //   location.reload();
-      // })
 
 
     });
@@ -113,20 +107,13 @@ class App extends Component {
   }
 
   render() {
-
-
-
-
-
-
-
     return (
       <React.Fragment>
         <Switch>
-          <Route path="/" exact component={this.state.remember ? User : Home} />
-          <Route path="/verify" component={this.state.remember ? User : Verify} />
-          <Route path="/user" component={User} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/" exact component={this.state.remember ? Profile : Home} />
+          <Route path="/verify" exact component={this.state.remember ? Profile : Verify} />
+          <Route path="/profile" exact component={Profile} />
+          <Route path="/user" exact component={this.state.remember ? Profile : User} />
           <Route component={Default} />
         </Switch>
       </React.Fragment>

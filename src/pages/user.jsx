@@ -23,9 +23,8 @@ class User extends Component {
 	}
 
 	componentDidMount() {
-		if (this.props.entered === 0) {
-			localStorage.setItem("rememberMe", true);
-		}
+	
+
 
 		console.log(localStorage.getItem("rememberMe"));
 
@@ -49,6 +48,7 @@ class User extends Component {
 	}
 
 	render() {
+
 		if (!localStorage.getItem("rememberMe")) {
 			return <Redirect to="/" />;
 		}
