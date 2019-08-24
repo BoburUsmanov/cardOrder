@@ -1,26 +1,29 @@
 @font-face {
-	font-family: 'Montserrat';
-	src: url('../fonts/montserrat/regular/montserrat.eot');
-	src: url('../fonts/montserrat/regular/montserrat.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/montserrat/regular/montserrat.woff') format('woff'),
-		 url('../fonts/montserrat/regular/montserrat.ttf') format('truetype'),
-		 url('../fonts/montserrat/regular/montserrat.svg#M-Regular') format('svg');
+	font-family: "Montserrat";
+	src: url("../fonts/montserrat/regular/montserrat.eot");
+	src: url("../fonts/montserrat/regular/montserrat.eot?#iefix")
+			format("embedded-opentype"),
+		url("../fonts/montserrat/regular/montserrat.woff2") format("woff"),
+		url("../fonts/montserrat/regular/montserrat.ttf") format("truetype"),
+		url("../fonts/montserrat/regular/montserrat.svg#M-Regular") format("svg");
 	font-style: normal;
 	font-weight: normal;
 }
 
 @font-face {
-	font-family:"Open-Sans";
-	src:url(../fonts/opensans/opensans.ttf);
+	font-family: "Open-Sans";
+	src: url(../fonts/opensans/opensans.ttf);
 }
 
 @font-face {
-	font-family: 'FontAwesome';
-	src: url('../fonts/fontawesome/fontawesome-webfont.eot');
-	src: url('../fonts/fontawesome/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/fontawesome/fontawesome-webfont.woff') format('woff'),
-		 url('../fonts/fontawesome/fontawesome-webfont.ttf') format('truetype'),
-		 url('../fonts/fontawesome/fontawesome-webfont.svg#FontAwesome') format('svg');
+	font-family: "FontAwesome";
+	src: url("../fonts/fontawesome/fontawesome-webfont.eot");
+	src: url("../fonts/fontawesome/fontawesome-webfont.eot?#iefix")
+			format("embedded-opentype"),
+		url("../fonts/fontawesome/fontawesome-webfont.woff2") format("woff"),
+		url("../fonts/fontawesome/fontawesome-webfont.ttf") format("truetype"),
+		url("../fonts/fontawesome/fontawesome-webfont.svg#FontAwesome")
+			format("svg");
 	font-style: normal;
 	font-weight: normal;
 }

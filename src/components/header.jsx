@@ -31,10 +31,10 @@ class Header extends Component {
     });
   }
   render() {
-
     const logout = e => {
 			localStorage.clear();
 		};
+
 
     var ln;
     if (this.props.lang === "ru") {
