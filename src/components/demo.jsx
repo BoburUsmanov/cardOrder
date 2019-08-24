@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import { ru } from "./../lang/ru";
 import { uz } from "./../lang/uz";
 import { en } from "./../lang/en";
+import OwlCarousel from 'react-owl-carousel';
 
 class Demo extends Component {
   componentDidMount() {
@@ -26,7 +27,7 @@ class Demo extends Component {
         <div style={{ position: "absolute", bottom: 0 }}>
           <img src="/img/Rectangle1.png" style={{ width: "100%" }} alt="" />
         </div>
-        <div className="slider owl-carousel">
+        <OwlCarousel className="slider" items={1}>
           <div className="demo__item uzcard">
             <h1 className="demo__overlay">Uzcard</h1>flphklptopthkpl
             <h2 className="demo__title "> UZCARD</h2>
@@ -77,7 +78,7 @@ class Demo extends Component {
             </p>
             <img className="demo__img" src="/img/pensiya.png" alt="" />
           </div>
-        </div>
+        </OwlCarousel>
       </div>
     );
   }
