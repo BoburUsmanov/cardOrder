@@ -85,10 +85,10 @@ class Demo extends Component {
 }
 
 const mapStateToProps = state => ({
-  lang: state.lang.lang,
-  en: en,
-  ru: ru,
-  uz: uz
+	lang: state.lang.lang,
+	en: en,
+	ru: ru,
+	uz: uz
 });
 
 export default connect(mapStateToProps)(Demo);

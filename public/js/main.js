@@ -31,18 +31,6 @@ $(document).ready(function() {
   });
 
 
-  $(".modal button").on("click", function() {
-    $(".modal").fadeOut();
-  });
-  $(".questionBtn").on("click", function() {
-    $(".modal").fadeIn();
-  });
-  $(".onFocusBtnShow input").on("focus", function() {
-    $(".questionBtn").fadeIn();
-  });
-  $(".tel input").on("focus", function() {
-    $(".questionBtn").fadeOut();
-  });
 
   $(".confirmCode").mask("999999");
   $("#phone").inputmask("(99) 999-99-99", {
@@ -50,10 +38,6 @@ $(document).ready(function() {
     showMaskOnHover: false,
     autoclear: false
   });
-
-  // $("#reload").on("click", function() {
-  //   location.reload();
-  // });
 
 });
 

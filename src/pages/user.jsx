@@ -51,14 +51,14 @@ class User extends Component {
 			return <Redirect to="/" />;
 		}
 
-    var ln;
-    if (this.props.lang === "ru") {
-      ln = this.props.ru;
-    } else if (this.props.lang === "uz") {
-      ln = this.props.uz;
-    } else {
-      ln = this.props.en;
-    }
+		var ln;
+		if (this.props.lang === "ru") {
+			ln = this.props.ru;
+		} else if (this.props.lang === "uz") {
+			ln = this.props.uz;
+		} else {
+			ln = this.props.en;
+		}
 
 		return (
 			<div>
@@ -114,6 +114,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-  mapStateToProps,
-  { user_entered }
+	mapStateToProps,
+	{ user_entered }
 )(User);

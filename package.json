@@ -7,7 +7,7 @@
     "http-proxy-middleware": "^0.19.1",
     "jquery": "^3.4.1",
     "jquery-mask-plugin": "^1.14.16",
-    "load-script": "^1.0.0",
+    "owl.carousel": "^2.3.4",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-owl-carousel": "^2.3.1",
