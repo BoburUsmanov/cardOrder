@@ -31,22 +31,6 @@ $(document).ready(function() {
   });
 
 
-<<<<<<< HEAD
-  $(".modal button").on("click", function() {
-    $(".modal").fadeOut();
-  });
-  $(".questionBtn").on("click", function() {
-    $(".modal").fadeIn();
-  });
-  $(".onFocusBtnShow input").on("focus", function() {
-    $(".questionBtn").fadeIn();
-  });
-  $(".tel input").on("focus", function() {
-    $(".questionBtn").fadeOut();
-  });
-=======
-
->>>>>>> 6ea96c4c10fe4d4216bb87b21be3d076554ba507
 
   $(".confirmCode").mask("999999");
   $("#phone").inputmask("(99) 999-99-99", {
@@ -55,20 +39,6 @@ $(document).ready(function() {
     autoclear: false
   });
 
-<<<<<<< HEAD
-  $("#reload").on("click", function() {
-    location.reload();
-  });
-
-  $("#profileCardHeader").mousemove(function(event) {
-    var moveX = ($(window).width() / 2 - event.pageX) * 0.03;
-    var moveY = ($(window).height() / 2 - event.pageY) * 0.03;
-
-    $("#profileCardImg").css("margin-left", moveX + "px");
-    $("#profileCardImg").css("margin-top", moveY + "px");
-  });
-=======
->>>>>>> 6ea96c4c10fe4d4216bb87b21be3d076554ba507
 });
 
 $(document).on("load", function() {

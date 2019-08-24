@@ -5,41 +5,21 @@ import Home from "./pages/home";
 import Verify from "./pages/verify";
 import User from "./pages/user";
 import Default from "./pages/default";
-<<<<<<< HEAD
-import Profile from "./pages/profile";
-=======
 import Profile from './pages/profile';
 import $ from 'jquery'
->>>>>>> 6ea96c4c10fe4d4216bb87b21be3d076554ba507
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
 import "./demo";
 
 class App extends Component {
   constructor(props) {
-<<<<<<< HEAD
-    super(props);
-    let rememberMe = localStorage.getItem("rememberMe");
-=======
     super(props)
     let rememberMe = localStorage.getItem('rememberMe');
->>>>>>> 6ea96c4c10fe4d4216bb87b21be3d076554ba507
     this.state = {
       remember: rememberMe
     };
   }
 
-<<<<<<< HEAD
-  componentWillMount() {
-    // const script = document.createElement("script");
-
-    // script.src = "/js/jquery.min.js";
-
-    // document.body.appendChild(script);
-  }
-
-  render() {
-=======
   componentDidMount() {
     $(document).ready(function () {
       $(".menu-item a").on("click", function (event) {
@@ -100,22 +80,7 @@ class App extends Component {
         }
       });
 
-      $(".navbar-toggle").click(function () {
-        $("nav.navbar #navbar.collapse").css({
-          left: 0,
-          overflow: "hidden",
-          transition: "all .3s linear"
-        });
-        return (menuOpen = true);
-      });
-      $(".closeBtn").click(function () {
-        $("nav.navbar #navbar.collapse").css({
-          left: "-1000%",
-          overflow: "hidden",
-          transition: "all .3s linear"
-        });
-        return (menuOpen = false);
-      });
+      
 
       $('.modal button').on('click', function () {
         $('.modal').fadeOut();
@@ -155,26 +120,13 @@ class App extends Component {
 
 
 
->>>>>>> 6ea96c4c10fe4d4216bb87b21be3d076554ba507
     return (
       <React.Fragment>
         <Switch>
           <Route path="/" exact component={this.state.remember ? User : Home} />
-<<<<<<< HEAD
-          <Route
-            path="/verify"
-            component={this.state.remember ? User : Verify}
-          />
-          <Route path="/user" component={User} />
-          <Route
-            path="/profile"
-            component={this.state.remember ? Profile : Default}
-          />
-=======
           <Route path="/verify" component={this.state.remember ? User : Verify} />
           <Route path="/user" component={User} />
           <Route path="/profile" component={Profile} />
->>>>>>> 6ea96c4c10fe4d4216bb87b21be3d076554ba507
           <Route component={Default} />
         </Switch>
       </React.Fragment>

@@ -8,8 +8,28 @@ import { uz } from "./../lang/uz";
 import { Link } from "react-router-dom";
 import Menu from "./menu";
 import { reactLocalStorage } from "reactjs-localstorage";
+import $ from 'jquery'
 
 class Header extends Component {
+  componentDidMount(){
+    let menuOpen = false;
+    $(".navbar-toggle").click(function () {
+      $("nav.navbar #navbar.collapse").css({
+        left: 0,
+        overflow: "hidden",
+        transition: "all .3s linear"
+      });
+      return (menuOpen = true);
+    });
+    $(".closeBtn").click(function () {
+      $("nav.navbar #navbar.collapse").css({
+        left: "-1000%",
+        overflow: "hidden",
+        transition: "all .3s linear"
+      });
+      return (menuOpen = false);
+    });
+  }
   render() {
 
     const logout = e => {

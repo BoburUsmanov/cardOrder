@@ -7,10 +7,7 @@ import { ru } from "../lang/ru";
 import { uz } from "../lang/uz";
 import $ from 'jquery'
 
-<<<<<<< HEAD
 class Profile extends Component {
-=======
-class profile extends Component {
 	componentDidMount() {
 		$(document).ready(function() {
 			$("#profileCardHeader").mousemove(function(event) {
@@ -22,7 +19,6 @@ class profile extends Component {
 			});
 		});
 	}
->>>>>>> 6ea96c4c10fe4d4216bb87b21be3d076554ba507
 	render() {
 		var ln;
 		if (this.props.lang === "ru") {
