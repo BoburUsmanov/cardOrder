@@ -50,7 +50,6 @@ export const send_request = (inps,number,seria,phone) => dispatch => {
         type: RESPONSE,
         payload: response.data
       })
-     
     })
 };
 
@@ -63,14 +62,14 @@ export const session_id = (sms,session) => dispatch => {
   };
   Axios.post(`/index.php?confirm`,userInfo)
     .then(response =>{
+      localStorage.setItem('info',response.data.data)
       dispatch({
         type: SESSION__ID,
         payload:response.data
       })
       
-      localStorage.setItem('info',response.data.data);
 
-      console.log(localStorage.getItem('info'));
+      // console.log(localStorage.getItem('info'));
     })
 };
 

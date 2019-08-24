@@ -22,7 +22,7 @@ class App extends Component {
 
   componentDidMount() {
     
-		console.log(localStorage.getItem("rememberMe"));
+		// console.log(localStorage.getItem("rememberMe"));
     $(document).ready(function () {
       $(".menu-item a").on("click", function (event) {
         if (this.hash !== "") {

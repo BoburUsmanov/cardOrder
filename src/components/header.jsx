@@ -90,7 +90,7 @@ class Header extends Component {
                             +998{localStorage.getItem('phone')}
                             <div className="number__content">
                                 <Link className="dropdown__link" to="/profile">Profile</Link>
-                                <Link className="dropdown__link" id="reload" to="/"  onClick={logout}>Logout</Link>
+                                <Link className="dropdown__link" to="/"  onClick={logout}>Logout</Link>
                             </div>
                             </div>
                           </div>:''}

@@ -13,6 +13,7 @@ import $ from 'jquery'
 class Profile extends Component {
 	constructor(props){
 		super(props)
+		// localStorage.setItem('info',this.props.profile)
 		this.state= {
 			inps:[],
 			document:[]
@@ -21,7 +22,11 @@ class Profile extends Component {
 	
 	
 	componentDidMount() {
+		
+		console.log(this.props.profile)
+		
 		this.parsing()
+		console.log(localStorage.getItem('info'))
 		if (this.props.entered === 0) {
 			localStorage.setItem("rememberMe", true);
 		}
@@ -40,6 +45,7 @@ class Profile extends Component {
 	}
 
 	parsing = () =>{
+		
 		this.setState({inps:JSON.parse(localStorage.getItem('info')).inps})
 		this.setState({document:JSON.parse(localStorage.getItem('info')).document})
 	}
@@ -78,13 +84,13 @@ class Profile extends Component {
 					</div>
 				</div>
 				<Footer />
-			<p>{console.log(JSON.parse(localStorage.getItem('info')))}</p>
-			{/* <p>{console.log(this.state.inps)}</p> */}
-			{/* <p>{console.log(this.state.document)}</p> */}
+			{/* <p>{console.log(JSON.parse(localStorage.getItem('info')))}</p> */}
+			<p>{console.log(this.state.inps)}</p>
+			<p>{console.log(this.state.document)}</p>
 			<p>
 				{
 					this.state.inps.map(m => 
-						<div>
+						<div key={ m.doc_number }>
 							<span> {m.first_name} </span>
 							<span>{m.filial_name}</span>
 						</div>
@@ -103,7 +109,8 @@ const mapStateToProps = state => ({
 	uz: uz,
 	ru: ru,
 	entered: state.session.session.status,
-	info:state.info.info
+	info:state.info.info,
+	profile:state.session.session.data
 });
 
 export default connect(mapStateToProps,{user_info})(Profile);
