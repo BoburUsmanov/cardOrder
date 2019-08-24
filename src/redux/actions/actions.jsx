@@ -1,8 +1,9 @@
 import {
   CHANGE__LANGUAGE,
-  RESPONSE,SAVE__PHONE,GET__CODE, SESSION__ID, USER__ENTERED
+  RESPONSE,SAVE__PHONE,GET__CODE, SESSION__ID, USER__ENTERED,USER__INFO
 } from "./types";
 import Axios from "axios";
+import { reactLocalStorage } from "reactjs-localstorage";
 
 
 export const change_language = text => dispatch => {
@@ -33,6 +34,8 @@ export const user_entered = text => dispatch => {
   });
 };
 
+
+
 export const send_request = (inps,number,seria,phone) => dispatch => {
   let userData = {
     "data":{
@@ -47,7 +50,7 @@ export const send_request = (inps,number,seria,phone) => dispatch => {
         type: RESPONSE,
         payload: response.data
       })
-      
+     
     })
 };
 
@@ -62,7 +65,18 @@ export const session_id = (sms,session) => dispatch => {
     .then(response =>{
       dispatch({
         type: SESSION__ID,
-        payload: response.data
+        payload:response.data
       })
+      
+      localStorage.setItem('info',response.data.data);
+
+      console.log(localStorage.getItem('info'));
     })
+};
+
+export const user_info = (text) => dispatch => {
+  dispatch({
+    type: USER__INFO,
+    payload: text
+  });
 };

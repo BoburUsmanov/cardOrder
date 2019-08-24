@@ -110,10 +110,10 @@ class App extends Component {
     return (
       <React.Fragment>
         <Switch>
-          <Route path="/" exact component={this.state.remember ? User : Home} />
-          <Route path="/verify" exact component={this.state.remember ? User : Verify} />
-          <Route path="/user" exact component={User} />
+          <Route path="/" exact component={this.state.remember ? Profile : Home} />
+          <Route path="/verify" exact component={this.state.remember ? Profile : Verify} />
           <Route path="/profile" exact component={Profile} />
+          <Route path="/user" exact component={this.state.remember ? Profile : User} />
           <Route component={Default} />
         </Switch>
       </React.Fragment>
