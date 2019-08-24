@@ -7,10 +7,12 @@ import { ru } from "../lang/ru";
 import { uz } from "../lang/uz";
 import { get_code, session_id } from "./../redux/actions/actions";
 import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 import localStorage from 'reactjs-localstorage';
 
 class Verify extends Component {
 	
+
 	getCode = e => {
 		this.props.get_code(e.target.value);
 	};
@@ -21,6 +23,9 @@ class Verify extends Component {
 
 
 	render() {
+
+		
+
 		var ln;
 		if (this.props.lang === "ru") {
 			ln = this.props.ru;
@@ -30,8 +35,9 @@ class Verify extends Component {
 			ln = this.props.en;
 		}
 
+		
 		if (this.props.status === 0) {
-			return <Redirect to="/user" />;
+			return <Redirect to="/profile" />;
 		}
 
 		const replacePhoneNumbers = () =>{
@@ -50,14 +56,8 @@ class Verify extends Component {
                 full_phone += tele[i];
             }
             return full_phone;
-            //return number;
 		}
-		// console.log(full_phone);
-
-        // window.onload = function what(){
-        //     var number1 = replacePhoneNumbers(this.number);
-        //     document.getElementById("demo").innerHTML = number1;
-        // }
+	
 
 		return (
 			<React.Fragment>
@@ -83,7 +83,7 @@ class Verify extends Component {
 									>
 										{ln["confirmBtn"]}
 									</button>
-									<button className="btn btn-danger">{ln["cancelBtn"]}</button>
+									<Link to="/" className="btn btn-danger">{ln["cancelBtn"]}</Link>
 								</div>
 							</div>
 						</div>

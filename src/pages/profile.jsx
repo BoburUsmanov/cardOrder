@@ -5,10 +5,15 @@ import Footer from "../components/footer";
 import { en } from "../lang/en";
 import { ru } from "../lang/ru";
 import { uz } from "../lang/uz";
+import { reactLocalStorage } from "reactjs-localstorage";
+import {  Redirect } from 'react-router';
 import $ from 'jquery'
 
 class Profile extends Component {
 	componentDidMount() {
+		if (this.props.entered === 0) {
+			localStorage.setItem("rememberMe", true);
+		}
 		$(document).ready(function() {
 			$("#profileCardHeader").mousemove(function(event) {
 				var moveX = ($(window).width() / 2 - event.pageX) * 0.03;
@@ -20,6 +25,9 @@ class Profile extends Component {
 		});
 	}
 	render() {
+		if (!localStorage.getItem("rememberMe")) {
+			return <Redirect to="/" />;
+		}
 		var ln;
 		if (this.props.lang === "ru") {
 			ln = this.props.ru;
@@ -60,7 +68,8 @@ const mapStateToProps = state => ({
 	lang: state.lang.lang,
 	en: en,
 	uz: uz,
-	ru: ru
+	ru: ru,
+	entered: state.session.session.status,
 });
 
 export default connect(mapStateToProps)(Profile);

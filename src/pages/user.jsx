@@ -23,9 +23,8 @@ class User extends Component {
 	}
 
 	componentDidMount() {
-		if (this.props.entered === 0) {
-			localStorage.setItem("rememberMe", true);
-		}
+	
+
 
 		$(document).ready(function() {
 			$(".menu-item a").on("click", function(event) {
@@ -47,6 +46,7 @@ class User extends Component {
 	}
 
 	render() {
+
 		if (!localStorage.getItem("rememberMe")) {
 			return <Redirect to="/" />;
 		}
