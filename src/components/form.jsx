@@ -97,7 +97,7 @@ class Form extends Component {
 				data-vc-full-width-init="false"
 				data-vc-parallax="1.3"
 				id="cardOffer"
-				className="vc_section vc_custom_1518968543193 vc_section-has-fill vc_general vc_parallax vc_parallax-content-moving bg-color-black ltx-overlay bg-overlay-black"
+        className="vc_section vc_custom_1518968543193 vc_section-has-fill vc_general vc_parallax vc_parallax-content-moving bg-color-black ltx-overlay bg-overlay-black"
 			>
 				<div className="ltx-overlay-black" />
 				<div className="vc_row wpb_row vc_row-fluid">
@@ -120,7 +120,7 @@ class Form extends Component {
 					</div>
 				</div>
 				<div className="vc_row wpb_row vc_row-fluid">
-					<div className="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-has-fill">
+					<div className="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-has-fill mobile-padding">
 						<div className="vc_column-inner vc_custom_1518973912429">
 							<div className="wpb_wrapper">
 								<div className="es-resp">
@@ -173,7 +173,7 @@ class Form extends Component {
 												<div className="col-md-12 onFocusBtnShow">
 													<div className="row">
 														<div className="col-md-5">
-															<span className="wpcf7-form-control-wrap field-header3">
+															<span className="wpcf7-form-control-wrap field-header3 padding-form">
 																<input
 																	type="text"
 																	name="doc_seria"
@@ -189,7 +189,7 @@ class Form extends Component {
 															</span>
 														</div>
 														<div className="col-md-7">
-															<span className="wpcf7-form-control-wrap field-header3">
+															<span className="wpcf7-form-control-wrap field-header3 padding-form">
 																<input
 																	type="number"
 																	name="doc_number"
@@ -211,7 +211,7 @@ class Form extends Component {
 													<button type="button" className="questionBtn">
 														<i className="fa fa-question" />
 													</button>
-													<span className="wpcf7-form-control-wrap field-header3">
+													<span className="wpcf7-form-control-wrap field-header3 padding-form">
 														<input
 															type="number"
 															name="inps"
@@ -228,7 +228,7 @@ class Form extends Component {
 												</div>
 
 												<div className="col-md-12 tel">
-													<span className="wpcf7-form-control-wrap field-heade2r">
+													<span className="wpcf7-form-control-wrap field-heade2r padding-form">
 														<input
 															type="text"
 															name="phone"

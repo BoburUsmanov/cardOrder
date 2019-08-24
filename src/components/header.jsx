@@ -45,7 +45,7 @@ class Header extends Component {
       ln = this.props.en;
     }
     return (
-      <div id="navbar">
+      <div id="navbar-main">
         <div className="ltx-topbar-block visible-mobile">
           <div className="container-fluid">
             <div className="vc_row wpb_row vc_row-fluid">
@@ -106,7 +106,7 @@ class Header extends Component {
         </div>
         <div id="nav-wrapper">
           <nav
-            className="navbar navbar-fixed-top"
+            className="navbar"
             style={{ transition: "all .3s linear", height: "110px" }}
             data-spy=""
             data-offset-top="45"

@@ -29,7 +29,7 @@ class Demo extends Component {
         </div>
         <OwlCarousel className="slider" items={1}>
           <div className="demo__item uzcard">
-            <h1 className="demo__overlay">Uzcard</h1>flphklptopthkpl
+            <h1 className="demo__overlay">Uzcard</h1>
             <h2 className="demo__title "> UZCARD</h2>
 
             <h3 className="demo__subtitle">{ln['uzcard__subtitle']}</h3>

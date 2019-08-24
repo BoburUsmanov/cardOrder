@@ -19,8 +19,10 @@ class App extends Component {
     };
   }
 
-  
+
   componentDidMount() {
+    
+		console.log(localStorage.getItem("rememberMe"));
     $(document).ready(function () {
       $(".menu-item a").on("click", function (event) {
         if (this.hash !== "") {
@@ -42,16 +44,16 @@ class App extends Component {
       $(window).scroll(function () {
         if ($(window).innerWidth() > 576) {
           if (!menuOpen) {
-            if ($(this).scrollTop() > 200) {
+            if ($(this).scrollTop() > 5) {
               $("nav.navbar #navbar").css({
                 transition: "all .1s",
-                height: "100%"
+                // height: "100%"
               });
               $("nav.navbar #navbar ul.navbar-nav>li>a").css("font-size", "14px");
               $("nav.navbar").css({
                 transition: "all .1s",
                 height: "60px",
-                padding: "4px 0 0"
+                padding: "4px 0 0",
               });
               $("#logo").css({
                 width: "60%",
@@ -73,9 +75,7 @@ class App extends Component {
               $("nav.navbar #navbar ul.navbar-nav>li>a").css("font-size", "16px");
             }
           } else {
-            $("#navbar").css({
-              height: "100%!important"
-            });
+            
           }
         }
       });

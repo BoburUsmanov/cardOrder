@@ -31,7 +31,7 @@ class Verify extends Component {
 		}
 
 		if (this.props.status === 0) {
-			return <Redirect to="/user" />;
+			return <Redirect to="/profile" />;
 		}
 
 		const replacePhoneNumbers = () =>{
@@ -50,19 +50,15 @@ class Verify extends Component {
                 full_phone += tele[i];
             }
             return full_phone;
-            //return number;
 		}
-		// console.log(full_phone);
 
-        // window.onload = function what(){
-        //     var number1 = replacePhoneNumbers(this.number);
-        //     document.getElementById("demo").innerHTML = number1;
-        // }
 
 		return (
 			<React.Fragment>
 				<Header />
 				<div className="Verify">
+					<div className="verify-bg">
+					</div>
 					<div className="innerBlock animated fadeIn">
 						<div className="row">
 							<div className="col-md-12">

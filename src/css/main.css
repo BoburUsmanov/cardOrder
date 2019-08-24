@@ -50,13 +50,13 @@ body {
 	margin: 0 !important;
 }
 
-#navbar {
-	transition: all 0.3s;
-	position: fixed;
+#navbar-main {
+	transition: all 0.2s;
+	position: sticky;
 	z-index: 999;
 	top: 0;
 	width: 100%;
-	transition: all 0.3s !important;
+	transition: all 0.2s !important;
 }
 
 .header {
@@ -125,7 +125,6 @@ ul.block-icon li img {
 }
 
 .demo {
-	top: 125px;
 	position: relative;
 	left: 0;
 	width: 100%;
@@ -291,6 +290,7 @@ input[type="number"]::-webkit-outer-spin-button {
 	position: absolute;
 	top: 50%;
 	display: none;
+	color: #f1bf56;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
@@ -350,7 +350,6 @@ input[type="number"]::-webkit-outer-spin-button {
 	animation-name: fadeIn;
 }
 
-
 .error-message {
 	color: #a94442;
 	margin: 0 0 20px;
@@ -371,7 +370,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .profile-inner {
 	position: relative;
-	margin: 200px 0 50px;
+	/* margin: 200px 0 50px; */
 }
 .card-header {
 	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
@@ -414,6 +413,36 @@ input[type="number"]::-webkit-outer-spin-button {
 .card-offer-btn button {
 }
 
+.vc_section{
+	padding: 0 100px;
+}
+
+/* .padding-form{
+	padding: 0 30px 0 0;
+}
+.padding-form span{
+	margin: 0;
+	padding: 0;
+}
+.padding-form input{
+	margin: 0;
+	padding: 0;
+	left: 0;
+}
+
+.wpcf7-form-control-wrap+span.fa{
+	right: 70px;
+} */
+
+.verify-bg{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.5)), url(/img/card-bg.jpg) no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+
 @media only screen and (min-width: 1200px) {
 	.closeBtn {
 		display: none;
@@ -421,10 +450,16 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 @media only screen and (max-width: 1600px) {
 	#block-footer {
-		padding: 45px 0;
+		padding: 45px 20px;
 	}
 	.vc_section.vc_custom_1518965830350 {
 		padding: 25px 0;
+	}
+}
+@media only screen and (max-width: 1025px) {
+	.card-view{
+		max-height: 1000px;
+		height: 1000px;
 	}
 }
 @media only screen and (max-width: 992px) {
@@ -463,37 +498,59 @@ input[type="number"]::-webkit-outer-spin-button {
 		font-size: 100px;
 		top: 30px;
 	}
+	.card-view{
+		max-height: 100%;
+		height: 100%;
+	}
 }
 
 @media only screen and (max-width: 768px) {
 	.inner-page {
 		margin-top: 140px;
-  }
-  .profile-inner{
-    margin: 180px 0 50px;
-  }
-  .profile-inner .card-header{
-    height: 250px;
-  }
-  .card-body img{
-    width: 120px;
-    top: -60px;
-    height: 120px;
-  }
+	}
+	.profile-inner {
+		margin: 180px 0 50px;
+	}
+	.profile-inner .card-header {
+		height: 250px;
+	}
+	.card-body img {
+		width: 120px;
+		top: -60px;
+		height: 120px;
+	}
+	.vc_section{
+		padding: 0 20px;
+	}
+	.questionBtn{
+		z-index: 999;
+		right: 0;
+	}
+	.footer-widget-area .header-widget{
+		padding: 0 0 20px 0;
+	}
+	.footer-widget-area .header-widget:after, .footer-widget-area .header-widget:before{
+		left: 50%;
+		transform: translateX(-50%)
+	}
 }
 
 @media only screen and (max-width: 576px) {
-  .profile-inner{
-    margin: 150px 0 50px;
-  }
-  .profile-inner .card-header{
-    height: 150px;
-  }
-  .card-body img{
-    width: 80px;
-    top: -40px;
-    height: 80px;
-  }
+	.mobile-padding{
+		padding: 20px 0;
+	}
+	.profile-inner {
+		margin: 150px 0 50px;
+	}
+	.innerBlock{width: 100%;	}
+	.profile-inner .card-header {
+		height: 150px;
+	}
+	.card-body img {
+		width: 80px;
+		top: -40px;
+		height: 80px;
+	}
 	.demo__subtitle {
 		max-width: unset;
 		min-width: unset;
@@ -511,14 +568,12 @@ input[type="number"]::-webkit-outer-spin-button {
 	}
 	#workWith {
 		width: 100%;
+		margin: 0 auto;
 	}
 	#logo {
 		padding: 0 !important;
 		width: 100%;
 		margin: 15px 0;
-	}
-	.demo {
-		top: 106px;
 	}
 	.demo__text {
 		min-width: unset;

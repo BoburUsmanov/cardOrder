@@ -27,6 +27,8 @@ class User extends Component {
 			localStorage.setItem("rememberMe", true);
 		}
 
+		console.log(localStorage.getItem("rememberMe"));
+
 		$(document).ready(function() {
 			$(".menu-item a").on("click", function(event) {
 				if (this.hash !== "") {

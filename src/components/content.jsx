@@ -34,7 +34,7 @@ class Content extends Component {
                     data-vc-full-width-init="false"
                     className="vc_section bg-color-white"
                     id="workWith" 
-                    style={{padding: '0 100px'}}
+                    
                   >
                     <div className="vc_row wpb_row vc_row-fluid">
                       <div className="wpb_column vc_column_container vc_col-sm-12">
@@ -198,10 +198,11 @@ class Content extends Component {
                     data-vc-full-width-init="false"
                     id="howItWorks"
                     className="vc_section vc_custom_1518965830350 bg-color-black ltx-overlay bg-overlay-semi-black text-align-center-ms"
+                    
                   >
                     <div className="vc_row wpb_row vc_row-fluid">
                       <div className="wpb_column vc_column_container vc_col-sm-12">
-                        <div className="vc_column-inner">
+                        <div className="vc_column-inner" style={{marginTop: '70px'}}>
                           <div className="wpb_wrapper">
                             <div className="es-resp">
                               <div
@@ -435,6 +436,7 @@ class Content extends Component {
                     data-vc-full-width-init="false"
                     id="checkOrder"
                     className="vc_section vc_custom_1518828740431 bg-color-theme_color"
+                    
                   >
                     <div className="vc_row wpb_row vc_row-fluid">
                       <div className="wpb_column vc_column_container vc_col-sm-12">
@@ -609,7 +611,7 @@ class Content extends Component {
                   </section>
                   <div className="vc_row-full-width vc_clearfix" />
 
-                  <section className="vc_section">
+                  <section className="vc_section" >
                     <div className="vc_row wpb_row vc_row-fluid">
                       <div className="wpb_column vc_column_container vc_col-sm-12">
                         <div className="vc_column-inner">
@@ -767,6 +769,7 @@ class Content extends Component {
                     data-vc-full-width-init="false"
                     id="bePartners"
                     className="vc_section vc_custom_1518834235899 vc_section-has-fill bg-color-gray bg-pos-right-center text-align-center-ms"
+                    
                   >
                     <div className="overlay1" />
                     <div className="vc_row wpb_row vc_row-fluid bg-pos-right-center bg-overlay-mode-mobile">
@@ -1009,6 +1012,7 @@ class Content extends Component {
                     data-vc-full-width="true"
                     data-vc-full-width-init="false"
                     className="vc_section"
+                    
                   >
                     <div className="vc_row wpb_row vc_row-fluid">
                       <div className="wpb_column vc_column_container vc_col-sm-12">
@@ -1093,7 +1097,7 @@ class Content extends Component {
                       </div>
                     </div>
                     <div className="vc_row wpb_row vc_row-fluid">
-                      <div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
+                      <div className="wpb_column vc_column_container vc_col-lg-3 vc_col-md-6 card-view">
                         <div className="vc_column-inner">
                           <div className="wpb_wrapper">
                             <div
@@ -1147,7 +1151,7 @@ class Content extends Component {
                           </div>
                         </div>
                       </div>
-                      <div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
+                      <div className="wpb_column vc_column_container vc_col-lg-3 vc_col-md-6 card-view">
                         <div className="vc_column-inner">
                           <div className="wpb_wrapper">
                             <div
@@ -1198,7 +1202,7 @@ class Content extends Component {
                           </div>
                         </div>
                       </div>
-                      <div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
+                      <div className="wpb_column vc_column_container vc_col-lg-3 vc_col-md-6 card-view">
                         <div className="vc_column-inner">
                           <div className="wpb_wrapper">
                             <div
@@ -1248,7 +1252,7 @@ class Content extends Component {
                           </div>
                         </div>
                       </div>
-                      <div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
+                      <div className="wpb_column vc_column_container vc_col-lg-3 vc_col-md-6 card-view">
                         <div className="vc_column-inner">
                           <div className="wpb_wrapper">
                             <div

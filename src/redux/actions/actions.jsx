@@ -64,5 +64,6 @@ export const session_id = (sms,session) => dispatch => {
         type: SESSION__ID,
         payload: response.data
       })
+      console.log(response.data);
     })
 };
