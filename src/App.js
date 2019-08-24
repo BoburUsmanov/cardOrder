@@ -20,6 +20,7 @@ class App extends Component {
     };
   }
 
+  
   componentDidMount() {
     $(document).ready(function () {
       $(".menu-item a").on("click", function (event) {
