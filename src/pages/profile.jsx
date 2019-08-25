@@ -6,33 +6,30 @@ import { en } from "../lang/en";
 import { ru } from "../lang/ru";
 import { uz } from "../lang/uz";
 import { reactLocalStorage } from "reactjs-localstorage";
-import {  Redirect } from 'react-router';
-import {user_info} from './../redux/actions/actions';
-import $ from 'jquery'
+import { Redirect } from 'react-router';
+import { user_info } from './../redux/actions/actions';
+import $ from 'jquery';
+import history from './../history'
+import {Link} from 'react-router-dom'
+import {rassrochka_info,credit_info} from './../redux/actions/actions';
 
 class Profile extends Component {
-	constructor(props){
+	constructor(props) {
 		super(props)
-		// localStorage.setItem('info',this.props.profile)
-		this.state= {
-			inps:[],
-			document:[]
+		this.state = {
+			inps: [],
+			document: []
 		}
 	}
-	
-	
+
+	credit_info = () =>{
+		this.props.rassrochka_info()
+	}
 	componentDidMount() {
-		
-		console.log(this.props.profile)
-		
-		this.parsing()
-		console.log(localStorage.getItem('info'))
-		if (this.props.entered === 0) {
-			localStorage.setItem("rememberMe", true);
-		}
-		$(document).ready(function() {
-		
-			$("#profileCardHeader").mousemove(function(event) {
+		this.parsing();
+		$(document).ready(function () {
+
+			$("#profileCardHeader").mousemove(function (event) {
 				var moveX = ($(window).width() / 2 - event.pageX) * 0.03;
 				var moveY = ($(window).height() / 2 - event.pageY) * 0.03;
 
@@ -40,17 +37,16 @@ class Profile extends Component {
 				$("#profileCardImg").css("margin-top", moveY + "px");
 			});
 		});
-	
-		this.props.user_info('test');
 	}
 
-	parsing = () =>{
-		
-		this.setState({inps:JSON.parse(localStorage.getItem('info')).inps})
-		this.setState({document:JSON.parse(localStorage.getItem('info')).document})
+	parsing = () => {
+
+		this.setState({ inps: JSON.parse(localStorage.getItem('info')).inps })
+		this.setState({ document: JSON.parse(localStorage.getItem('info')).document })
+		localStorage.setItem('loan',JSON.parse(localStorage.getItem('info')).loan_sum)
 	}
 	render() {
-		
+
 		var ln;
 		if (this.props.lang === "ru") {
 			ln = this.props.ru;
@@ -60,7 +56,9 @@ class Profile extends Component {
 			ln = this.props.en;
 		}
 
-		
+		if (!window.localStorage.getItem('loggedStatus')) {
+			history.push('/')
+		}
 		return (
 			<div className="profile">
 				<Header />
@@ -74,8 +72,128 @@ class Profile extends Component {
 									</div>
 									<div className="card-body">
 										<img src="/img/user.svg" alt="" />
+										<div className="links text-right">
+											<Link to="/rassrochka" onClick={this.rassrochka_info} className="link__info">Rassrochka</Link>
+											<Link to="/credit" onClick={this.credit_info} className="link__info">Credit</Link>
+										</div>
 										<div className="userInfo">
-											<p>Name: John Doe</p>
+											<div className="row">
+												<div className="col-md-12">
+													<p className="userName">{
+														this.state.inps.map(m =>
+															<div key={m.doc_number}>
+																<span> {`${m.last_name} ${m.first_name} ${m.middle_name}`} </span>
+															</div>
+														)
+													}</p>
+												</div>
+											</div>
+											<hr />
+
+											<div className="row">
+												<div className="col-md-6">
+													<span className="fa fa-id-card"></span>	Identifikatsion raqam
+													</div>
+												<div className="col-md-6 bold">
+													{
+														this.state.inps.map(m =>
+															<div key={m.doc_number}>
+																<span> {`${m.id}`} </span>
+															</div>
+														)
+													}
+												</div>
+											</div>
+
+											<hr />
+
+											<div className="row">
+												<div className="col-md-6">
+													<span className="fa fa-id-card"></span>	Passport seriya
+													</div>
+												<div className="col-md-6 bold">
+													{
+														this.state.inps.map(m =>
+															<div key={m.doc_number}>
+																<span> {`${m.doc_seria} ${m.doc_number}`} </span>
+															</div>
+														)
+													}
+												</div>
+											</div>
+
+											<hr />
+
+											<div className="row">
+												<div className="col-md-6">
+													<span className="fa fa-university"></span>	Passport kim tomonidan berilgan
+													</div>
+												<div className="col-md-6 bold">
+													{
+														this.state.document.map(m =>
+															<div key={m.doc_number}>
+																<span> {m.doc_give_place} </span>
+															</div>
+														)
+													}
+												</div>
+											</div>
+
+											<hr />
+											<div className="row">
+												<div className="col-md-6">
+													<span className="fa fa-calendar"></span>	Tug'ilgan sanasi
+													</div>
+												<div className="col-md-6 bold">
+													{
+														this.state.inps.map(m =>
+															<div key={m.doc_number}>
+																<span> {m.birth_date} </span>
+															</div>
+														)
+													}
+												</div>
+											</div>
+
+											<hr />
+
+												<div className="row">
+												<div className="col-md-6">
+													<span className="fa fa-calendar"></span>	Jamgʼarib boriladigan pensiya taʼminoti tizimida roʼyxatga olingan sana
+													</div>
+												<div className="col-md-6 bold">
+													{
+														this.state.inps.map(m =>
+															<div key={m.doc_number}>
+																<span> {m.creation_date} </span>
+															</div>
+														)
+													}
+												</div>
+											</div>
+
+											<hr />
+
+												<div className="row">
+												<div className="col-md-6">
+													<span className="fa fa-university"></span>Roʼyxatga olingan bank filiali va MFO
+													</div>
+												<div className="col-md-6 bold">
+													{
+														this.state.inps.map(m =>
+															<div key={m.doc_number}>
+																<span> {`${m.filial}-${m.filial_name}`} </span>
+															</div>
+														)
+													}
+												</div>
+											</div>
+
+											<hr />
+
+											
+
+											
 										</div>
 									</div>
 								</div>
@@ -84,19 +202,6 @@ class Profile extends Component {
 					</div>
 				</div>
 				<Footer />
-			{/* <p>{console.log(JSON.parse(localStorage.getItem('info')))}</p> */}
-			<p>{console.log(this.state.inps)}</p>
-			<p>{console.log(this.state.document)}</p>
-			<p>
-				{
-					this.state.inps.map(m => 
-						<div key={ m.doc_number }>
-							<span> {m.first_name} </span>
-							<span>{m.filial_name}</span>
-						</div>
-				)					
-				}
-			</p>
 			</div>
 
 		);
@@ -108,9 +213,8 @@ const mapStateToProps = state => ({
 	en: en,
 	uz: uz,
 	ru: ru,
-	entered: state.session.session.status,
-	info:state.info.info,
-	profile:state.session.session.data
+	info: state.info.info,
+	profile: state.session.session.data
 });
 
-export default connect(mapStateToProps,{user_info})(Profile);
+export default connect(mapStateToProps, { user_info,rassrochka_info,credit_info })(Profile);

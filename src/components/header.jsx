@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { change_language } from "./../redux/actions/actions";
+import { change_language,get_code } from "./../redux/actions/actions";
 import Language from "./language";
 import { ru } from "./../lang/ru";
 import { en } from "./../lang/en";
@@ -8,7 +8,8 @@ import { uz } from "./../lang/uz";
 import { Link } from "react-router-dom";
 import Menu from "./menu";
 import { reactLocalStorage } from "reactjs-localstorage";
-import $ from 'jquery'
+import $ from 'jquery';
+import history from './../history';
 
 class Header extends Component {
   componentDidMount(){
@@ -32,7 +33,9 @@ class Header extends Component {
   }
   render() {
     const logout = e => {
-			localStorage.clear();
+      localStorage.clear();
+      history.push('/other');
+      this.props.get_code('')
 		};
 
 
@@ -84,13 +87,13 @@ class Header extends Component {
                             alignItems:'center'
                           }}
                         >
-                          {localStorage.getItem('rememberMe')?<div className="user__avatar">
+                          {localStorage.getItem('loggedStatus')?<div className="user__avatar">
                             <i className="fa fa-user-circle-o" />
                             <div className="number">
                             +998{localStorage.getItem('phone')}
                             <div className="number__content">
                                 <Link className="dropdown__link" to="/profile">Profile</Link>
-                                <Link className="dropdown__link" to="/"  onClick={logout}>Logout</Link>
+                                <Link className="dropdown__link"  to="/other" onClick={logout}>Logout</Link>
                             </div>
                             </div>
                           </div>:''}
@@ -141,5 +144,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { change_language }
+  { change_language,get_code }
 )(Header);

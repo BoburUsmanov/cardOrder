@@ -9,20 +9,12 @@ import Profile from './pages/profile';
 import $ from 'jquery'
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
+import Rassrochka from "./pages/rassrochka";
+import Credit from "./pages/credit";
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    let rememberMe = localStorage.getItem('rememberMe');
-    this.state = {
-      remember: rememberMe
-    };
-  }
-
-
   componentDidMount() {
     
-		// console.log(localStorage.getItem("rememberMe"));
     $(document).ready(function () {
       $(".menu-item a").on("click", function (event) {
         if (this.hash !== "") {
@@ -110,10 +102,13 @@ class App extends Component {
     return (
       <React.Fragment>
         <Switch>
-          <Route path="/" exact component={this.state.remember ? Profile : Home} />
-          <Route path="/verify" exact component={this.state.remember ? Profile : Verify} />
-          <Route path="/profile" exact component={Profile} />
-          <Route path="/user" exact component={this.state.remember ? Profile : User} />
+          <Route path="/" exact component={Home} />
+          <Route path="/verify"  component={Verify} />
+          <Route path="/profile"  component={Profile} />
+          <Route path="/user"  component={ User} />
+          <Route path="/rassrochka"  component={ Rassrochka} />
+          <Route path="/credit"  component={ Credit} />
+          <Route path="/other"  component={ Default} />
           <Route component={Default} />
         </Switch>
       </React.Fragment>

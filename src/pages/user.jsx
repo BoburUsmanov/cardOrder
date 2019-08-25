@@ -11,22 +11,13 @@ import { en } from "../lang/en";
 import { ru } from "../lang/ru";
 import { uz } from "../lang/uz";
 import Demo from "./../components/demo";
-import $ from 'jquery'
+import $ from 'jquery';
+import history from './../history'
 
 class User extends Component {
-	constructor(props) {
-		super(props);
-		let rememberMe = localStorage.getItem("rememberMe");
-		this.state = {
-			rememberMe: rememberMe
-		};
-	}
+
 
 	componentDidMount() {
-	
-
-
-		console.log(localStorage.getItem("rememberMe"));
 
 		$(document).ready(function() {
 			$(".menu-item a").on("click", function(event) {
@@ -49,8 +40,8 @@ class User extends Component {
 
 	render() {
 
-		if (!localStorage.getItem("rememberMe")) {
-			return <Redirect to="/" />;
+		if (!window.localStorage.getItem("loggedStatus")) {
+			history.push('/')
 		}
 
 		var ln;
@@ -66,40 +57,7 @@ class User extends Component {
 			<div>
 				<Header />
 				<div className="user-main">
-					{/* <Demo /> */}
 					<Content />
-					<div className="container main-wrapper">
-						<div className="vc_row wpb_row vc_row-fluid card-offer-btn">
-							<div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
-								<input
-									type="submit"
-									value={ln["Order your card now"]}
-									className="wpcf7-form-control wpcf7-submit"
-								/>
-							</div>
-							<div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
-								<input
-									type="submit"
-									value={ln["Order your card now"]}
-									className="wpcf7-form-control wpcf7-submit"
-								/>
-							</div>
-							<div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
-								<input
-									type="submit"
-									value={ln["Order your card now"]}
-									className="wpcf7-form-control wpcf7-submit"
-								/>
-							</div>
-							<div className="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-6">
-								<input
-									type="submit"
-									value={ln["Order your card now"]}
-									className="wpcf7-form-control wpcf7-submit"
-								/>
-							</div>
-						</div>
-					</div>
 				</div>
 				<Footer />
 			</div>

@@ -4,6 +4,7 @@ import { en } from "./../lang/en";
 import { uz } from "./../lang/uz";
 import { connect } from "react-redux";
 import { reactLocalStorage } from "reactjs-localstorage";
+import {Link} from 'react-router-dom';
 
 class Menu extends Component {
 	render() {
@@ -52,7 +53,7 @@ class Menu extends Component {
 								id="menu-item-619"
 								className="menu-item menu-item-type-custom menu-item-619"
 							>
-								{localStorage.getItem("rememberMe") ? (
+								{localStorage.getItem("loggedStatus") ? (
 									""
 								) : (
 									<a href="#cardOffer">

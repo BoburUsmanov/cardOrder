@@ -5,3 +5,6 @@ export const GET__CODE = "GET__CODE";
 export const SESSION__ID = "SESSION__ID";
 export const USER__ENTERED = "USER__ENTERED";
 export const USER__INFO = "USER__INFO";
+export const APPEAL__RASSOCHKA = "APPEAL__RASSROCHKA";
+export const RASSROCHKA__INFO = "RASSROCHKA__INFO";
+export const CREDIT__INFO = "CREDIT__INFO";

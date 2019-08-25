@@ -9,10 +9,16 @@ import { get_code, session_id } from "./../redux/actions/actions";
 import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
 import localStorage from 'reactjs-localstorage';
+import history from './../history';
 
 class Verify extends Component {
-	
-
+	constructor(props) {
+		super(props)
+		let number = window.localStorage.getItem('phone')
+		this.state = {
+			number: number
+		}
+	}
 	getCode = e => {
 		this.props.get_code(e.target.value);
 	};
@@ -22,10 +28,8 @@ class Verify extends Component {
 	};
 
 
+
 	render() {
-
-		
-
 		var ln;
 		if (this.props.lang === "ru") {
 			ln = this.props.ru;
@@ -35,29 +39,31 @@ class Verify extends Component {
 			ln = this.props.en;
 		}
 
-		
-		if (this.props.status === 0) {
-			return <Redirect to="/profile" />;
+		const replacePhoneNumbers = () => {
+			var tele = [];
+			if (this.state.number.length !== null) {
+				for (var i = 0; i < this.state.number.length; i++) {
+					if (i < 5) {
+						tele[i] = this.state.number[i].replace(/^\d+$/, "*");
+					}
+					else {
+						tele[i] = this.state.number[i];
+					}
+				}
+			}
+
+			var full_phone = "";
+			if (this.state.number.length !== null) {
+				for (var i = 0; i < this.state.number.length; i++) {
+					full_phone += tele[i];
+				}
+			}
+			return full_phone;
 		}
 
-		const replacePhoneNumbers = () =>{
-            var tele = [];
-            for (var i = 0; i < this.props.number.length; i++) {
-                if(i < 5){
-                    tele[i] = this.props.number[i].replace(/^\d+$/, "*");
-                }
-                else{
-                    tele[i] = this.props.number[i];
-                }
-            }
-            
-            var full_phone = "";
-            for (var i = 0; i < this.props.number.length; i++) {
-                full_phone += tele[i];
-            }
-            return full_phone;
+		if (!window.localStorage.getItem('verifyStatus')) {
+			history.push('/');
 		}
-	
 
 		return (
 			<React.Fragment>
@@ -68,7 +74,7 @@ class Verify extends Component {
 					<div className="innerBlock animated fadeIn">
 						<div className="row">
 							<div className="col-md-12">
-								<h3>+998 {replacePhoneNumbers(this.props.number)}</h3>
+								<h3>+998 {replacePhoneNumbers(this.state.number)}</h3>
 								<p>{ln["confirmDesc"]} </p>
 								<input
 									type="number"
@@ -104,8 +110,7 @@ const mapStateToProps = state => ({
 	uz: uz,
 	ru: ru,
 	code: state.code.code,
-	data: state.response.response.data,
-	status: state.session.session.status
+	data: state.response.response.data
 });
 export default connect(
 	mapStateToProps,

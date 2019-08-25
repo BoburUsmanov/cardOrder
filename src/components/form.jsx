@@ -34,8 +34,7 @@ class Form extends Component {
 			this.phoneTrim()
 		);
 
-		this.props.save_phone(this.phoneTrim());
-		localStorage.setItem("phone", this.phoneTrim());
+		// this.props.save_phone(this.phoneTrim());
 	};
 
 	phoneTrim = () => {
@@ -85,10 +84,6 @@ class Form extends Component {
 			ln = this.props.uz;
 		} else {
 			ln = this.props.en;
-		}
-
-		if (this.props.response.status === 0) {
-			return <Redirect to="/verify" />;
 		}
 
 		return (
