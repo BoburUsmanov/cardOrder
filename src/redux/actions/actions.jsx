@@ -48,6 +48,8 @@ export const send_request = (inps,number,seria,phone) => dispatch => {
   Axios.post(`/index.php?sigin`, userData)
     .then(response =>{
       window.localStorage.setItem("phone", phone) 
+      window.localStorage.setItem("seria", seria) 
+      window.localStorage.setItem("number", number) 
       window.localStorage.setItem('verifyStatus',response.data.status)
       window.localStorage.setItem('session',response.data.data)
       

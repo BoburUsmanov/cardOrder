@@ -11,37 +11,53 @@ export default class Rassrochka extends Component {
         super(props)
         this.state = {
             chart: [],
-            details:''
+            details: '',
+            redirect:true,
+            loader:true
         }
     }
 
     componentDidMount() {
         let data = {
             "data": {
-                "docNum": "2136371",
-                "docSerial": "AA",
-                "branch": "00883"
+                "docNum": `${window.localStorage.getItem('number')}`,
+                "docSerial": `${window.localStorage.getItem('seria')}`
+                // "docNum": "2136371",
+                // "docSerial": "AA"
             }
         }
+        
         Axios.post(`/index.php?planning_operation_card`, data)
             .then(response => {
-                this.setState({ chart: response.data.data.grafik,details: response.data.data.limit })
+
+                if (response.data.message === "success") {
+                    this.setState({ chart: response.data.data.grafik, details: response.data.data.limit,redirect:false,loader:false })
+                }
+
+                if(this.state.redirect){
+                    history.push('/user')
+                }
             })
     }
     render() {
         if (!window.localStorage.getItem("loggedStatus")) {
             history.push('/')
         }
-        console.log(this.state.details)
+       
+        
+
+        console.log(this.state.chart)
         return (
             <React.Fragment>
                 <Header />
                 <div className="container">
+               
                     <div className="row">
                         <div className="col-md-12">
                             <h2>Rassrochka haqida ma'lumot</h2>
                         </div>
                         <div className="col-md-12">
+                            
                             <table className="table table-bordered">
                                 <tbody>
                                     <tr>
@@ -50,7 +66,7 @@ export default class Rassrochka extends Component {
                                     </tr>
                                     <tr>
                                         <td>{this.state.details}</td>
-                                        <td>6 oy</td>
+                                        <td> 6 oy </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -60,23 +76,29 @@ export default class Rassrochka extends Component {
                         </div>
                         <div className="col-md-12">
                             <table className="table table-bordered">
-                                <tbody>
+                                <thead>
                                     <tr>
                                         <th>To'lov vaqti</th>
                                         <th>To'lov miqdori</th>
                                     </tr>
-                                    {this.state.chart?this.state.chart.map(chart =>
-                                <tr key={chart.obligateNumber}>
-                                    <td>{chart.red_date}</td>
-                                    <td>{chart.sum}</td>
-                                </tr>    
-                                ):'rassrochka berilmagan'}
+                                </thead>
+                                <tbody>
+
+                                    {this.state.chart.map(chart =>
+                                        <tr key={chart.OBLIGATE_NUMBER}>
+                                            <td>{chart.DATE_RED}</td>
+                                            <td>{chart.SUMM_RED}</td>
+                                        </tr>
+                                    )}
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
                 <Footer />
+                {this.state.loader &&  <div className="loader">
+                    <img src="/img/loader.gif" alt=""/>
+                </div>}
             </React.Fragment>
         )
     }

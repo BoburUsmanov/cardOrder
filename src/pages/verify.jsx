@@ -74,7 +74,7 @@ class Verify extends Component {
 					<div className="innerBlock animated fadeIn">
 						<div className="row">
 							<div className="col-md-12">
-								<h3>+998 {replacePhoneNumbers(this.state.number)}</h3>
+								<h3>+998 {window.localStorage.getItem('verifyStatus') && replacePhoneNumbers(this.state.number)}</h3>
 								<p>{ln["confirmDesc"]} </p>
 								<input
 									type="number"
