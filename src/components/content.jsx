@@ -7,11 +7,22 @@ import Form from "./form";
 import { reactLocalStorage } from "reactjs-localstorage";
 import Demo from './../components/demo'
 import {appeal_rassrochka} from "./../redux/actions/actions"
+import $ from 'jquery'
 class Content extends Component {
 
   appeal__rassrochka = () =>{
-    alert(`siz ${window.localStorage.getItem('loan')} miqdordagi mablag'ni rassrochkaga olishingiz mumkin`)
+    $('.popup__order').fadeOut()
+    // alert(`siz ${window.localStorage.getItem('loan')} miqdordagi mablag'ni rassrochkaga olishingiz mumkin`)
     this.props.appeal_rassrochka(window.localStorage.getItem('phone'),window.localStorage.getItem('session'),window.localStorage.getItem('loan'))
+  }
+  componentDidMount(){
+    $('#rassrochka__popup').on('click',function(){
+      $('.popup__order').fadeIn()
+    });
+
+    $('.popup__close').on('click',function(){
+      $('.popup__order').fadeOut()
+    });
   }
   render() {
     var ln;
@@ -1331,7 +1342,7 @@ class Content extends Component {
                           </div>
                           {window.localStorage.getItem('loggedStatus')?<div className="text-center">
                             <input
-                              type="submit" onClick={this.appeal__rassrochka}
+                              type="submit"  id="rassrochka__popup"
                               value={ln["Order your card now"]}
                               className="wpcf7-form-control wpcf7-submit"
                             />
@@ -1383,6 +1394,16 @@ class Content extends Component {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="popup__order">
+        <span className="popup__close"> &times;</span>
+              <div className="popup__order-content">
+                  <h2 className="order__title">Siz {window.localStorage.getItem('loan')} - miqdordagi mablag'ni rassrochkaga olishingiz mumkin </h2>
+                  <div className="text-center">
+                  <button className="order__btn" onClick={this.appeal__rassrochka}>Tasdiqlash</button>
+                  </div>
+              </div>
         </div>
       </React.Fragment>
     );
