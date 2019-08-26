@@ -98,22 +98,6 @@ class Profile extends Component {
 								<img id="user-img" src="/img/user.svg" alt="" />
 								<div className="card">
 									<div className="card-body">
-										<div className="links text-right">
-											<Link
-												to="/rassrochka"
-												onClick={this.rassrochka_info}
-												className="link__info"
-											>
-												Rassrochka
-											</Link>
-											<Link
-												to="/credit"
-												onClick={this.credit_info}
-												className="link__info"
-											>
-												Credit
-											</Link>
-										</div>
 										<div className="row">
 											<div className="col-md-9">
 												<div className="userInfo">
@@ -136,7 +120,7 @@ class Profile extends Component {
 													<div className="row">
 														<div className="col-md-6 col-sm-6">
 															<span className="fa fa-id-card"></span>{" "}
-															{ln['pin']}
+															{ln["pin"]}
 														</div>
 														<div className="col-md-6 bold">
 															{this.state.inps.map(m => (
@@ -151,8 +135,8 @@ class Profile extends Component {
 
 													<div className="row">
 														<div className="col-md-6 col-sm-6">
-															<span className="fa fa-id-card"></span> 
-															{ln['doc_seria_lang']}
+															<span className="fa fa-id-card"></span>
+															{ln["doc_seria_lang"]}
 														</div>
 														<div className="col-md-6 bold">
 															{this.state.inps.map(m => (
@@ -169,16 +153,13 @@ class Profile extends Component {
 
 													<div className="row">
 														<div className="col-md-6 col-sm-6">
-															<span className="fa fa-id-card"></span> 
-															{ln['date_begin_document']}
+															<span className="fa fa-id-card"></span>
+															{ln["date_begin_document"]}
 														</div>
 														<div className="col-md-6 bold">
 															{this.state.document.map(m => (
 																<div key={m.doc_number}>
-																	<span>
-																		{" "}
-																		{`${m.date_begin_document}`}{" "}
-																	</span>
+																	<span> {`${m.date_begin_document}`} </span>
 																</div>
 															))}
 														</div>
@@ -187,16 +168,13 @@ class Profile extends Component {
 
 													<div className="row">
 														<div className="col-md-6 col-sm-6">
-															<span className="fa fa-id-card"></span> 
-															{ln['date_end_document']}
+															<span className="fa fa-id-card"></span>
+															{ln["date_end_document"]}
 														</div>
 														<div className="col-md-6 bold">
 															{this.state.document.map(m => (
 																<div key={m.doc_number}>
-																	<span>
-																		{" "}
-																		{`${m.date_end_document}`}{" "}
-																	</span>
+																	<span> {`${m.date_end_document}`} </span>
 																</div>
 															))}
 														</div>
@@ -207,7 +185,7 @@ class Profile extends Component {
 													<div className="row">
 														<div className="col-md-6 col-sm-6">
 															<span className="fa fa-university"></span>{" "}
-															{ln['who_gave_passport']}
+															{ln["who_gave_passport"]}
 														</div>
 														<div className="col-md-6 bold">
 															{this.state.document.map(m => (
@@ -221,8 +199,8 @@ class Profile extends Component {
 													<hr />
 													<div className="row">
 														<div className="col-md-6 col-sm-6">
-															<span className="fa fa-calendar"></span> {" "}
-															{ln['user_birthday']}
+															<span className="fa fa-calendar"></span>{" "}
+															{ln["user_birthday"]}
 														</div>
 														<div className="col-md-6 bold">
 															{this.state.inps.map(m => (
@@ -237,8 +215,8 @@ class Profile extends Component {
 
 													<div className="row">
 														<div className="col-md-6 col-sm-6">
-															<span className="fa fa-calendar"></span> 
-															{ln['pension_accumulative_date']}
+															<span className="fa fa-calendar"></span>
+															{ln["pension_accumulative_date"]}
 														</div>
 														<div className="col-md-6 bold">
 															{this.state.inps.map(m => (
@@ -254,7 +232,7 @@ class Profile extends Component {
 													<div className="row">
 														<div className="col-md-6 col-sm-6">
 															<span className="fa fa-university"></span>
-															{ln['bank_branch_and_mfo']}
+															{ln["bank_branch_and_mfo"]}
 														</div>
 														<div className="col-md-6 bold">
 															{this.state.inps.map(m => (
@@ -271,7 +249,27 @@ class Profile extends Component {
 													<hr />
 												</div>
 											</div>
-											<div className="col-md-3"></div>
+											<div className="col-md-3">
+												<div className="links text-right">
+													<h4>{ln['myCard_title']}</h4>
+													{this.state.product?this.state.product.map(card=>
+													<React.Fragment>
+														<Link to="/rassrochka"
+														onClick={this.rassrochka_info}>
+														{card.product_id==="120" && <img src="/img/rassrochka.png " />}
+														</Link>
+														<Link>
+															{card.product_id==="100" && <img src="/img/uzcard.png " />}
+														</Link>
+														<Link to="/credit"
+															onClick={this.credit_info}>
+															{card.product_id==="140" && <img src="/img/kredit.png " />}
+														</Link>
+													</React.Fragment>
+													)
+													:'karta yuq'}
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>

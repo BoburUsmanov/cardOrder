@@ -84,6 +84,7 @@ export const uz = {
     'pension_accumulative_date': 'Jamgʼarib boriladigan pensiya taʼminoti tizimida roʼyxatga olingan sana',
     'bank_branch_and_mfo': 'Roʼyxatga olingan bank filiali va MFO',
     'date_begin_document' : 'Passport berilgan sanasi',
-    'date_end_document': 'Passport amal qilish muddati'
+    'date_end_document': 'Passport amal qilish muddati',
+    'myCard_title': 'Mening kartalarim'
 
 }

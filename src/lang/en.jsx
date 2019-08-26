@@ -81,5 +81,6 @@ export const en = {
     'pension_accumulative_date': 'Date of registration in the accumulative pension system',
     'bank_branch_and_mfo': 'Registered branch of bank and MFI',
     'date_begin_document' : 'Date of issue',
-    'date_end_document': 'Date of expiry'
+    'date_end_document': 'Date of expiry',
+    'myCard_title': 'My cards'
 }
