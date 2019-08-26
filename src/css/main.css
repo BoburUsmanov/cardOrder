@@ -574,6 +574,23 @@ input[type="number"]::-webkit-outer-spin-button {
 	transform: translateX(-50%);
 }
 
+
+.rassrochka_info{
+	margin: 10px 0;
+	background: #095A2F;
+	border-radius: 5px;
+	padding: 20px;	
+	text-align: center;
+	color: #F1BF56;
+}
+.rassrochka_info h4{
+	margin: 0;
+}
+.rassrochka_info p{
+	margin: 10px 0;
+	font-size: 1.3em;
+}
+
 .card {
 	width: 100%;
 	/* box-shadow: 0 5px 10px #ccc; */

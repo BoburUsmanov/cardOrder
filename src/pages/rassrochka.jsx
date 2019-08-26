@@ -13,7 +13,7 @@ export default class Rassrochka extends Component {
             chart: [],
             details: '',
             redirect:true,
-            loader:true
+            loader:false
         }
     }
 
@@ -31,7 +31,7 @@ export default class Rassrochka extends Component {
             .then(response => {
 
                 if (response.data.message === "success") {
-                    this.setState({ chart: response.data.data.grafik, details: response.data.data.limit,redirect:false,loader:false })
+                    this.setState({ chart: response.data.data.grafik, details: response.data.data,redirect:false,loader:false })
                 }
 
                 if(this.state.redirect){
@@ -39,10 +39,15 @@ export default class Rassrochka extends Component {
                 }
             })
     }
+    
     render() {
         if (!window.localStorage.getItem("loggedStatus")) {
             history.push('/')
         }
+        let replaceCorrectInfo = () =>{
+            // if((this.state.details.ostatok.length || this.state.details.debt.length) != null)
+        }
+
        
         return (
             <React.Fragment>
@@ -54,7 +59,27 @@ export default class Rassrochka extends Component {
                             <h2>Rassrochka haqida ma'lumot</h2>
                         </div>
                         <div className="col-md-12">
-                            
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <div className="rassrochka_info">
+                                        <h4>Limit</h4>
+                                        <p>{this.state.details.limit}</p>
+                                    </div>
+                                </div>
+                                <div className="col-md-4">
+                                <div className="rassrochka_info">
+                                    <h4>Qolgan summa</h4>
+                                    <p>{this.state.details.ostatok}</p>
+                                    {replaceCorrectInfo(this.state.details)}
+                                </div>
+                                </div>
+                                <div className="col-md-4">
+                                <div className="rassrochka_info">
+                                    <h4>Qarzdorlik</h4>
+                                    <p>{this.state.details.debt}</p>
+                                </div>
+                                </div>
+                            </div>
                             <table className="table table-bordered">
                                 <tbody>
                                     <tr>
@@ -62,7 +87,7 @@ export default class Rassrochka extends Component {
                                         <th>Rassrochkani qaytarish muddati</th>
                                     </tr>
                                     <tr>
-                                        <td>{this.state.details}</td>
+                                        <td>{this.state.details.limit}</td>
                                         <td> 6 oy </td>
                                     </tr>
                                 </tbody>
