@@ -50,6 +50,9 @@ class Profile extends Component {
 				);
 			});
 		});
+		$('.cardFlip').on('hover', function(){
+			$(this).addClass('flip');
+		})
 	}
 
 	parsing = () => {
@@ -158,8 +161,8 @@ class Profile extends Component {
 														</div>
 														<div className="col-md-6 bold">
 															{this.state.document.map(m => (
-																<div key={m.doc_number}>
-																	<span> {`${m.date_begin_document}`} </span>
+																<div key={m.document}>
+																	<span key={m.document}> {`${m.date_begin_document}`} </span>
 																</div>
 															))}
 														</div>
@@ -173,8 +176,8 @@ class Profile extends Component {
 														</div>
 														<div className="col-md-6 bold">
 															{this.state.document.map(m => (
-																<div key={m.doc_number}>
-																	<span> {`${m.date_end_document}`} </span>
+																<div key={m.document}>
+																	<span key={m.document}> {`${m.date_end_document}`} </span>
 																</div>
 															))}
 														</div>
@@ -255,14 +258,18 @@ class Profile extends Component {
 													{this.state.product?this.state.product.map(card=>
 													<React.Fragment>
 														<Link to="/rassrochka"
-														onClick={this.rassrochka_info}>
+														onClick={this.rassrochka_info}
+														className="animated cardFlip"
+														>
 														{card.product_id==="120" && <img src="/img/rassrochka.png " />}
 														</Link>
-														<Link>
+														<Link className="animated cardFlip">
 															{card.product_id==="100" && <img src="/img/uzcard.png " />}
 														</Link>
 														<Link to="/credit"
-															onClick={this.credit_info}>
+															onClick={this.credit_info}
+															className="animated cardFlip"
+															>
 															{card.product_id==="140" && <img src="/img/kredit.png " />}
 														</Link>
 													</React.Fragment>
