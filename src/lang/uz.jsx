@@ -73,8 +73,18 @@ export const uz = {
     'confirmBtn':'Tasdiqlash',
     'cancelBtn': 'Ortga',
     'verificationCode': 'Kodni kiriting',
+
     'doc_seria_lang' : 'Passport seriya',
     'doc_num_lang': 'Passport seriya raqami',
     'pin': 'Shaxsiy Identifikatsion Raqam',
-    'form_phone': 'Telefon raqam'
+    'form_phone': 'Telefon raqam',
+    'user_inps_number': 'Shaxsiy identifikatsion raqam',
+    'who_gave_passport': 'Kim tomonidan berilgan',
+    'user_birthday': 'Tug\'ilgan sanasi',
+    'pension_accumulative_date': 'Jamgʼarib boriladigan pensiya taʼminoti tizimida roʼyxatga olingan sana',
+    'bank_branch_and_mfo': 'Roʼyxatga olingan bank filiali va MFO',
+    'date_begin_document' : 'Passport berilgan sanasi',
+    'date_end_document': 'Passport amal qilish muddati',
+    'myCard_title': 'Mening kartalarim'
+
 }
