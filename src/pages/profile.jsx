@@ -26,7 +26,9 @@ class Profile extends Component {
 		this.props.rassrochka_info();
 	};
 	componentDidMount() {
-		this.parsing();
+		if(window.localStorage.getItem("loggedStatus")){
+			this.parsing();
+		}
 		$(document).ready(function() {
 			$("#profileCardHeader").mousemove(function(event) {
 				var moveX = ($(window).width() / 2 - event.pageX) * 0.03;
