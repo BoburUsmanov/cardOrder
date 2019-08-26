@@ -14,7 +14,8 @@ class Form extends Component {
 			inps: "",
 			doc_number: "",
 			doc_seria: "",
-			phone: ""
+			phone: "",
+			loader:false
 		};
 	}
 
@@ -25,7 +26,7 @@ class Form extends Component {
 	onSubmit = e => {
 		e.preventDefault();
 
-		this.setState({ redirect: true });
+		this.setState({ redirect: true, loader: true });
 
 		this.props.send_request(
 			this.state.inps,
@@ -325,6 +326,9 @@ class Form extends Component {
 						</div>
 					</div>
 				</div>
+				{this.state.loader &&  <div className="loader">
+					<img src="/img/loader.gif" alt=""/>
+				</div>}
 			</section>
 		);
 	}
