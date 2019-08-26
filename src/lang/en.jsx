@@ -75,5 +75,11 @@ export const en = {
     'doc_seria_lang' : 'Passport series',
     'doc_num_lang': 'Passport number',
     'pin': 'Personal Identification Number',
-    'form_phone': 'Phone number'
+    'form_phone': 'Phone number',
+    'who_gave_passport': 'Issued by',
+    'user_birthday': 'Birthday',
+    'pension_accumulative_date': 'Date of registration in the accumulative pension system',
+    'bank_branch_and_mfo': 'Registered branch of bank and MFI',
+    'date_begin_document' : 'Date of issue',
+    'date_end_document': 'Date of expiry'
 }

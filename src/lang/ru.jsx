@@ -76,5 +76,11 @@ export const ru = {
     'doc_seria_lang' : 'Пасспорт серия',
     'doc_num_lang': 'Номер пасспорта',
     'pin': 'Персональный Идентификационный Номер',
-    'form_phone': 'Номер телефона'
+    'form_phone': 'Номер телефона',
+    'who_gave_passport': 'Кем выдан паспорт',
+    'user_birthday': 'День рождение',
+    'pension_accumulative_date': 'Дата регистрации в накопительной пенсионной системе',
+    'bank_branch_and_mfo': 'Зарегистрированный филиал банка и МФО',
+    'date_begin_document' : 'Дата выдачи',
+    'date_end_document': 'Дата истечения срока'
 }
