@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router";
 import Rassrochka from "./pages/rassrochka";
 import Credit from "./pages/credit";
+import Appeal from "./pages/appeal";
 
 class App extends Component {
 
@@ -109,6 +110,7 @@ class App extends Component {
           <Route path="/user"  component={ User} />
           <Route path="/rassrochka"  component={ Rassrochka} />
           <Route path="/credit"  component={ Credit} />
+          <Route path="/appeal"  component={Appeal} />
           <Route path="/other"  component={ Default} />
           <Route component={Default} />
         </Switch>

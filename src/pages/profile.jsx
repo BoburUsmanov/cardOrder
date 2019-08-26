@@ -276,7 +276,7 @@ class Profile extends Component {
 																			<img src="/img/rassrochka.png " />
 																		)}
 																	</Link>
-																	<Link className="animated cardFlip">
+																	<Link to="/credit" className="animated cardFlip">
 																		{card.product_id === "100" && (
 																			<img src="/img/uzcard.png " />
 																		)}

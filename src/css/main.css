@@ -351,6 +351,33 @@ input[type="number"]::-webkit-outer-spin-button {
 .order__btn:hover{
 	background-color: rgba(9,90,47,1);
 }
+.appeal{
+	padding: 50px 0;
+}
+.appeal h2{
+	text-align: center;
+	margin-bottom: 50px;
+}
+.appeal h2 .yellow{
+	color: #F1BF56;
+}
+.appeal .appeal__btn{
+	border:none;
+	background-color: #F1BF56;
+	color: #fff;
+	display: inline-block;
+	padding: 10px 45px;
+}
+.appeal__link{
+	background-color: #095A2F;
+	padding: 5px 25px;
+	display: inline-block;
+	color: #fff;
+	transition: 0.25s ease;
+}
+.appeal__link:hover{
+	color: #F1BF56;
+}
 .loader{
 	position: fixed;
 	top: 0;

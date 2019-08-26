@@ -6,23 +6,19 @@ import { en } from "./../lang/en";
 import Form from "./form";
 import { reactLocalStorage } from "reactjs-localstorage";
 import Demo from './../components/demo'
-import {appeal_rassrochka} from "./../redux/actions/actions"
 import $ from 'jquery'
+import {Link} from 'react-router-dom'
 class Content extends Component {
 
-  appeal__rassrochka = () =>{
-    $('.popup__order').fadeOut()
-    // alert(`siz ${window.localStorage.getItem('loan')} miqdordagi mablag'ni rassrochkaga olishingiz mumkin`)
-    this.props.appeal_rassrochka(window.localStorage.getItem('phone'),window.localStorage.getItem('session'),window.localStorage.getItem('loan'))
-  }
-  componentDidMount(){
-    $('#rassrochka__popup').on('click',function(){
-      $('.popup__order').fadeIn()
-    });
 
-    $('.popup__close').on('click',function(){
-      $('.popup__order').fadeOut()
-    });
+  componentDidMount(){
+    // $('#rassrochka__popup').on('click',function(){
+    //   $('.popup__order').fadeIn()
+    // });
+
+    // $('.popup__close').on('click',function(){
+    //   $('.popup__order').fadeOut()
+    // });
   }
   render() {
     var ln;
@@ -1341,11 +1337,11 @@ class Content extends Component {
                             </div>
                           </div>
                           {window.localStorage.getItem('loggedStatus')?<div className="text-center">
-                            <input
-                              type="submit"  id="rassrochka__popup"
-                              value={ln["Order your card now"]}
-                              className="wpcf7-form-control wpcf7-submit"
-                            />
+                            <Link to="/appeal"  className="appeal__link">
+                              
+                              {ln["Order your card now"]}
+                             
+                            </Link>
                           </div>:''}
                         </div>
                       </div>
@@ -1396,7 +1392,7 @@ class Content extends Component {
           </div>
         </div>
 
-        <div className="popup__order">
+        {/* <div className="popup__order">
         <span className="popup__close"> &times;</span>
               <div className="popup__order-content">
                   <h2 className="order__title">Siz {window.localStorage.getItem('loan')} - miqdordagi mablag'ni rassrochkaga olishingiz mumkin </h2>
@@ -1404,7 +1400,7 @@ class Content extends Component {
                   <button className="order__btn" onClick={this.appeal__rassrochka}>Tasdiqlash</button>
                   </div>
               </div>
-        </div>
+        </div> */}
       </React.Fragment>
     );
   }
@@ -1417,4 +1413,4 @@ const mapStateToProps = state => ({
   uz: uz
 });
 
-export default connect(mapStateToProps,{appeal_rassrochka})(Content);
+export default connect(mapStateToProps)(Content);

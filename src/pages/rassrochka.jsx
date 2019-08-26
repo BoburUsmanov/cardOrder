@@ -44,9 +44,6 @@ export default class Rassrochka extends Component {
             history.push('/')
         }
        
-        
-
-        console.log(this.state.chart)
         return (
             <React.Fragment>
                 <Header />

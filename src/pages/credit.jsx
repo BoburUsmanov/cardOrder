@@ -9,22 +9,34 @@ export default class Credit extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            chart: [],
-            details:''
+            chart: '',
+            limit: '',
+            sum: '',
+            debit: '',
+            loader:true,
+            redirect:true
         }
     }
 
     componentDidMount() {
         let data = {
             "data": {
-                "docNum": "2136371",
-                "docSerial": "AA",
-                "branch": "00883"
+                "docNum": `${window.localStorage.getItem('number')}`,
+                "docSerial": `${window.localStorage.getItem('seria')}`,
+                // "docNum": "5630154",
+                // "docSerial": "AA",
+                "branch": "01125"
             }
         }
         Axios.post(`/index.php?credit_info`, data)
             .then(response => {
-                this.setState({ chart: response.data.data.grafik,details: response.data.data.limit })
+                if (response.data.message === "success") {
+                    this.setState({ chart: response.data.data.grafik, limit: response.data.data.limit, sum: response.data.data.sum_loan, debit: response.data.data.debit,loader:false,redirect:false })
+                }
+                
+                if(this.state.redirect){
+                    history.push('/user')
+                }
             })
     }
     render() {
@@ -34,10 +46,48 @@ export default class Credit extends Component {
         return (
             <React.Fragment>
                 <Header />
-                <div>
-                    Credit info
-       </div>
+                <div className="container">
+                    <h2>Kredit info</h2>
+                    <table className="table table-bordered table-stripped">
+                        <thead>
+                            <tr>
+                                <th>Summa</th>
+                                <th>Debit</th>
+                                <th>Limit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    {this.state.sum}
+                                </td>
+                                <td>
+                                    {this.state.debit}
+                                </td>
+                                <td>
+                                    {this.state.limit?this.state.limit:'limit yuq'}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>Kredit to'lash grafigi</h2>
+                    <table className="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>To'lash muddati</td>
+                                <td>To'lov miqdori</td>
+                            </tr>
+                            <tr>
+                                <td>{this.state.chart.red_date}</td>
+                                <td>{this.state.chart.sum}</td>
+                            </tr>
+                            </thead>      
+                    </table>
+                </div>
                 <Footer />
+                {this.state.loader &&  <div className="loader">
+                    <img src="/img/loader.gif" alt=""/>
+                </div>}
             </React.Fragment>
         )
     }
