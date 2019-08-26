@@ -1336,13 +1336,16 @@ class Content extends Component {
                               </div>
                             </div>
                           </div>
-                          {window.localStorage.getItem('loggedStatus')?<div className="text-center">
+                          {
+                            console.log(window.localStorage.getItem('product_r_status')==0)
+                          }
+                          {(window.localStorage.getItem('product_r_status')==0) && <div className="text-center">
                             <Link to="/appeal"  className="appeal__link">
                               
                               {ln["Order your card now"]}
                              
                             </Link>
-                          </div>:''}
+                          </div>}
                         </div>
                       </div>
 

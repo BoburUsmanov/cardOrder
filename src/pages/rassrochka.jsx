@@ -13,7 +13,7 @@ export default class Rassrochka extends Component {
             chart: [],
             details: '',
             redirect:true,
-            loader:false
+            loader:true
         }
     }
 
@@ -34,9 +34,9 @@ export default class Rassrochka extends Component {
                     this.setState({ chart: response.data.data.grafik, details: response.data.data,redirect:false,loader:false })
                 }
 
-                if(this.state.redirect){
-                    history.push('/user')
-                }
+                // if(this.state.redirect){
+                //     history.push('/user')
+                // }
             })
     }
     
@@ -44,10 +44,27 @@ export default class Rassrochka extends Component {
         if (!window.localStorage.getItem("loggedStatus")) {
             history.push('/')
         }
-        let replaceCorrectInfo = () =>{
-            // if((this.state.details.ostatok.length || this.state.details.debt.length) != null)
+        // console.log(this.state.chart)
+        const replaceCorrectInfo = (number) =>{
+
+            if(number<0){
+                number = -1*number/100;
+            }else{
+                number = number/100;
+            }
+
+          
+            return number;
         }
 
+        const replaceCorrectDate = (day) =>{
+            
+            return day.slice(0,10)
+        }
+
+        if(window.localStorage.getItem('product_r_status')==0){
+            history.push('/user')
+        }
        
         return (
             <React.Fragment>
@@ -63,20 +80,19 @@ export default class Rassrochka extends Component {
                                 <div className="col-md-4">
                                     <div className="rassrochka_info">
                                         <h4>Limit</h4>
-                                        <p>{this.state.details.limit}</p>
+                                        <p>{replaceCorrectInfo(this.state.details.limit)}</p>
                                     </div>
                                 </div>
                                 <div className="col-md-4">
                                 <div className="rassrochka_info">
                                     <h4>Qolgan summa</h4>
-                                    <p>{this.state.details.ostatok}</p>
-                                    {replaceCorrectInfo(this.state.details)}
+                                    <p>{replaceCorrectInfo(this.state.details.ostatok)}</p>
                                 </div>
                                 </div>
                                 <div className="col-md-4">
                                 <div className="rassrochka_info">
                                     <h4>Qarzdorlik</h4>
-                                    <p>{this.state.details.debt}</p>
+                                    <p>{replaceCorrectInfo(this.state.details.debt)}</p>
                                 </div>
                                 </div>
                             </div>
@@ -87,7 +103,7 @@ export default class Rassrochka extends Component {
                                         <th>Rassrochkani qaytarish muddati</th>
                                     </tr>
                                     <tr>
-                                        <td>{this.state.details.limit}</td>
+                                        <td>{replaceCorrectInfo(this.state.details.limit)}</td>
                                         <td> 6 oy </td>
                                     </tr>
                                 </tbody>
@@ -108,8 +124,8 @@ export default class Rassrochka extends Component {
 
                                     {this.state.chart.map(chart =>
                                         <tr key={chart.OBLIGATE_NUMBER}>
-                                            <td>{chart.DATE_RED}</td>
-                                            <td>{chart.SUMM_RED}</td>
+                                            <td>{replaceCorrectDate(chart.DATE_RED)}</td>
+                                            <td>{ replaceCorrectInfo(chart.SUMM_RED)}</td>
                                         </tr>
                                     )}
                                 </tbody>

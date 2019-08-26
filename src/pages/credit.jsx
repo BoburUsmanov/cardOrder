@@ -34,15 +34,36 @@ export default class Credit extends Component {
                     this.setState({ chart: response.data.data.grafik, limit: response.data.data.limit, sum: response.data.data.sum_loan, debit: response.data.data.debit,loader:false,redirect:false })
                 }
                 
-                if(this.state.redirect){
-                    history.push('/user')
-                }
+                // if(this.state.redirect){
+                //     history.push('/user')
+                // }
             })
     }
     render() {
         if (!window.localStorage.getItem("loggedStatus")) {
             history.push('/')
         }
+
+            if(window.localStorage.getItem('product_c_status')==0){
+                    history.push('/user')
+                }
+
+                const replaceCorrectInfo = (number) =>{
+
+                    if(number<0){
+                        number = -1*number/100;
+                    }else{
+                        number = number/100;
+                    }
+        
+                  
+                    return number;
+                }
+        
+                const replaceCorrectDate = (day) =>{
+                    
+                    return day.slice(0,10)
+                }
         return (
             <React.Fragment>
                 <Header />
@@ -59,13 +80,13 @@ export default class Credit extends Component {
                         <tbody>
                             <tr>
                                 <td>
-                                    {this.state.sum}
+                                    {replaceCorrectInfo(this.state.sum)}
                                 </td>
                                 <td>
-                                    {this.state.debit}
+                                    {replaceCorrectInfo(this.state.debit)}
                                 </td>
                                 <td>
-                                    {this.state.limit?this.state.limit:'limit yuq'}
+                                    {replaceCorrectInfo(this.state.limit)}
                                 </td>
                             </tr>
                         </tbody>
@@ -78,8 +99,8 @@ export default class Credit extends Component {
                                 <td>To'lov miqdori</td>
                             </tr>
                             <tr>
-                                <td>{this.state.chart.red_date}</td>
-                                <td>{this.state.chart.sum}</td>
+                                <td>{replaceCorrectDate(this.state.chart.red_date)}</td>
+                                <td>{replaceCorrectInfo(this.state.chart.sum)}</td>
                             </tr>
                             </thead>      
                     </table>

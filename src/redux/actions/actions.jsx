@@ -73,6 +73,10 @@ export const session_id = (sms,session) => dispatch => {
 
       localStorage.setItem("loggedStatus",response.data.status )
       localStorage.setItem('info',response.data.data)
+      localStorage.setItem('product_r_id',JSON.parse(response.data.data).product[0].product_id)
+      localStorage.setItem('product_r_status',JSON.parse(response.data.data).product[0].status)
+      localStorage.setItem('product_c_id',JSON.parse(response.data.data).product[1].product_id)
+      localStorage.setItem('product_c_status',JSON.parse(response.data.data).product[1].status)
 
       dispatch({
         type: SESSION__ID,
