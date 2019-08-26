@@ -1167,13 +1167,13 @@ class Content extends Component {
                               </div>
                             </div>
                           </div>
-                            {window.localStorage.getItem('loggedStatus')?<div className="text-center">
+                            {/* {window.localStorage.getItem('loggedStatus')?<div className="text-center">
                             <input
                               type="submit"
                               value={ln["Order your card now"]}
                               className="wpcf7-form-control wpcf7-submit"
                             />
-                          </div>:''}
+                          </div>:''} */}
                         </div>
                         <div className="wpb_column vc_column_container vc_col-lg-3 vc_col-md-6 card-view">
                           <div className="vc_column-inner">
@@ -1225,13 +1225,13 @@ class Content extends Component {
                               </div>
                             </div>
                           </div>
-                          {window.localStorage.getItem('loggedStatus')?<div className="text-center">
+                          {/* {window.localStorage.getItem('loggedStatus')?<div className="text-center">
                             <input
                               type="submit"
                               value={ln["Order your card now"]}
                               className="wpcf7-form-control wpcf7-submit"
                             />
-                          </div>:''}
+                          </div>:''} */}
                         </div>
                         <div className="wpb_column vc_column_container vc_col-lg-3 vc_col-md-6 card-view">
                           <div className="vc_column-inner">
@@ -1282,13 +1282,13 @@ class Content extends Component {
                               </div>
                             </div>
                           </div>
-                          {window.localStorage.getItem('loggedStatus')?<div className="text-center">
+                          {/* {window.localStorage.getItem('loggedStatus')?<div className="text-center">
                             <input
                               type="submit"
                               value={ln["Order your card now"]}
                               className="wpcf7-form-control wpcf7-submit"
                             />
-                          </div>:''}
+                          </div>:''} */}
                         </div>
                         <div className="wpb_column vc_column_container vc_col-lg-3 vc_col-md-6 card-view">
                           <div className="vc_column-inner">

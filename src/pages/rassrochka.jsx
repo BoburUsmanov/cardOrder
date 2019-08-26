@@ -19,8 +19,7 @@ export default class Rassrochka extends Component {
         let data = {
             "data": {
                 "docNum": "2136371",
-                "docSerial": "AA",
-                "branch": "00883"
+                "docSerial": "AA"
             }
         }
         Axios.post(`/index.php?planning_operation_card`, data)
@@ -67,8 +66,8 @@ export default class Rassrochka extends Component {
                                     </tr>
                                     {this.state.chart?this.state.chart.map(chart =>
                                 <tr key={chart.obligateNumber}>
-                                    <td>{chart.red_date}</td>
-                                    <td>{chart.sum}</td>
+                                    <td key={chart.obligateNumber}>{chart.red_date}</td>
+                                    <td key={chart.obligateNumber}>{chart.sum}</td>
                                 </tr>    
                                 ):'rassrochka berilmagan'}
                                 </tbody>

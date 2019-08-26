@@ -13,6 +13,7 @@ import Rassrochka from "./pages/rassrochka";
 import Credit from "./pages/credit";
 
 class App extends Component {
+
   componentDidMount() {
     
     $(document).ready(function () {
