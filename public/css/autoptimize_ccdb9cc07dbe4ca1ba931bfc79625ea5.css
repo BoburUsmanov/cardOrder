@@ -19462,7 +19462,7 @@ nav.navbar #navbar {
         bottom: 0;
         left: 0;
         right: -14px;
-        border-bottom: 2px solid var(--main);
+        border-bottom: 2px solid #F1BF56;
         -webkit-transform: translateX(-100px);
         -moz-transform: translateX(-100px);
         -o-transform: translateX(-100px);
