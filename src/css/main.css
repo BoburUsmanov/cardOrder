@@ -31,7 +31,21 @@ body {
 	border-radius: 0px 0px 0px 0px;
 	letter-spacing: 2px;
 }
+nav.navbar{
+	background-color: #095A2F!important;
+}
+nav.navbar .navbar-toggle .icon-bar{
+	background: #fff!important;
+}
 
+nav.navbar #navbar ul.navbar-nav>li>a{
+	color: rgb(233, 233, 233)!important
+}
+
+ul.navbar-nav>li>a> span::after{
+	color: #F1BF56!important;
+	/* background-color: #F1BF56!important; */
+}
 .top-nav {
 	z-index: 999;
 	background: #f4f4f4;
@@ -575,7 +589,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 
-.rassrochka_info{
+.rassrochka_info,.credit_main_info{
 	margin: 10px 0;
 	background: #095A2F;
 	border-radius: 5px;
@@ -583,10 +597,10 @@ input[type="number"]::-webkit-outer-spin-button {
 	text-align: center;
 	color: #F1BF56;
 }
-.rassrochka_info h4{
+.rassrochka_info h4,.credit_main_info h4{
 	margin: 0;
 }
-.rassrochka_info p{
+.rassrochka_info p, .credit_main_info p{
 	margin: 10px 0;
 	font-size: 1.3em;
 }
