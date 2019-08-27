@@ -1339,7 +1339,7 @@ class Content extends Component {
                           {
                             console.log(window.localStorage.getItem('product_r_status')==0)
                           }
-                          {(window.localStorage.getItem('product_r_status')==0) && <div className="text-center">
+                          {(window.localStorage.getItem('product_r_status')!=2) && <div className="text-center">
                             <Link to="/appeal"  className="appeal__link">
                               
                               {ln["Order your card now"]}

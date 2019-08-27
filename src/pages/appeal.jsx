@@ -19,7 +19,16 @@ class Appeal extends Component {
 
             <React.Fragment>
                 <Header />
-                <div className="appeal">
+                {window.localStorage.getItem('product_r_status')==1 && <div className="appeal">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <h2>Siz rassrochka karta uchun buyrtma bergansiz.Hozirda sizning buyurtmangiz ko'rib chiqilmoqda</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div> }
+                {window.localStorage.getItem('product_r_status')==0 &&  <div className="appeal">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
@@ -32,7 +41,10 @@ class Appeal extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> }
+
+                {window.localStorage.getItem('product_r_status')==2 && history.push('/rassrochka') }
+               
                 <Footer />
             </React.Fragment>
 

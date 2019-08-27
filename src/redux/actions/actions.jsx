@@ -121,7 +121,8 @@ export const appeal_rassrochka = (phone,session,loan) => dispatch => {
 
   Axios.post(`/index.php?appeal`,data)
     .then(response =>{
-      history.push('/rassrochka')
+      localStorage.setItem('product_r_status',response.data.status)
+      history.push('/appeal')
     })
     
 };
