@@ -82,5 +82,10 @@ export const en = {
     'bank_branch_and_mfo': 'Registered branch of bank and MFI',
     'date_begin_document' : 'Date of issue',
     'date_end_document': 'Date of expiry',
-    'myCard_title': 'My cards'
+    'myCard_title': 'My cards',
+    'Information about installment plan':'Information about installment plan',
+    'debit':'Debit',
+    'schedule':'Payment schedule',
+    'schedule time':"Schedule time",
+    'schedule amount':"Payment amount"
 }

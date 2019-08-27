@@ -69,8 +69,9 @@ class Header extends Component {
                           display: "flex",
                           justifyContent: "space-between"
                         }}
+                        className="mobile-column"
                       >
-                        <p>
+                        <p className="hidden-xs visible-lg">
                           <img
                             src="/img/phone-square-alt-solid.svg"
                             width="16"
@@ -107,12 +108,9 @@ class Header extends Component {
             </div>
           </div>
         </div>
-        <div id="nav-wrapper">
+        <div id="nav-wrapper" className={ window.location.pathname === '/' && "scroll"}>
           <nav
-            className="navbar"
-            style={{ transition: "all .3s linear", height: "110px" }}
-            data-spy=""
-            data-offset-top="45"
+            className="navbar" 
           >
             <div className="container-fluid">
               <div className="row row-center">

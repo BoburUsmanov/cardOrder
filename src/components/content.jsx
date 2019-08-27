@@ -12,13 +12,6 @@ class Content extends Component {
 
 
   componentDidMount(){
-    // $('#rassrochka__popup').on('click',function(){
-    //   $('.popup__order').fadeIn()
-    // });
-
-    // $('.popup__close').on('click',function(){
-    //   $('.popup__order').fadeOut()
-    // });
   }
   render() {
     var ln;
@@ -1339,7 +1332,7 @@ class Content extends Component {
                           {
                             console.log(window.localStorage.getItem('product_r_status')==0)
                           }
-                          {(window.localStorage.getItem('product_r_status')!=2) && <div className="text-center">
+                          {((window.localStorage.getItem('product_r_status')==0) || (window.localStorage.getItem('product_r_status')==1)) && <div className="text-center">
                             <Link to="/appeal"  className="appeal__link">
                               
                               {ln["Order your card now"]}

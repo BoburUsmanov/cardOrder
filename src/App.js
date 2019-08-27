@@ -35,45 +35,48 @@ class App extends Component {
       });
 
       var menuOpen = false;
-      $(window).scroll(function () {
-        if ($(window).innerWidth() > 576) {
-          if (!menuOpen) {
-            if ($(this).scrollTop() > 5) {
-              $("nav.navbar #navbar").css({
-                transition: "all .1s",
-                // height: "100%"
-              });
-              $("nav.navbar #navbar ul.navbar-nav>li>a").css("font-size", "14px");
-              $("nav.navbar").css({
-                transition: "all .1s",
-                height: "60px",
-                padding: "4px 0 0",
-              });
-              $("#logo").css({
-                width: "60%",
-                margin: "5px 0 0",
-                padding: "10px"
-              });
+      if(window.location.pathname == '/'){
+        $(window).scroll(function () {
+          if ($(window).innerWidth() > 576) {
+            if (!menuOpen) {
+              if ($(this).scrollTop() > 5) {
+                $(".scroll nav.navbar #navbar").css({
+                  transition: "all .1s",
+                  // height: "100%"
+                });
+                $(".scroll nav.navbar #navbar ul.navbar-nav>li>a").css("font-size", "14px");
+                $(".scroll nav.navbar").css({
+                  transition: "all .1s",
+                  height: "60px",
+                  padding: "4px 0 0",
+                });
+                $(".scroll #logo").css({
+                  width: "60%",
+                  margin: "5px 0 0",
+                  padding: "10px"
+                });
+              } else {
+                $(".scroll nav.navbar").css({
+                  transition: "all .1s",
+                  background: "#fff",
+                  height: "110px",
+                  padding: "8px 0"
+                });
+                $(".scroll #logo").css({
+                  width: "90%",
+                  margin: "10px",
+                  padding: "20px"
+                });
+                $(".scroll nav.navbar #navbar ul.navbar-nav>li>a").css("font-size", "16px");
+              }
             } else {
-              $("nav.navbar").css({
-                transition: "all .1s",
-                background: "#fff",
-                height: "110px",
-                padding: "8px 0"
-              });
-              $("#logo").css({
-                width: "90%",
-                margin: "10px",
-                padding: "20px"
-              });
-              $("nav.navbar #navbar ul.navbar-nav>li>a").css("font-size", "16px");
+              
             }
-          } else {
-            
           }
-        }
-      });
-
+        });
+  
+      }
+     
       
 
       $('.modal button').on('click', function () {

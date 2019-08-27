@@ -85,6 +85,11 @@ export const uz = {
     'bank_branch_and_mfo': 'Roʼyxatga olingan bank filiali va MFO',
     'date_begin_document' : 'Passport berilgan sanasi',
     'date_end_document': 'Passport amal qilish muddati',
-    'myCard_title': 'Mening kartalarim'
+    'myCard_title': 'Mening kartalarim',
+    'Information about installment plan':"Rassrochka haqida ma'lumot",
+    'debit':'Qarzdorlik',
+    'schedule':"To'lov grafigi",
+    'schedule time':"To'lov vaqti",
+    'schedule amount':"To'lov miqdori"
 
 }

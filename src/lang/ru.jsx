@@ -83,5 +83,10 @@ export const ru = {
     'bank_branch_and_mfo': 'Зарегистрированный филиал банка и МФО',
     'date_begin_document' : 'Дата выдачи',
     'date_end_document': 'Дата истечения срока',
-    'myCard_title': 'Мои карты'
+    'myCard_title': 'Мои карты',
+    'Information about installment plan':'Информация о рассрочке',
+    'debit':'Долг',
+    'schedule':'График оплаты',
+    'schedule time':"Время оплаты",
+    'schedule amount':"Сумма платежа"
 }

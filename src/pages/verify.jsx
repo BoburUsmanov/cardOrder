@@ -10,6 +10,7 @@ import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
 import localStorage from 'reactjs-localstorage';
 import history from './../history';
+import $ from 'jquery'
 
 class Verify extends Component {
 	constructor(props) {
@@ -27,7 +28,9 @@ class Verify extends Component {
 		this.props.session_id(this.props.code, this.props.data);
 	};
 
-
+	componentDidMount(){
+		$("html, body").animate({ scrollTop: 0 });
+	}
 
 	render() {
 		var ln;

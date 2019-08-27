@@ -26,11 +26,12 @@ class Profile extends Component {
 		this.props.rassrochka_info();
 	};
 	componentDidMount() {
-		if(window.localStorage.getItem("loggedStatus")){
+		if (window.localStorage.getItem("loggedStatus")) {
 			this.parsing();
 		}
-		$(document).ready(function() {
-			$("#profileCardHeader").mousemove(function(event) {
+		$("html, body").animate({ scrollTop: 0 });
+		$(document).ready(function () {
+			$("#profileCardHeader").mousemove(function (event) {
 				var moveX = ($(window).width() / 2 - event.pageX) * 0.03;
 				var moveY = ($(window).height() / 2 - event.pageY) * 0.03;
 				$("#profileCardImg").css("margin-left", moveX + "px");
@@ -41,7 +42,7 @@ class Profile extends Component {
 			var height = movementStrength / $(window).height();
 			var width = movementStrength / $(window).width();
 
-			$(".card-header").mousemove(function(e) {
+			$(".card-header").mousemove(function (e) {
 				var pageX = e.pageX - $(window).width() / 2;
 				var pageY = e.pageY - $(window).height() / 2;
 				var newvalueX = width * -pageX * -1 - 25;
@@ -52,9 +53,9 @@ class Profile extends Component {
 				);
 			});
 			$('.cardFlip').hover(
-				function(){ $(this).addClass('flip');},
-				function(){ $(this).removeClass('flip') }
-		 	)
+				function () { $(this).addClass('flip'); },
+				function () { $(this).removeClass('flip') }
+			)
 		});
 	}
 
@@ -266,33 +267,44 @@ class Profile extends Component {
 													<h4>{ln["myCard_title"]}</h4>
 													{this.state.product
 														? this.state.product.map(card => (
-																<React.Fragment>
-																	<Link
-																		to="/rassrochka"
-																		onClick={this.rassrochka_info}
-																		className="animated cardFlip"
-																	>
-																		{card.product_id === "120" && window.localStorage.getItem('product_r_status')==2 && (
-																			<img src="/img/rassrochka.png " />
-																		)}
-																	</Link>
-																	<Link to="/credit" className="animated cardFlip">
-																		{card.product_id === "100" && window.localStorage.getItem('product_c_status')==2 && (
-																			<img src="/img/uzcard.png " />
-																		)}
-																	</Link>
-																	<Link
-																		to="/credit"
-																		onClick={this.credit_info}
-																		className="animated cardFlip"
-																	>
-																		{card.product_id === "140" && (
-																			<img src="/img/kredit.png " />
-																		)}
-																	</Link>
-																</React.Fragment>
-														  ))
+															<React.Fragment>
+																<Link
+																	to="/rassrochka"
+																	onClick={this.rassrochka_info}
+																	className="animated cardFlip"
+																>
+																	{card.product_id === "120" && window.localStorage.getItem('product_r_status') == 2 && (
+																		<img src="/img/rassrochka.png " />
+																	)}
+																</Link>
+																<Link to="/credit" className="animated cardFlip">
+																	{card.product_id === "100" && window.localStorage.getItem('product_c_status') == 2 && (
+																		<img src="/img/uzcard.png " />
+																	)}
+																</Link>
+																<Link
+																	to="/credit"
+																	onClick={this.credit_info}
+																	className="animated cardFlip"
+																>
+																	{card.product_id === "140" && (
+																		<img src="/img/kredit.png " />
+																	)}
+																</Link>
+
+
+															</React.Fragment>
+														))
 														: "karta yuq"}
+
+													{  window.localStorage.getItem('product_r_status') == 0 && window.localStorage.getItem('product_r_id') == 120 && (<Link
+														to="/appeal"
+														className="profile_order"
+													>
+														
+															Onlayn buyurtma qilish
+													</Link>)}
+													{window.localStorage.getItem('product_r_status') == 1 && <p className="text-center">Sizning so'rovingiz ko'rib chiqilmoqda</p>}
 												</div>
 											</div>
 										</div>
