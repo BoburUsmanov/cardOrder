@@ -114,19 +114,13 @@ export default class Rassrochka extends Component {
 						</div>
 						<div className="col-md-12">
 							<div className="row">
-								<div className="col-md-4">
+								<div className="col-md-6">
 									<div className="rassrochka_info">
 										<h4>Limit</h4>
 										<p>{replaceCorrectInfo(this.state.details.limit)}</p>
 									</div>
 								</div>
-								<div className="col-md-4">
-									<div className="rassrochka_info">
-										<h4>Qolgan summa</h4>
-										<p>{replaceCorrectInfo(this.state.details.ostatok)}</p>
-									</div>
-								</div>
-								<div className="col-md-4">
+								<div className="col-md-6">
 									<div className="rassrochka_info">
 										<h4>Qarzdorlik</h4>
 										<p>{replaceCorrectInfo(this.state.details.debt)}</p>
@@ -163,7 +157,10 @@ export default class Rassrochka extends Component {
                                                 {(expirationYear(chart.DATE_RED) || expirationMonth(chart.DATE_RED) || expirationDay(chart.DATE_RED)) > 0 &&
                                                     <span className="text-success">
                                                         {expirationYear(chart.DATE_RED) != 0 && <span>{expirationYear(chart.DATE_RED)} Yil </span> }
-                                                        {expirationMonth(chart.DATE_RED) != 0 && <span>{expirationMonth(chart.DATE_RED)} Oy </span> } 
+                                                        {expirationYear(chart.DATE_RED) > 0 && 
+                                                            <span>{expirationMonth(chart.DATE_RED) != 0 && <span>{expirationMonth(chart.DATE_RED)+ 12 } Oy </span>}</span> ||
+                                                            <span>{expirationMonth(chart.DATE_RED) != 0 && <span>{expirationMonth(chart.DATE_RED)} Oy </span> } </span>
+                                                        }
                                                         {expirationDay(chart.DATE_RED) != 0 && <span>{expirationDay(chart.DATE_RED)+30} kun </span> } qoldi
                                                     </span>
                                                 }
