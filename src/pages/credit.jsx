@@ -42,19 +42,19 @@ export default class Credit extends Component {
 				});
 			}
 
-			if (this.state.redirect) {
-				history.push("/user");
-			}
+			
 		});
 	}
 	render() {
+
 		if (!window.localStorage.getItem("loggedStatus")) {
 			history.push("/");
-		}
-		let date = String(this.state.chart.red_date);
-        console.log(date.slice(0, 10));
-        if(window.localStorage.getItem('product_c_status')==0){
-            history.push('/user')
+        }
+        
+		// let date = String(this.state.chart.red_date);
+        // console.log(date.slice(0, 10));
+        if (window.localStorage.getItem('product_c_status') == 0 || window.localStorage.getItem('product_c_status') == 1) {
+            history.push("/user");
         }
 
         const replaceCorrectInfo = (number) =>{

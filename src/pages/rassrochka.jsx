@@ -95,12 +95,12 @@ export default class Rassrochka extends Component {
 			let month = ("0" + (dateObj.getMonth() + 1)).slice(-2);
 			let date = ("0" + dateObj.getDate()).slice(-2);
             let year = dateObj.getFullYear();
-            let expDate = (year - expYear) + " " + (month - expMonth) + " " + (date - expDay);
+            let expDate = (year - expYear) + " " + (month - expMonth) + " "	 + (date - expDay);
             return expDate 
         };
         
 
-		if (window.localStorage.getItem("product_r_status") == 0) {
+		if (window.localStorage.getItem("product_r_status") == 0 || window.localStorage.getItem("product_r_status") == 1) {
 			history.push("/user");
 		}
 

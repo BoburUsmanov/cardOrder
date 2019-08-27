@@ -272,12 +272,12 @@ class Profile extends Component {
 																		onClick={this.rassrochka_info}
 																		className="animated cardFlip"
 																	>
-																		{card.product_id === "120" && (
+																		{card.product_id === "120" && window.localStorage.getItem('product_r_status')==2 && (
 																			<img src="/img/rassrochka.png " />
 																		)}
 																	</Link>
 																	<Link to="/credit" className="animated cardFlip">
-																		{card.product_id === "100" && (
+																		{card.product_id === "100" && window.localStorage.getItem('product_c_status')==2 && (
 																			<img src="/img/uzcard.png " />
 																		)}
 																	</Link>
