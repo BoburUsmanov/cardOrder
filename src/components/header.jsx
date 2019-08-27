@@ -11,9 +11,9 @@ import { reactLocalStorage } from "reactjs-localstorage";
 import $ from 'jquery';
 import history from './../history';
 
+let menuOpen = false;
 class Header extends Component {
   componentDidMount(){
-    let menuOpen = false;
     $(".navbar-toggle").click(function () {
       $("nav.navbar #navbar.collapse").css({
         left: 0,

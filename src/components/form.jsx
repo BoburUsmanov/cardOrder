@@ -61,6 +61,7 @@ class Form extends Component {
 		return trimmedNumber;
 	};
 
+
 	render() {
 		const toInputUppercase = e => {
 			e.target.value = ("" + e.target.value).toUpperCase();
